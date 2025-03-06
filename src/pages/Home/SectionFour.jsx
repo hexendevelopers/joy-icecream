@@ -38,8 +38,77 @@ function SectionFour() {
           src={bar}
           alt=""
           width={1400}
-          className=" -mt-80 hidden lg:block"
+          className=" -mt-80 hidden "
         />
+        <div className="hidden lg:block w-full h-1/2 relative">
+          <div className="absolute z-50 bottom-0 left-1/2 transform -translate-x-1/2">
+            <Image src={barMain} className="w-[9.5rem]" />
+          </div>
+          <motion.div
+            initial={{ right: 100, rotateZ:-45}}
+            whileInView={{ right: 6, rotateZ:0 }}
+            viewport={{ once: false, amount: 0.99 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.4,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+              mass: 1,
+            }}
+            className="absolute bottom-16 "
+          >
+            <Image src={bar1} className="w-[12.5rem]" />
+          </motion.div>
+          <motion.div
+           initial={{ right: 100, rotateZ:-45}}
+           whileInView={{ right: 4, rotateZ:0 }}
+           viewport={{ once: false, amount: 0.99 }}
+           transition={{
+             duration: 0.5,
+             delay: 0.2,
+             type: "spring",
+             stiffness: 100,
+             damping: 20,
+             mass: 1,
+           }}
+            className="absolute bottom-1"
+          >
+            <Image src={bar2} className="w-[12.5rem]" />
+          </motion.div>
+          <motion.iv
+          initial={{ left: 100, rotateZ:45}}
+          whileInView={{ left: 6, rotateZ:0 }}
+          viewport={{ once: false, amount: 0.99 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.4,
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            mass: 1,
+          }}
+           className="absolute bottom-16 ">
+            <Image src={bar3} className="w-[12.5rem]" />
+          </motion.iv>
+          <motion.div
+           initial={{ left: 100, rotateZ:45}}
+           whileInView={{ left: 4, rotateZ:0 }}
+           viewport={{ once: false, amount: 0.99 }}
+           transition={{
+             duration: 0.5,
+             delay: 0.2,
+             type: "spring",
+             stiffness: 100,
+             damping: 20,
+             mass: 1,
+           }}
+           className="absolute bottom-1 ">
+            <Image src={bar4} className="w-[12.5rem]" />
+          </motion.div>
+        </div>
+        
+        {/* -----MOBILE VERSION--- */}
         <div className="lg:hidden w-full h-1/2 relative">
           <div className="absolute z-50 bottom-0 left-1/2 transform -translate-x-1/2">
             <Image src={barMain} className="w-[9.5rem]" />

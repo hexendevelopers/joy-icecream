@@ -14,13 +14,17 @@ const thunderLight = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
   weight: "100 900",
 });
+const thunderSemibold = localFont({
+  src: "../../app/fonts/Thunder-SemiBoldLC.otf",
+  weight: "600",
+});
 
 function SectionTwo() {
   return (
-    <div className=" w-full h-[500px] flex  justify-center bg-gradient-to-b from-red-900 to-red-500 px-20 pt-20">
-      <div className=" w-full flex items-start gap-10 justify-between">
-        <div className=" w-1/2 flex flex-col gap-5">
-          <h1 className={`${thunder.className} text-8xl  text-white uppercase`}>
+    <div className=" w-full h-auto lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-8 lg:px-20 lg:pt-20">
+      <div className=" w-full flex flex-col lg:flex-row lg:items-start items-center gap-10 justify-between">
+        <div className="w-full lg:w-1/2 flex flex-col gap-5">
+          <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3.2rem] lg:text-8xl leading-none  text-white uppercase`}>
             same great taste new different look
           </h1>
           <h1>
@@ -35,7 +39,7 @@ function SectionTwo() {
             creating new ones{" "}
           </h1>
         </div>
-        <div className="w-1/3 -mt-10">
+        <div className="w-full lg:w-1/3 -mt-10 py-12 lg:py-0">
           <div className="w-full h-full overflow-hidden rounded-3xl">
             <ReactCompareImage
               className="w-full h-full"

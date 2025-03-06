@@ -1,5 +1,8 @@
 import React from "react";
 import localFont from "next/font/local";
+import Image from "next/image";
+import ellipseImg from '../../app/assets/MOBILE/HOME/Ellipse.png'
+
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-BoldLC.otf",
@@ -12,10 +15,10 @@ const signatie = localFont({
 
 function ContactFooter() {
   return (
-    <div className=" w-full h-[600px] bg-gradient-to-b from-red-900 to-red-500 flex items-center justify-center">
-      <div className=" flex flex-col gap-5 items-center">
+    <div className=" w-full h-auto bg-gradient-to-b from-red-900 to-red-500  flex flex-col lg:flex-row pt-20 lg:pt-0 items-center justify-center">
+      <div className=" flex flex-col gap-5 items-center px-7 lg:px-0">
         <h1
-          className={` text-6xl ${thunder.className} font-semibold text-center uppercase w-[30rem]`}
+          className={` text-6xl ${thunder.className} font-semibold text-center uppercase text-[3rem] lg:w-[30rem]`}
         >
           bringing joy to every moment with love
         </h1>
@@ -23,16 +26,17 @@ function ContactFooter() {
           Discover happiness in every purchase. Shop now and make every moment
           joyful!
         </h1>
-        <div className=" uppercase text-xs flex items-center gap-10 mt-5">
+        <div className=" uppercase text-xs flex items-center gap-5 lg:gap-10 mt-5">
           <h1>instagram</h1>
           <h1>facebook</h1>
           <h1>twitter</h1>
           <h1>pintrest</h1>
         </div>
-        <h1 className={`${signatie.className} text-4xl mt-16 font-semibold`}>
+        <h1 className={`${signatie.className} text-2xl lg:text-4xl mt-16 font-semibold`}>
           Shri LC Java
         </h1>
       </div>
+      <Image src={ellipseImg} className='w-full lg:w-[60%] h-auto' />
     </div>
   );
 }
