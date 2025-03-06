@@ -56,10 +56,10 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
           <IoClose className="text-3xl" onClick={() => setShowMenu(false)} />
         </div>
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between">
-          <div className={` w-full flex flex-col text-white py-16`}>
+          <div className={` w-full flex flex-col text-white py-10  `}>
             <Link onClick={() => setShowMenu(false)} href={"/"}>
               <button
-                className={`${thunderSemibold.className} text-6xl py-1.5`}
+                className={`${thunderSemibold.className} text-6xl py-1.5  ` }
               >
                 HOME
               </button>
@@ -86,7 +86,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
               </button>
             </Link>
           </div>
-          <div className="w-full flex flex-col gap-1 items-center">
+          <div className="w-full flex flex-col gap-1 mt-24 items-center">
             <div className="relative w-full flex md:hidden flex-col items-center bg-white ">
               {/* Increased container size from 400px to 500px for both width and height */}
               <div style={{ width: '450px', height: '450px' }} className="absolute bottom-4 left-[48.5%] transform -translate-x-1/2 z-10">
@@ -100,7 +100,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                     - spotLight: Controls focused lighting (0.1 to 4.0)
                     - directionalLight: Controls directional shadows (0.1 to 2.0)
                     */}
-                    <ambientLight intensity={1.2} />
+                    <ambientLight intensity={1} />
                     <hemisphereLight intensity={2} groundColor="#ff0000" />
                     <spotLight 
                       position={[10, 20, 10]} 

@@ -154,7 +154,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":1769,
+			"count":1784,
 			"max":[
 				0.052928000688552856,
 				0.05299999937415123,
@@ -170,13 +170,13 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":1769,
+			"count":1784,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":1769,
+			"count":1784,
 			"type":"VEC2"
 		},
 		{
@@ -251,68 +251,68 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":21228,
+			"byteLength":21408,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":21228,
-			"byteOffset":21228,
+			"byteLength":21408,
+			"byteOffset":21408,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":14152,
-			"byteOffset":42456,
+			"byteLength":14272,
+			"byteOffset":42816,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":13524,
-			"byteOffset":56608,
+			"byteOffset":57088,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":1560,
-			"byteOffset":70132,
+			"byteOffset":70612,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1560,
-			"byteOffset":71692,
+			"byteOffset":72172,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1040,
-			"byteOffset":73252,
+			"byteOffset":73732,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":744,
-			"byteOffset":74292,
+			"byteOffset":74772,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":1560,
-			"byteOffset":75036,
+			"byteOffset":75516,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1560,
-			"byteOffset":76596,
+			"byteOffset":77076,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1040,
-			"byteOffset":78156,
+			"byteOffset":78636,
 			"target":34962
 		}
 	],
@@ -324,7 +324,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":79196,
+			"byteLength":79676,
 			"uri":"joy%20ice%20cream%20tub.bin"
 		}
 	]
