@@ -86,7 +86,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
               </button>
             </Link>
           </div>
-          <div className="w-full flex flex-col gap-1 mt-24 items-center">
+          <div className="w-full flex flex-col gap-1  pt-14 items-center">
             <div className="relative w-full flex md:hidden flex-col items-center bg-white ">
               {/* Increased container size from 400px to 500px for both width and height */}
               <div style={{ width: '450px', height: '450px' }} className="absolute bottom-4 left-[48.5%] transform -translate-x-1/2 z-10">
