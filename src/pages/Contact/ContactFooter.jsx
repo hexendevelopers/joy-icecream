@@ -15,7 +15,7 @@ const signatie = localFont({
 
 function ContactFooter() {
   return (
-    <div className=" w-full h-auto bg-gradient-to-b from-red-900 to-red-500  flex flex-col lg:flex-row pt-20 lg:pt-0 items-center justify-center">
+    <div className=" w-full h-auto bg-gradient-to-b from-red-900 to-red-500  flex flex-col  pt-20  items-center justify-center">
       <div className=" flex flex-col gap-5 items-center px-7 lg:px-0">
         <h1
           className={` text-6xl ${thunder.className} font-semibold text-center uppercase text-[3rem] lg:w-[30rem]`}
@@ -36,7 +36,7 @@ function ContactFooter() {
           Shri LC Java
         </h1>
       </div>
-      <Image src={ellipseImg} className='w-full lg:w-[60%] h-auto' />
+      <Image src={ellipseImg} className='w-full  h-[40vh] object-contain' />
     </div>
   );
 }
