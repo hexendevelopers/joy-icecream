@@ -59,34 +59,34 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
           <div className={` w-full flex flex-col text-white py-10  `}>
             <Link onClick={() => setShowMenu(false)} href={"/"}>
               <button
-                className={`${thunderSemibold.className} text-6xl py-1.5  ` }
+                className={`${thunderSemibold.className} text-5xl py-1.5  ` }
               >
                 HOME
               </button>
             </Link>
             <Link onClick={() => setShowMenu(false)} href={"/about"}>
               <button
-                className={`${thunderSemibold.className} text-6xl py-1.5`}
+                className={`${thunderSemibold.className} text-5xl py-1.5`}
               >
                 ABOUT
               </button>
             </Link>
             <Link onClick={() => setShowMenu(false)} href={"/catalog"}>
               <button
-                className={`${thunderSemibold.className} text-6xl py-1.5`}
+                className={`${thunderSemibold.className} text-5xl py-1.5`}
               >
                 CATALOG
               </button>
             </Link>
             <Link onClick={() => setShowMenu(false)} href={"/contact"}>
               <button
-                className={`${thunderSemibold.className} text-6xl py-1.5`}
+                className={`${thunderSemibold.className} text-5xl py-1.5`}
               >
                 CONTACT
               </button>
             </Link>
           </div>
-          <div className="w-full flex flex-col gap-1  pt-14 items-center">
+          <div className="w-full flex flex-col gap-1  pt-8 items-center">
             <div className="relative w-full flex md:hidden flex-col items-center bg-white ">
               {/* Increased container size from 400px to 500px for both width and height */}
               <div style={{ width: '450px', height: '450px' }} className="absolute bottom-4 left-[48.5%] transform -translate-x-1/2 z-10">
