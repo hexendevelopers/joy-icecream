@@ -44,10 +44,10 @@ function SectionFour() {
           <div className="absolute z-50 -bottom-12 left-1/2 transform -translate-x-1/2">
             <Image src={barMain} className="w-[11.5rem]" />
           </div>
-          <div className="absolute bottom-9 left-1/2 z-20 transform -translate-x-1/2  w-[11rem]">
+          <div className="absolute bottom-7 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
-              whileInView={{ rotateZ: 30, x: 140 }}
+              whileInView={{ rotateZ: 40, x: 130 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -61,10 +61,10 @@ function SectionFour() {
               <Image src={bar1} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2   w-[11rem] ">
+          <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2   w-[10.5rem] ">
             <motion.div
                initial={{ rotateZ: 0, x: 0, y: 0 }}
-               whileInView={{ rotateZ: 50, x: 185, y: 20 }}
+               whileInView={{ rotateZ: 60, x: 185, y: 20 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -78,10 +78,10 @@ function SectionFour() {
               <Image src={bar2} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute bottom-9 left-1/2 z-20 transform -translate-x-1/2  w-[11rem]">
+          <div className="absolute bottom-7 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
-              whileInView={{ rotateZ: -30, x: -140 }}
+              whileInView={{ rotateZ: -40, x: -130 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -95,10 +95,10 @@ function SectionFour() {
               <Image src={bar3} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2   w-[11rem] ">
+          <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2   w-[10.5rem] ">
             <motion.div
                  initial={{ rotateZ: 0, x: 0, y: 0 }}
-                 whileInView={{ rotateZ: -50, x: -185, y: 20 }}
+                 whileInView={{ rotateZ: -60, x: -185, y: 20 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,

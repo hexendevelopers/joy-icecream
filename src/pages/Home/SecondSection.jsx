@@ -16,9 +16,9 @@ const thunderLight = localFont({
 
 function SecondSection() {
   return (
-    <div className=" w-full h-screen bg-gradient-to-b from-red-500 to-red-900 px-7 md:px-20 flex items-center justify-center">
+    <div className=" w-full h-screen bg-gradient-to-b from-red-500 to-red-900 py-16 px-7 md:px-20 flex items-center justify-center">
       <div
-        className={` flex flex-col gap-0 md:gap-5 items-center relative h-full justify-normal md:justify-center py-14  md:py-0 w-full`}
+        className={` flex flex-col gap-0 md:gap-5 items-center relative h-full  py-16  md:py-0 w-full`}
       >
         <h1 className={`${thunder.className} text-7xl uppercase font-bold`}>
           IT's about biringing joy in every scoop
@@ -46,13 +46,13 @@ function SecondSection() {
           </h1>
           <div className=" absolute left-0 top-0 w-full h-full flex items-end justify-center pb-14 lg:pb-0">
             <div className="hidden md:flex relative w-full  flex-col items-center">
-              <Image src={dub} alt="dub" width={420} className=" absolute bottom-10 left-[48.5%] transform -translate-x-1/2 z-10"/>
-              <Image src={stage} alt="stage" width={600} className="absolute -bottom-12"/>
+              <Image src={dub} alt="dub" width={420} className=" absolute bottom-12 left-[48.5%] transform -translate-x-1/2 z-10"/>
+              <Image src={stage} alt="stage" width={600} className="absolute -bottom-10"/>
             </div>
             {/* ----MOBILE VERSION---- */}
             <div className="relative w-full flex md:hidden flex-col items-center ">
-              <Image src={dub} alt="dub" width={264} className=" absolute bottom-10 left-[48.5%] transform -translate-x-1/2 z-10"/>
-              <Image src={stage} alt="stage" width={500} className="absolute -bottom-2"/>
+              <Image src={dub} alt="dub" width={264} className=" absolute -bottom-4 left-[48.5%] transform -translate-x-1/2 z-10"/>
+              <Image src={stage} alt="stage" width={500} className="absolute -bottom-16"/>
             </div>
           </div>
         </div>
