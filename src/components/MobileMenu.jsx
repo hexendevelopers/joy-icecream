@@ -58,7 +58,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
         </div>
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">
           <div className=" w-full h-screen flex items-center justify-center absolute top-0 left-0">
-            <div className=" flex flex-col justify-between pb-52 w-full h-full">
+            <div className=" flex flex-col justify-between pb-32 w-full h-full">
               <div className={` w-full flex flex-col text-white py-10   `}>
                 <Link onClick={() => setShowMenu(false)} href={"/"}>
                   <button
