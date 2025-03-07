@@ -19,15 +19,16 @@ const thunderSemibold = localFont({
 });
 
 function IceCreamModel() {
-  const gltf = useGLTF('/assets/MENU 3D/joy ice cream tub.gltf');
+  const gltf = useGLTF("/assets/MENU 3D/joy ice cream tub.gltf");
   // Increased scale from [1.5, 1.5, 1.5] to [2, 2, 2] for larger model
-  return <primitive object={gltf.scene} 
-  
-  scale={[3.3, 3.3, 3.3]}
-  rotation={[-6.3, Math.PI / 50, 0]}
-   
-   
-  position={[0, 0, 0]} />;
+  return (
+    <primitive
+      object={gltf.scene}
+      scale={[3.3, 3.3, 3.3]}
+      rotation={[-6.3, Math.PI / 50, 0]}
+      position={[0, 0, 0]}
+    />
+  );
 }
 
 const MobileMenu = ({ showMenu, setShowMenu }) => {
@@ -55,44 +56,50 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
           <h1 className={`text-3xl ${thunderMedium.className}`}>MENU</h1>
           <IoClose className="text-3xl" onClick={() => setShowMenu(false)} />
         </div>
-        <div className="w-full h-full flex flex-col gap-[18rem] justify-between">
-          <div className={` w-full flex flex-col text-white py-10  `}>
-            <Link onClick={() => setShowMenu(false)} href={"/"}>
-              <button
-                className={`${thunderSemibold.className} text-5xl py-1.5  ` }
-              >
-                HOME
-              </button>
-            </Link>
-            <Link onClick={() => setShowMenu(false)} href={"/about"}>
-              <button
-                className={`${thunderSemibold.className} text-5xl py-1.5`}
-              >
-                ABOUT
-              </button>
-            </Link>
-            <Link onClick={() => setShowMenu(false)} href={"/catalog"}>
-              <button
-                className={`${thunderSemibold.className} text-5xl py-1.5`}
-              >
-                CATALOG
-              </button>
-            </Link>
-            <Link onClick={() => setShowMenu(false)} href={"/contact"}>
-              <button
-                className={`${thunderSemibold.className} text-5xl py-1.5`}
-              >
-                CONTACT
-              </button>
-            </Link>
-          </div>
-          <div className="w-full flex flex-col gap-1    items-center">
-            <div className="relative w-full flex md:hidden flex-col items-center bg-white ">
-              {/* Increased container size from 400px to 500px for both width and height */}
-              <div style={{ width: '450px', height: '450px' }} className="absolute bottom-4 left-[48.5%] transform -translate-x-1/2 z-10">
-                <Canvas>
-                  <Suspense fallback={null}>
-                    {/* 
+        <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">
+          <div className=" w-full h-screen flex items-center justify-center absolute top-0 left-0">
+            <div className=" flex flex-col justify-between pb-20 w-full h-full">
+              <div className={` w-full flex flex-col text-white py-10   `}>
+                <Link onClick={() => setShowMenu(false)} href={"/"}>
+                  <button
+                    className={`${thunderSemibold.className} text-5xl py-1.5  `}
+                  >
+                    HOME
+                  </button>
+                </Link>
+                <Link onClick={() => setShowMenu(false)} href={"/about"}>
+                  <button
+                    className={`${thunderSemibold.className} text-5xl py-1.5`}
+                  >
+                    ABOUT
+                  </button>
+                </Link>
+                <Link onClick={() => setShowMenu(false)} href={"/catalog"}>
+                  <button
+                    className={`${thunderSemibold.className} text-5xl py-1.5`}
+                  >
+                    CATALOG
+                  </button>
+                </Link>
+                <Link onClick={() => setShowMenu(false)} href={"/contact"}>
+                  <button
+                    className={`${thunderSemibold.className} text-5xl py-1.5`}
+                  >
+                    CONTACT
+                  </button>
+                </Link>
+              </div>
+           
+              <div className="w-full flex flex-col gap-1  items-center" >
+                <div className="relative w-full flex md:hidden flex-col  items-center  ">
+                  {/* Increased container size from 400px to 500px for both width and height */}
+                  <div
+                    style={{ width: "450px", height: "450px" }}
+                    className="absolute bottom-4  left-[48.5%] transform -translate-x-1/2 z-10"
+                  >
+                    <Canvas>
+                      <Suspense fallback={null}>
+                        {/* 
                     BRIGHTNESS CONTROLS:
                     - Increase/decrease intensity values for brighter/darker model
                     - ambientLight: Controls overall brightness (0.1 to 2.0)
@@ -100,38 +107,39 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                     - spotLight: Controls focused lighting (0.1 to 4.0)
                     - directionalLight: Controls directional shadows (0.1 to 2.0)
                     */}
-                    <ambientLight intensity={1} />
-                    <hemisphereLight intensity={2} groundColor="#ff0000" />
-                    <spotLight 
-                      position={[10, 20, 10]} 
-                      angle={0.5} 
-                      penumbra={1} 
-                      intensity={4}
-                      castShadow
-                    />
-                       <directionalLight
-                      position={[0, 0, 4]} // Changed to center position
-                        intensity={0.6}
-                      castShadow
-                    />
-                    <IceCreamModel />
-                    <OrbitControls 
-                      enableZoom={false} 
-                      autoRotate 
-                      minPolarAngle={Math.PI / 2} 
-                      maxPolarAngle={Math.PI / 2}
-                    />
-                  </Suspense>
-                </Canvas>
+                        <ambientLight intensity={1} />
+                        <hemisphereLight intensity={2} groundColor="#ff0000" />
+                        <spotLight
+                          position={[10, 20, 10]}
+                          angle={0.5}
+                          penumbra={1}
+                          intensity={4}
+                          castShadow
+                        />
+                        <directionalLight
+                          position={[0, 0, 4]} // Changed to center position
+                          intensity={0.6}
+                          castShadow
+                        />
+                        <IceCreamModel />
+                        <OrbitControls
+                          enableZoom={false}
+                          autoRotate
+                          minPolarAngle={Math.PI / 2}
+                          maxPolarAngle={Math.PI / 2}
+                        />
+                      </Suspense>
+                    </Canvas>
+                  </div>
+                  <Image
+                    src={menuStage}
+                    alt="stage"
+                    width={350}
+                    className=" -bottom-1"
+                  />
+                </div>
               </div>
-              <Image
-                src={menuStage}
-                alt="stage"
-                width={350}
-                className="absolute -bottom-1"
-              />
             </div>
-            
           </div>
         </div>
       </div>
