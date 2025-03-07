@@ -46,13 +46,13 @@ function SecondSection() {
           </h1>
           <div className=" absolute left-0 top-0 w-full h-full flex items-end justify-center pb-14 lg:pb-0">
             <div className="hidden md:flex relative w-full  flex-col items-center">
-              <Image src={dub} alt="dub" width={420} className=" absolute bottom-10"/>
-              <Image src={stage} alt="stage" width={600} />
+              <Image src={dub} alt="dub" width={420} className=" absolute bottom-10 left-[48.5%] transform -translate-x-1/2 z-10"/>
+              <Image src={stage} alt="stage" width={600} className="absolute -bottom-12"/>
             </div>
             {/* ----MOBILE VERSION---- */}
             <div className="relative w-full flex md:hidden flex-col items-center ">
-              <Image src={dub} alt="dub" width={264} className=" absolute bottom-2"/>
-              <Image src={stage} alt="stage" width={300} />
+              <Image src={dub} alt="dub" width={264} className=" absolute bottom-10 left-[48.5%] transform -translate-x-1/2 z-10"/>
+              <Image src={stage} alt="stage" width={500} className="absolute -bottom-2"/>
             </div>
           </div>
         </div>

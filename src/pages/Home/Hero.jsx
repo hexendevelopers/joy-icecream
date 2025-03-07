@@ -172,7 +172,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className=" w-full h-full absolute top-0 left-0 flex items-center justify-between">
+      <div className=" w-full h-full absolute top-0 left-0 flex  justify-between">
         <div className="hidden md:flex items-center gap-32 w-full justify-between overflow-hidden">
           <motion.div
             initial={{ x: 300, y: 200 }}
