@@ -15,7 +15,7 @@ const signatie = localFont({
 
 function ContactFooter() {
   return (
-    <div className=" w-full h-auto bg-gradient-to-b from-red-900 to-red-500  flex flex-col  pt-20  items-center justify-center">
+    <div className=" w-full h-auto bg-gradient-to-b from-red-500 to-red-900  flex flex-col  pt-20  items-center justify-center">
       <div className=" flex flex-col gap-5 items-center px-7 lg:px-0">
         <h1
           className={` text-6xl ${thunder.className} font-semibold text-center uppercase text-[3rem] lg:w-[30rem]`}
