@@ -59,7 +59,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">
           <div className=" w-full h-screen flex items-center justify-center absolute top-0 left-0">
             <div className=" flex flex-col justify-between pb-32 w-full h-full">
-              <div className={` w-full flex flex-col text-white py-10   `}>
+              <div className={` w-full flex flex-col text-white py-10 -mt-5  `}>
                 <Link onClick={() => setShowMenu(false)} href={"/"}>
                   <button
                     className={`${thunderSemibold.className} text-5xl py-1.5  `}
@@ -95,7 +95,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                   {/* Increased container size from 400px to 500px for both width and height */}
                   <div
                     style={{ width: "450px", height: "450px" }}
-                    className="absolute bottom-4  left-[48.5%] transform -translate-x-1/2 z-10"
+                    className="absolute bottom-4    left-[48.5%] transform -translate-x-1/2 "
                   >
                     <Canvas>
                       <Suspense fallback={null}>
