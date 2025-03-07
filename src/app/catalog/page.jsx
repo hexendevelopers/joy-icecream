@@ -289,25 +289,25 @@ function page() {
                 src={card.img1}
                 alt={`${card.name}-1`}
                 width={100}
-                className="absolute top-20 left-10 opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 group-hover:-translate-y-10 duration-500 rotate-45 animate-float-fast"
+                className="absolute top-20 left-10 opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 group-hover:-translate-y-10 duration-500 rotate-45 transform animate-float-fast z-50"
               />
               <Image
                 src={card.img2}
                 alt={`${card.name}-2`}
                 width={60}
-                className="absolute top-40 right-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 group-hover:-translate-y-10 duration-500 -rotate-12 animate-float-fast"
+                className="absolute top-40 right-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 group-hover:-translate-y-10 duration-500 -rotate-12 transform animate-float-fast z-50"
               />
               <Image
                 src={card.img3}
                 alt={`${card.name}-3`}
                 width={120}
-                className="absolute bottom-20 left-10 opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 group-hover:translate-y-10 duration-500 rotate-6 animate-float-fast"
+                className="absolute bottom-20 left-10 opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 group-hover:translate-y-10 duration-500 rotate-6 transform animate-float-fast z-50"
               />
               <Image
                 src={card.img4}
                 alt={`${card.name}-4`}
                 width={115}
-                className="absolute bottom-40 right-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 group-hover:translate-y-10 duration-500 -rotate-12 animate-float-fast"
+                className="absolute bottom-40 right-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 group-hover:translate-y-10 duration-500 -rotate-12 transform animate-float-fast z-50"
               />
             </div>
           );
