@@ -1,7 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import localFont from "next/font/local";
-import dubs from "../../app/assets/HERO-SECTION/132.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import flavor1 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/101.png";
+import flavor2 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/102.png";
+import flavor3 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/103.png";
+import flavor4 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/104.png";
+import flavor5 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/105.png";
+import flavor6 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/106.png";
+import flavor7 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/107.png";
+import flavor8 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/108.png";
+import flavor9 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/109.png";
+import flavor10 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/110.png";
+import flavor11 from "../../app/assets/HERO-SECTION/ALL-FLAVORS/111.png";
+import centerText from "../../app/assets/HERO-SECTION/ALL-FLAVORS/center-text.png";
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-BoldLC.otf",
@@ -13,41 +26,119 @@ const thunderLight = localFont({
 });
 
 function SectionThree() {
+  const containerRef = useRef();
+
+  const allFlavors = [
+    flavor1,
+    flavor2,
+    flavor3,
+    flavor4,
+    flavor5,
+    flavor6,
+    flavor7,
+    flavor8,
+    flavor9,
+    flavor10,
+    flavor11,
+  ];
+
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const containerTop = containerRef.current.getBoundingClientRect().top;
+      // if(containerTop<-980){
+      //   setValue(containerTop)
+      // }else
+      if (containerTop < 0) {
+        setValue(containerTop);
+      } else {
+        setValue(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(value);
+  }, [value]);
+
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-red-900 to-red-500">
-      <div className="flex flex-col gap-20 md:gap-10 items-center  relative">
+    <div
+      ref={containerRef}
+      className="w-full h-[270vh] py-20 relative  bg-gradient-to-b from-red-900 to-red-500"
+    >
+      <div className="sticky w-full top-20 flex flex-col gap-20 md:gap-10 items-center ">
         <h1 className={`${thunder.className} text-5xl md:text-7xl uppercase`}>
           explore our flavors
         </h1>
         <div className="w-96 h-96 rounded-full  flex items-center justify-center relative">
+
           {/* Center text */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className={`${thunder.className} text-4xl`}>100%</div>
-              <div className={`${thunder.className} text-2xl`}>ICE CREAM</div>
-              <div className={`${thunder.className} text-2xl`}>NATURAL</div>
-            </div>
+              <div className={`${thunderLight.className} text-2xl`}>
+                ICE CREAM
+              </div>
+              <div className={`${thunderLight.className} text-2xl`}>
+                NATURAL
+              </div>
+            </div> */}
+            <Image src={centerText} className="w-[45%] lg:w-[60%]" />
           </div>
-          
+
           {/* Ice cream containers */}
-          {[...Array(10)].map((_, index) => (
-            <div
-              key={index}
-              className="absolute w-24 h-24"
-              style={{
-                transform: `rotate(${index * 36}deg) translateY(-150px) rotate(-${
-                  index * 36
-                }deg)`,
-              }}
-            >
-              <Image
-                src={dubs}
-                alt={`Ice cream ${index + 1}`}
-                width={80}
-                height={80}
-                className={`w-full h-full object-contain `}
-              />
-            </div>
+          {allFlavors.map((item, index) => (
+            <>
+              <motion.div
+                // initial={{opacity:0}}
+                // animate={{opacity:  (-(10 - index) * (value / 50)) >160 ? 1 : 0 }}
+                key={index}
+                className="absolute w-24 h-24 hidden lg:block"
+                style={{
+                  transform: `rotate(${
+                    -index * (value / 50)
+                  }deg) translateY(-170px)`,
+                  zIndex: 11 - index,
+                }}
+              >
+                <Image
+                  src={item}
+                  alt={`Ice cream ${index + 1}`}
+                  width={80}
+                  height={80}
+                  className={`w-full h-full object-contain `}
+                />
+              </motion.div>
+
+              {/* // ----MOBILE-VERSION--- */}
+              <motion.div
+                // initial={{opacity:0}}
+                // animate={{opacity:  (-(10 - index) * (value / 50)) >160 ? 1 : 0 }}
+                key={index}
+                className="absolute w-20 h-20  lg:hidden"
+                style={{
+                  transform: `rotate(${
+                    -index * (value / 50)
+                  }deg) translateY(-140px)`,
+                  zIndex: 11 - index,
+                }}
+              >
+                <Image
+                  src={item}
+                  alt={`Ice cream ${index + 1}`}
+                  width={80}
+                  height={80}
+                  className={`w-full h-full object-contain `}
+                />
+              </motion.div>
+            </>
           ))}
         </div>
         <h1 className="w-[22.56rem] md:w-[600px] text-sm md:text-base text-center">
