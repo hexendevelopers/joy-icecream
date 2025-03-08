@@ -27,7 +27,6 @@ function page() {
     target: ContainerRef2,
     offset: ["start start", "end end"],
   });
-
   useEffect(()=>{
     const handleScroll = () => {
       const containerTop = ContainerRef2.current.getBoundingClientRect().top;
