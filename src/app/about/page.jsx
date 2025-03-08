@@ -63,7 +63,7 @@ function page() {
       </div>
       <div ref={ContainerRef2} className="h-[400vh] w-full z-10 relative">
         <div className={`w-screen h-screen top-0 ${isFixed ? "fixed" : "hidden"}`}>
-        <Image src={tubBg}  className="w-full"/>
+        <Image src={tubBg}  className="h-full lg:h-auto object-cover lg:w-full"/>
         </div>
         
         <SectionFour scrollYProgress2={scrollYProgress2} />
