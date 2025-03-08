@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import Navbar from "../../components/Navbar";
 import { Bebas_Neue, Montez } from "next/font/google";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 import bg from "../../app/assets/HERO-SECTION/background-one.png";
-import mobBg from "../../app/assets/MOBILE/HOME/mobile-background1.png"
+import mobBg from "../../app/assets/MOBILE/HOME/mobile-background1.png";
 import Image from "next/image";
 import dubOne from "../../app/assets/HERO-SECTION/130.png";
 import dubTwo from "../../app/assets/HERO-SECTION/131.png";
@@ -16,6 +16,8 @@ import choclate from "../../app/assets/HERO-SECTION/CHOCOLATE.png";
 import berry from "../../app/assets/HERO-SECTION/straw.png";
 import caramel from "../../app/assets/HERO-SECTION/caramel.png";
 import flower from "../../app/assets/HERO-SECTION/sunlover-vanilla-1.png";
+import { Canvas } from "@react-three/fiber";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -32,19 +34,47 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+function Dub1Model() {
+  const glb = useGLTF("/assets/HERO 3D/SPANISH.glb");
+  return (
+    <primitive
+      object={glb.scene}
+      scale={[2.5, 2, 1.5]}
+      position={[0, 0, 0]}
+    />
+  );
+}
+function Dub2Model() {
+  const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
+  return (
+    <primitive
+      object={glb.scene}
+      scale={[3.2, 2.8, 1.5]}
+      position={[0, 0, 0]}
+    />
+  );
+}
+function Dub3Model() {
+  const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
+  return (
+    <primitive object={glb.scene} scale={[2.5, 2, 1.5]} position={[0, 0, 0]} />
+  );
+}
+
 function Hero() {
   return (
-    <div className=" w-full h-screen flex justify-center items-center bg-gradient-to-b from-red-900 to-red-500  relative">
+    <div className=" w-full h-screen  bg-gradient-to-b from-red-900 to-red-500  relative">
       <Image
         src={bg}
         alt="bg"
         className=" w-full h-full hidden md:block bg-cover"
       />
-       <Image
+      <Image
         src={mobBg}
         alt="bg"
         className=" w-full h-full  md:hidden object-contain object-bottom "
       />
+
       <div className=" w-full h-full absolute top-0 left-0 pt-10 px-8 lg:px-20">
         <div className=" w-full h-full flex flex-col justify-between">
           <div className=" flex flex-col gap-5">
@@ -55,7 +85,7 @@ function Hero() {
                 <h1
                   className={`text-[10rem] md:text-[11rem] xl:text-[16.5rem] ${thunder.className} font-extrabold`}
                 >
-                  SCOOP 
+                  SCOOP
                 </h1>
                 <h1
                   className={`text-[8rem] md:text-[11rem]  xl:text-[16.5rem]  flex-1 ${thunder.className}  -mt-24 md:mt-0`}
@@ -70,53 +100,57 @@ function Hero() {
               </h1>
             </div>
           </div>
+
           <div className="hidden md:flex w-full  justify-center relative">
-            <motion.div className=" z-10">
-              <Image
-                src={dubThree}
-                alt="main one"
-                width={410}
-                className=" -mt-36 z-10 "
-              />
+            <motion.div className="absolute bg-violet-500 -bottom-6 left-1/2 transform -translate-x-1/2  h-[35rem] w-[30rem] z-20">
+              <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+                <ambientLight intensity={1} />
+                <hemisphereLight intensity={1.5} groundColor="#ff0000" />
+                <directionalLight position={[2, 2, 5]} intensity={1} />
+                <Dub2Model />
+              </Canvas>
             </motion.div>
 
             <motion.div
-              initial={{ x: -230, rotateZ: -30 }}
-              animate={{ x: 0, rotateZ: 0 }}
+              initial={{ x: -200, rotateZ: 0 }}
+              animate={{ x: 0, rotateZ: 30 }}
               transition={{
+                delay:0.5,
                 duration: 0.5,
                 type: "spring",
                 stiffness: 100,
                 damping: 20,
                 mass: 1,
               }}
-              className=" absolute -mt-10 ml-96"
+              className=" absolute bg-yellow-400 -bottom-12 right-[17rem] h-[30rem] w-[20rem] z-10 "
             >
-              <Image
-                src={dubOne}
-                alt="second one"
-                width={400}
-                className="object-contain"
-              />
+              <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+                <ambientLight intensity={1} />
+                <hemisphereLight intensity={1.5} groundColor="#ff0000" />
+                <directionalLight position={[2, 2, 5]} intensity={1} />
+                <Dub3Model />
+              </Canvas>
             </motion.div>
 
             <motion.div
-              initial={{ x: 230, rotateZ: 30 }}
-              animate={{ x: 0, rotateZ: 0 }}
+              initial={{ x: 200, rotateZ: 0 }}
+              animate={{ x: 0, rotateZ: -30 }}
               transition={{
+                delay:0.5,
                 duration: 0.5,
                 type: "spring",
                 stiffness: 100,
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute -mt-10 -ml-96"
+              className="absolute bg-yellow-400 -bottom-12 left-[17rem] h-[30rem] w-[20rem] z-10 "
             >
-              <Image
-                src={dubTwo}
-                alt="second one"
-                width={400}
-              />
+              <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+                <ambientLight intensity={1} />
+                <hemisphereLight intensity={1.5} groundColor="#ff0000" />
+                <directionalLight position={[2, 2, 5]} intensity={1} />
+                <Dub1Model />
+              </Canvas>
             </motion.div>
           </div>
 
@@ -163,15 +197,13 @@ function Hero() {
               }}
               className="absolute -mt-[18.5rem] -ml-52"
             >
-              <Image
-                src={dubTwo}
-                alt="second one"
-                width={224}
-              />
+              <Image src={dubTwo} alt="second one" width={224} />
             </motion.div>
           </div>
         </div>
       </div>
+
+
       <div className=" w-full h-full absolute top-0 left-0 flex  justify-between">
         <div className="hidden md:flex items-center gap-32 w-full justify-between overflow-hidden">
           <motion.div
@@ -202,7 +234,11 @@ function Hero() {
             }}
             className=" relative -mt-[30rem] ml-16 bg-whit   z-50 flex flex-shrink-0"
           >
-            <Image src={choclate} width={130} className="z-50 mt-44 transform -translate-y-1/2 animate-float-fast" />
+            <Image
+              src={choclate}
+              width={130}
+              className="z-50 mt-44 transform -translate-y-1/2 animate-float-fast"
+            />
           </motion.div>
           <motion.div
             initial={{ x: 100, y: 300 }}
@@ -232,7 +268,11 @@ function Hero() {
               mass: 1,
             }}
           >
-            <Image  src={caramel} width={140} className=" -mt-56 transform -translate-y-1/2 animate-float-fast" />
+            <Image
+              src={caramel}
+              width={140}
+              className=" -mt-56 transform -translate-y-1/2 animate-float-fast"
+            />
           </motion.div>
           <motion.div
             initial={{ x: -300, y: 300 }}
@@ -254,8 +294,8 @@ function Hero() {
         {/* ---MOBILE VERSION---- */}
         <div className="md:hidden relative h-screen w-screen overflow-hidden">
           <motion.div
-           initial={{ x: 100, y: 300, opacity:0 }}
-           animate={{ x: 0, y: 0, opacity:1 }}
+            initial={{ x: 100, y: 300, opacity: 0 }}
+            animate={{ x: 0, y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               delay: 0.5,
@@ -269,8 +309,8 @@ function Hero() {
             <Image src={coconut} width={110} />
           </motion.div>
           <motion.div
-           initial={{ x: -50, y: 300, opacity:0 }}
-           animate={{ x: 0, y: 0, opacity:1 }}
+            initial={{ x: -50, y: 300, opacity: 0 }}
+            animate={{ x: 0, y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               delay: 0.5,
@@ -284,8 +324,8 @@ function Hero() {
             <Image src={choclate} width={65} className="" />
           </motion.div>
           <motion.div
-            initial={{ x: 0, y: 300, opacity:0 }}
-            animate={{ x: 0, y: 0, opacity:1 }}
+            initial={{ x: 0, y: 300, opacity: 0 }}
+            animate={{ x: 0, y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               delay: 0.5,
@@ -300,8 +340,8 @@ function Hero() {
           </motion.div>
           <motion.div
             className="absolute top-[20rem] left-[15.5rem]"
-            initial={{ x: -20, y: 300, opacity:0 }}
-            animate={{ x: 0, y: 0, opacity:1 }}
+            initial={{ x: -20, y: 300, opacity: 0 }}
+            animate={{ x: 0, y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               delay: 0.5,
@@ -311,11 +351,15 @@ function Hero() {
               mass: 1,
             }}
           >
-            <Image src={caramel} width={90} className=" transform -translate-y-1/2 animate-float-fast" />
+            <Image
+              src={caramel}
+              width={90}
+              className=" transform -translate-y-1/2 animate-float-fast"
+            />
           </motion.div>
           <motion.div
-            initial={{ x: -100, y: 300, opacity:0 }}
-            animate={{ x: 0, y: 0, opacity:1 }}
+            initial={{ x: -100, y: 300, opacity: 0 }}
+            animate={{ x: 0, y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               delay: 0.5,

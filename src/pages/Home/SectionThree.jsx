@@ -43,6 +43,7 @@ function SectionThree() {
   ];
 
   const [value, setValue] = useState(0);
+  const [mobileValue, setMobileValue] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,13 +65,32 @@ function SectionThree() {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const containerTop = containerRef.current.getBoundingClientRect().top;
+      if (containerTop < -1638) {
+        setMobileValue(-1638);
+      } else if (containerTop < 0) {
+        setMobileValue(containerTop);
+      } else {
+        setMobileValue(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     console.log(value);
   }, [value]);
 
   return (
     <div
       ref={containerRef}
-      className="w-full h-[400vh] py-20 pt-32 relative  bg-gradient-to-b from-red-900 to-red-500"
+      className="w-full h-[350vh] lg:h-[400vh] py-20 pt-32 relative  bg-gradient-to-b from-red-900 to-red-500"
     >
       <div className="sticky w-full top-20 flex flex-col gap-20 md:gap-10 items-center ">
         <h1 className={`${thunder.className} text-5xl md:text-7xl uppercase`}>
@@ -123,7 +143,7 @@ function SectionThree() {
                 className="absolute w-20 h-20  lg:hidden"
                 style={{
                   transform: `rotate(${
-                    -index * (value / 50)
+                    -index * (mobileValue / 50)
                   }deg) translateY(-140px)`,
                   zIndex: 11 - index,
                 }}
