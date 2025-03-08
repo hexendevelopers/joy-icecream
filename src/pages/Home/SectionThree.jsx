@@ -47,10 +47,9 @@ function SectionThree() {
   useEffect(() => {
     const handleScroll = () => {
       const containerTop = containerRef.current.getBoundingClientRect().top;
-      // if(containerTop<-980){
-      //   setValue(containerTop)
-      // }else
-      if (containerTop < 0) {
+      if (containerTop < -1962) {
+        setValue(-1962);
+      } else if (containerTop < 0) {
         setValue(containerTop);
       } else {
         setValue(0);
@@ -71,14 +70,13 @@ function SectionThree() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-[270vh] py-20 relative  bg-gradient-to-b from-red-900 to-red-500"
+      className="w-full h-[400vh] py-20 relative  bg-gradient-to-b from-red-900 to-red-500"
     >
       <div className="sticky w-full top-20 flex flex-col gap-20 md:gap-10 items-center ">
         <h1 className={`${thunder.className} text-5xl md:text-7xl uppercase`}>
           explore our flavors
         </h1>
         <div className="w-96 h-96 rounded-full  flex items-center justify-center relative">
-
           {/* Center text */}
           <div className="absolute inset-0 flex items-center justify-center">
             {/* <div className="text-center">
@@ -103,7 +101,7 @@ function SectionThree() {
                 className="absolute w-24 h-24 hidden lg:block"
                 style={{
                   transform: `rotate(${
-                    -index * (value / 50)
+                    -index * (value /60)
                   }deg) translateY(-170px)`,
                   zIndex: 11 - index,
                 }}
