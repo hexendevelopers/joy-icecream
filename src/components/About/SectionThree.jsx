@@ -6,7 +6,7 @@ import React from 'react'
 
 const thunderSemibold = localFont({
   src: "../../app/fonts/Thunder-SemiBoldLC.otf",
-  weight: "600",
+  weight: "600"
 });
 
 const SectionThree = ({scrollYProgress1}) => {

@@ -1,16 +1,29 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
+import Navbar from "../../components/Navbar";
 import React, { useEffect, useRef, useState } from "react";
-import SectionOne from "../../pages/About/SectionOne";
-import SectionTwo from "../../pages/About/SectionTwo";
-import Footer from "@/pages/Home/Footer";
-import SectionThree from "../../pages/About/SectionThree";
-import SectionFour from "../../pages/About/SectionFour";
-import SectionFive from "../../pages/About/SectionFive";
-import { motion, useScroll, useTransform } from "framer-motion";
+import SectionOne from "../../components/About/SectionOne";
+import SectionTwo from "../../components/About/SectionTwo";
+import Footer from "../../pages/Home/Footer";
+import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
-import tubBg from '../../app/assets/ABOUT US/tub-bg.png'
+import tubBg from '../assets/ABOUT US/tub-bg.png';
+import dynamic from 'next/dynamic';
+
+const SectionThree = dynamic(() => import('@/components/About/SectionThree'), {
+  ssr: false,
+  loading: () => <div className="h-[700vh] w-full bg-gradient-to-b from-red-500 to-red-900" />
+});
+
+const SectionFour = dynamic(() => import('@/components/About/SectionFour'), {
+  ssr: false,
+  loading: () => <div className="h-screen w-full bg-gradient-to-r from-[#EC3D3D] to-[#ea2729]" />
+});
+
+const SectionFive = dynamic(() => import('@/components/About/SectionFive'), {
+  ssr: false,
+  loading: () => <div className="h-screen w-full bg-gradient-to-r from-red-900 to-red-500" />
+});
 
 function page() {
 
