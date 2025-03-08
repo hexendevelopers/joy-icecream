@@ -75,7 +75,7 @@ function Hero() {
               <Image
                 src={dubThree}
                 alt="main one"
-                width={430}
+                width={410}
                 className=" -mt-36 z-10 "
               />
             </motion.div>
@@ -90,12 +90,12 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className=" absolute -mt-14 ml-96"
+              className=" absolute -mt-10 ml-96"
             >
               <Image
                 src={dubOne}
                 alt="second one"
-                width={450}
+                width={400}
                 className="object-contain"
               />
             </motion.div>
@@ -110,12 +110,12 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute -mt-14 -ml-96"
+              className="absolute -mt-10 -ml-96"
             >
               <Image
                 src={dubTwo}
                 alt="second one"
-                width={450}
+                width={400}
               />
             </motion.div>
           </div>
@@ -185,7 +185,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className=" -ml-20 z-50"
+            className=" -ml-20 mt-20 z-50 transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={coconut} width={200} />
           </motion.div>
@@ -200,9 +200,9 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className=" relative -mt-80 ml-16 bg-whit   z-50 flex flex-shrink-0"
+            className=" relative -mt-[30rem] ml-16 bg-whit   z-50 flex flex-shrink-0"
           >
-            <Image src={choclate} width={130} className="z-50 mt-44" />
+            <Image src={choclate} width={130} className="z-50 mt-44 transform -translate-y-1/2 animate-float-fast" />
           </motion.div>
           <motion.div
             initial={{ x: 100, y: 300 }}
@@ -215,7 +215,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className=" z-10 -mt-40  ml-56 flex flex-shrink-0"
+            className=" z-10 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={berry} width={120} />
           </motion.div>
@@ -232,7 +232,7 @@ function Hero() {
               mass: 1,
             }}
           >
-            <Image src={caramel} width={140} />
+            <Image  src={caramel} width={140} className=" -mt-56 transform -translate-y-1/2 animate-float-fast" />
           </motion.div>
           <motion.div
             initial={{ x: -300, y: 300 }}
@@ -245,7 +245,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className=" z-20 -mt-54 -mr-16 -mt-28 "
+            className=" z-20 -mt-54 -mr-16 -mt-28 transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={flower} width={160} />
           </motion.div>
@@ -264,7 +264,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className="absolute top-[13rem] -left-9 "
+            className="absolute top-[13rem] -left-9 transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={coconut} width={110} />
           </motion.div>
@@ -279,7 +279,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className="absolute top-[10rem] left-[10.5rem] flex flex-shrink-0"
+            className="absolute top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={choclate} width={65} className="" />
           </motion.div>
@@ -294,7 +294,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className="absolute top-[17rem] left-[9.5rem] flex flex-shrink-0"
+            className="absolute top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={berry} width={65} />
           </motion.div>
@@ -311,7 +311,7 @@ function Hero() {
               mass: 1,
             }}
           >
-            <Image src={caramel} width={90} />
+            <Image src={caramel} width={90} className=" transform -translate-y-1/2 animate-float-fast" />
           </motion.div>
           <motion.div
             initial={{ x: -100, y: 300, opacity:0 }}
@@ -324,7 +324,7 @@ function Hero() {
               damping: 10,
               mass: 1,
             }}
-            className="absolute -right-11 top-[10rem]"
+            className="absolute -right-11 top-[10rem] transform -translate-y-1/2 animate-float-fast"
           >
             <Image src={flower} width={110} />
           </motion.div>

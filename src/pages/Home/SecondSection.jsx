@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import stage from "../../app/assets/HERO-SECTION/icestage.png";
 import dub from "../../app/assets/HERO-SECTION/132.png";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-BoldLC.otf",
@@ -23,27 +24,29 @@ function SecondSection() {
         <h1 className={`${thunder.className} text-7xl uppercase font-bold`}>
           IT's about biringing joy in every scoop
         </h1>
-        <h1 className="w-full md:w-96 text-sm md:text-base leading-6 md:leading-normal text-start md:text-center">
+        <h1 className="w-full md:w-[30rem] text-sm md:text-base leading-6 md:leading-normal -mt-3 text-start md:text-center">
           It’s about turning simple moments into delightful experiences. Ice
           cream isn’t just a dessert; it’s a way to bring happiness, share
           smiles, and create lasting memories.{" "}
         </h1>
-        <div className=" flex items-center gap-5 overflow-hidden">
+        <div className=" flex w-screen items-center gap-5 overflow-hidden">
+          <Marquee autoFill className="w-full flex items-center gap-5 overflow-x-hidden">
+
           <h1
-            className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0  uppercase`}
+            className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0  uppercase px-10`}
           >
             scoop up!
           </h1>
           <h1
-            className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0  uppercase`}
+            className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0 uppercase text-transparent [-webkit-text-stroke:2px_white]`}
           >
             scoop up!
           </h1>
-          <h1
-            className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0  uppercase`}
-          >
-            scoop up!
-          </h1>
+   
+
+
+   
+          </Marquee>
           <div className=" absolute left-0 top-0 w-full h-full flex items-end justify-center pb-14 lg:pb-0">
             <div className="hidden md:flex relative w-full  flex-col items-center">
               <Image src={dub} alt="dub" width={420} className=" absolute bottom-12 left-[48.5%] transform -translate-x-1/2 z-10"/>

@@ -51,7 +51,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[10.5rem] left-8"
         >
-          <Image className="w-full" src={dub1} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub1}  />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -60,7 +60,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[17rem] left-[31rem] z-30"
         >
-          <Image className="w-full" src={dub2} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub2} />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -69,7 +69,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[22.5rem] left-[14.5rem] z-30"
         >
-          <Image className="w-full" src={dub3} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub3} />
         </motion.div>
         <motion.div
           initial={{ width: 80 }}
@@ -78,7 +78,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[9.5rem] right-[37.5rem] z-30"
         >
-          <Image className="w-full" src={dub4} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub4} />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -87,7 +87,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[17rem] right-20 z-30"
         >
-          <Image className="w-full" src={dub5} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub5} />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -96,7 +96,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[20.5rem] right-[21.5rem] z-30"
         >
-          <Image className="w-full" src={dub6} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub6} />
         </motion.div>
         <motion.div
           initial={{ width: 60 }}
@@ -105,7 +105,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[10rem] right-1 z-30"
         >
-          <Image className="w-full" src={bar1} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar1} />
         </motion.div>
         <motion.div
           initial={{ width: 75 }}
@@ -114,7 +114,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[10rem] left-[14rem] z-30"
         >
-          <Image className="w-full" src={bar2} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar2} />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -123,7 +123,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[20rem] right-[35.5rem] z-30"
         >
-          <Image className="w-full" src={bar3} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar3} />
         </motion.div>
       </div>
 
