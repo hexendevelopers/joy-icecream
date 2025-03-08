@@ -24,15 +24,29 @@ const SectionThree = ({scrollYProgress1}) => {
   );
 
   return (
-    <motion.div
+    <>
+     <motion.div
     style={{
       scale:scale,
       translateY:translateY,
       translateX:translateX
     }}
-     className='sticky top-0 left-0 w-screen h-screen bg-gradient-to-b from-red-500 to-red-900 flex items-center justify-center overflow-hidden z-0'>
-        <h1 className={`${thunderSemibold.className} text-white text-[15rem]`}>THE JOURNEY</h1>
+     className='hidden lg:flex sticky top-0 left-0 w-screen h-screen bg-gradient-to-b from-red-500 to-red-900  items-center justify-center overflow-hidden z-0'>
+        <h1 className={`${thunderSemibold.className} text-[#F5A5A5] text-[5rem] lg:text-[15rem]`}>THE JOURNEY</h1>
     </motion.div>
+
+    {/* -----mobile-version-- */}
+    <motion.div
+    style={{
+      scale:scale,
+      // translateY:translateY,
+      // translateX:translateX
+    }}
+     className='lg:hidden sticky top-0 left-0 w-screen h-screen bg-gradient-to-b from-red-500 to-red-900 flex items-center justify-center overflow-hidden z-0'>
+        <h1 className={`${thunderSemibold.className} text-[#F5A5A5] text-[5rem] lg:text-[15rem]`}>THE JOURNEY</h1>
+    </motion.div>
+    </>
+   
   )
 }
 
