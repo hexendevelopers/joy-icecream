@@ -19,12 +19,17 @@ const thunderLight = localFont({
   weight: "100 900",
 });
 
-function SecondSection({setStageTop}) {
+function SecondSection({setStageTopMobile,setStageTop}) {
 
   const hasSetStageTop = useRef(false); // Tracks if value was set
+  const hasSetStageTopMobile = useRef(false); // Tracks if value was set
 
 
   const [stageRef,stageBounds] = useMeasure({
+    scroll: true,
+  debounce: 50
+  })
+  const [stageRefMobile,stageBoundsMobile] = useMeasure({
     scroll: true,
   debounce: 50
   })
@@ -33,11 +38,19 @@ function SecondSection({setStageTop}) {
   if (!hasSetStageTop.current) {
     setStageTop(stageBounds.top);
     if(stageBounds.top != 0){
-      hasSetStageTop.current = true; // Prevent future updates
-
+    hasSetStageTop.current = true; // Prevent future updates
     }
   }
 }, [stageBounds]);
+
+useEffect(() => {
+  if (!hasSetStageTopMobile.current) {
+    setStageTopMobile(stageBoundsMobile.top);
+    if(stageBoundsMobile.top != 0){
+    hasSetStageTopMobile.current = true; // Prevent future updates
+    }
+  }
+}, [stageBoundsMobile]);
 
 
   return (
@@ -74,12 +87,12 @@ function SecondSection({setStageTop}) {
           <div className=" absolute left-0 top-0 w-full h-full flex items-end justify-center pb-14 lg:pb-0">
             <div className="hidden md:flex relative w-full  flex-col items-center">
               {/* <Image src={dub} alt="dub" width={420} className=" absolute bottom-12 left-[48.5%] transform -translate-x-1/2 z-10"/> */}
-              <Image  ref={stageRef} src={stage} alt="stage" width={600} className="absolute -bottom-10 bg-yellow-400"/>
+              <Image  ref={stageRef} src={stage} alt="stage" width={600} className="absolute -bottom-10 "/>
             </div>
             {/* ----MOBILE VERSION---- */}
             <div className="relative w-full flex md:hidden flex-col items-center ">
               {/* <Image src={dub} alt="dub" width={264} className=" absolute -bottom-4 left-[48.5%] transform -translate-x-1/2 z-10"/> */}
-              <Image src={stage} alt="stage" width={500} className="absolute -bottom-16"/>
+              <Image ref={stageRefMobile} src={stage} alt="stage" width={500} className="absolute -bottom-16 "/>
             </div>
           </div>
         </div>

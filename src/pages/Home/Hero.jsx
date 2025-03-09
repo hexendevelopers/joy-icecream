@@ -7,16 +7,13 @@ import localFont from "next/font/local";
 import bg from "../../app/assets/HERO-SECTION/background-one.png";
 import mobBg from "../../app/assets/MOBILE/HOME/mobile-background1.png";
 import Image from "next/image";
-import dubOne from "../../app/assets/HERO-SECTION/130.png";
-import dubTwo from "../../app/assets/HERO-SECTION/131.png";
-import dubThree from "../../app/assets/HERO-SECTION/132.png";
 import { motion } from "framer-motion";
 import coconut from "../../app/assets/HERO-SECTION/sunlover-cocco-1.png";
 import choclate from "../../app/assets/HERO-SECTION/CHOCOLATE.png";
 import berry from "../../app/assets/HERO-SECTION/straw.png";
 import caramel from "../../app/assets/HERO-SECTION/caramel.png";
 import flower from "../../app/assets/HERO-SECTION/sunlover-vanilla-1.png";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
@@ -42,14 +39,22 @@ function Dub1Model() {
     <primitive object={glb.scene} scale={[2.5, 2, 1.5]} position={[0, 0, 0]} />
   );
 }
-function Dub2Model({ value }) {
+function Dub2Model({ value, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
+  const modelRef = useRef();
+
+  useFrame(() => {
+    if (rotateY && modelRef.current) {
+      modelRef.current.rotation.y += 0.01;  //Adjustment of Y rotation desktop
+    }
+  });
   return (
     <primitive
+      ref={modelRef}
       object={glb.scene}
       scale={[3.9, 3.05, 3.9]}
       position={[0, 0, 0]}
-      rotation={[0, value * 0.0085, 0]}
+      rotation={[0, value * 0.00915, 0]}  //Adjustment of facing position on stage desktop
     />
   );
 }
@@ -68,14 +73,26 @@ function Dub1ModelMob() {
     <primitive object={glb.scene} scale={[1.4, 1.2, 2]} position={[0, 0, 0]} />
   );
 }
-function Dub2ModelMob({ mobileValue }) {
+function Dub2ModelMob({ mobileValue, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
+  const modelRef = useRef();
+
+  useFrame(() => {
+    if (rotateY && modelRef.current) {
+      modelRef.current.rotation.y += 0.01; //Adjustment of Y rotation mobile
+    }
+  });
   return (
     <primitive
+      ref={modelRef}
       object={glb.scene}
+<<<<<<< HEAD
       scale={[1.8, 1.8, 1.8]}
+=======
+      scale={[3.9, 3.06, 3.9]}
+>>>>>>> 4aded9bc7df87b9f1016b1c7bd806f6f4fc61ca2
       position={[0, 0, 0]}
-      rotation={[0, mobileValue * 0.0078, 0]}
+      rotation={[0, mobileValue * 0.0082, 0]}  //Adjustment of facing position on stage mobile
     />
   );
 }
@@ -86,46 +103,76 @@ function Dub3ModelMob() {
   );
 }
 
+
+
+
 function Hero() {
   const [value, setValue] = useState(0);
   const [mobileValue, setMobileValue] = useState(0);
-  const containerRef = useRef();
   const [stageTop, setStageTop] = useState(0);
+  const [stageTopMobile, setStageTopMobile] = useState(0);
   const [dubTop, setDubTop] = useState(0);
+  const [dubTopMobile, setDubTopMobile] = useState(0);
   const [limit, setLimit] = useState(500);
+  const [limitMobile, setLimitMobile] = useState(500);
+  const [rotateY, setRotateY] = useState(false);
+
+  const containerRef = useRef();
 
   const hasSetDubTop = useRef(false); // Tracks if value was set
-
+  const hasSetDubTopMobile = useRef(false); // Tracks if value was set
 
   const [dubRef, dubBounds] = useMeasure({
     scroll: true,
     debounce: 50,
   });
+  const [dubRefMobile, dubBoundsMobile] = useMeasure({
+    scroll: true,
+    debounce: 50,
+  });
 
+  //Stop position adjustment of main Dub
   useEffect(() => {
     if (dubTop && stageTop) {
-      setLimit((stageTop - dubTop)-330);
+      setLimit(stageTop - dubTop + 40);
     }
   }, [dubTop, stageTop]);
 
   useEffect(() => {
-    console.log(dubTop, "dubTop");
-    console.log(stageTop, "stageTop");
-  }, [dubTop, stageTop]);
+    if (dubTopMobile && stageTopMobile) {
+      setLimitMobile(stageTopMobile - dubTopMobile + 25);
+    }
+  }, [dubTopMobile, stageTopMobile]);
 
 
-  useEffect(() => {
-    console.log(limit, "limit");
-  }, [limit]);
+  // useEffect(() => {
+  //   console.log(dubTop, "dubTop");
+  //   console.log(stageTop, "stageTop");
+  // }, [dubTop, stageTop]);
+
+  // useEffect(() => {
+  //   console.log(limitMobile, "limit");
+  // }, [limitMobile]);
+
 
   useEffect(() => {
     if (!hasSetDubTop.current) {
-      setDubTop(dubBounds.top);
+      setDubTop(dubBounds.top + dubBounds.height);
       if (dubBounds.top != 0) {
-        hasSetDubTop.current = true; // Prevent future updates
+        hasSetDubTop.current = true; 
       }
     }
   }, [dubBounds]);
+
+  useEffect(() => {
+    if (!hasSetDubTopMobile.current) {
+      setDubTopMobile(dubBoundsMobile.top + dubBoundsMobile.height);
+      if (dubBoundsMobile.top != 0) {
+        hasSetDubTopMobile.current = true; 
+      }
+    }
+  }, [dubBoundsMobile]);
+
 
 
   useEffect(() => {
@@ -133,10 +180,13 @@ function Hero() {
       const containerTop = containerRef.current.getBoundingClientRect().top;
       if (containerTop < -limit) {
         setValue(limit);
+        setRotateY(true);
       } else if (containerTop < 0) {
         setValue(-containerTop);
+        setRotateY(false);
       } else {
         setValue(0);
+        setRotateY(false);
       }
     };
 
@@ -150,12 +200,15 @@ function Hero() {
   useEffect(() => {
     const handleScroll = () => {
       const containerTop = containerRef.current.getBoundingClientRect().top;
-      if (containerTop < -limit) {
-        setMobileValue(limit);
+      if (containerTop < -limitMobile) {
+        setMobileValue(limitMobile);
+        setRotateY(true);
       } else if (containerTop < 0) {
         setMobileValue(-containerTop);
+        setRotateY(false);
       } else {
         setMobileValue(0);
+        setRotateY(false);
       }
     };
 
@@ -164,12 +217,10 @@ function Hero() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [limit]);
+  }, [limitMobile]);
 
-  //  useEffect(() => {
-  //     console.log(mobileValue);
-  //   }, [mobileValue]);
 
+  
   return (
     <>
       <div
@@ -225,7 +276,7 @@ function Hero() {
                   <ambientLight intensity={1} />
                   <hemisphereLight intensity={1.5} groundColor="#ff0000" />
                   <directionalLight position={[2, 2, 5]} intensity={1} />
-                  <Dub2Model value={value} />
+                  <Dub2Model value={value} rotateY={rotateY} />
                 </Canvas>
               </motion.div>
 
@@ -283,16 +334,17 @@ function Hero() {
             {/* ----MOBILE VERSION---- */}
             <div className="lg:hidden relative">
               <motion.div
+                ref={dubRefMobile}
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute  -bottom-16 w-full flex items-center justify-center  h-[35rem]  z-20"
+                className="absolute bottom-14 w-full  flex items-center justify-center  h-[15rem]  z-20"
               >
                 <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
                   <ambientLight intensity={1} />
                   <hemisphereLight intensity={1.5} groundColor="#ff0000" />
                   <directionalLight position={[2, 2, 5]} intensity={1} />
-                  <Dub2ModelMob mobileValue={mobileValue} />
+                  <Dub2ModelMob mobileValue={mobileValue} rotateY={rotateY} />
                 </Canvas>
               </motion.div>
 
@@ -521,7 +573,10 @@ function Hero() {
         </div>
       </div>
 
-      <SecondSection setStageTop={setStageTop} />
+      <SecondSection
+        setStageTopMobile={setStageTopMobile}
+        setStageTop={setStageTop}
+      />
     </>
   );
 }
