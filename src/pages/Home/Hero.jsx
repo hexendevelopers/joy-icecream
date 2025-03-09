@@ -179,7 +179,7 @@ function Dub3Model() {
 
   
   return (
-    <primitive object={glb.scene} scale={[1.2 ,1.2, 1.2]} position={[0, 0, 0]} />
+    <primitive object={glb.scene} scale={[2 ,2, 2]} position={[0, 0, 0]} />
   );
 }
 
