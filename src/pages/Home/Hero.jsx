@@ -79,7 +79,7 @@ function Dub2Model({ value, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.2, 3.2, 3.2]}
+      scale={[3.4, 3.2, 3.2]}
       position={[0, 0, 0]}
       rotation={[0, value * 0.00915, 0]}  //Adjustment of facing position on stage desktop
     />
