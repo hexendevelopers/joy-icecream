@@ -73,7 +73,7 @@ function Dub2ModelMob({ mobileValue }) {
   return (
     <primitive
       object={glb.scene}
-      scale={[1.8, 1.5, 2]}
+      scale={[1.8, 1.8, 1.8]}
       position={[0, 0, 0]}
       rotation={[0, mobileValue * 0.0078, 0]}
     />
