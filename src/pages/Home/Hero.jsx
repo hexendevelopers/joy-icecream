@@ -157,6 +157,10 @@ function Dub1ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/SPANISH.glb");
 
   useEffect(() => {
+    glb.scene.position.set(0, 0, 0); // Lock model position
+  }, [glb]);
+
+  useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
         // Add roughness to all materials
@@ -219,6 +223,10 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 
 function Dub3ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
+
+  useEffect(() => {
+    glb.scene.position.set(0, 0, 0); // Lock model position
+  }, [glb]);
 
   useEffect(() => {
     glb.scene.traverse((child) => {
@@ -606,7 +614,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute  -bottom-16 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
+                className=" absolute flex justify-center  -bottom-16 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -650,7 +658,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute -bottom-16 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-10 overflow-hidden"
+                className="absolute flex justify-center -bottom-16 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
