@@ -176,6 +176,8 @@ function Dub1ModelMob() {
       object={glb.scene}
       scale={[1.2, 1.2, 1.2]}
       position={[0, 0, 0]}
+      rotation={[0, 0, Math.PI / 6]} // Rotate 30 degrees on Z-axis
+
     />
   );
 }
@@ -244,6 +246,8 @@ function Dub3ModelMob() {
       object={glb.scene}
       scale={[1.2, 1.2, 1.2]}
       position={[0, 0, 0]}
+      rotation={[0, 0, -Math.PI / 6]} // Rotate 30 degrees on Z-axis
+
     />
   );
 }
@@ -604,8 +608,8 @@ function Hero() {
               </motion.div>
 
               <motion.div
-                initial={{ x: -100, rotateZ: 0 }}
-                animate={{ x: 15, rotateZ: 30 }}
+                initial={{ x: -100}}
+                animate={{ x: 15}}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -648,8 +652,8 @@ function Hero() {
               </motion.div>
 
               <motion.div
-                initial={{ x: 100, rotateZ: 0 }}
-                animate={{ x: -15, rotateZ: -30 }}
+                initial={{ x: 100}}
+                animate={{ x: -15}}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
