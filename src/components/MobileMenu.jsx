@@ -95,7 +95,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                   {/* Increased container size from 400px to 500px for both width and height */}
                   <div
                     style={{ width: "450px", height: "450px" }}
-                    className="absolute bottom-4    left-[48.5%] transform -translate-x-1/2 "
+                    className="absolute bottom-4   left-[48.5%] transform -translate-x-1/2 "
                   >
                     <Canvas>
                       <Suspense fallback={null}>

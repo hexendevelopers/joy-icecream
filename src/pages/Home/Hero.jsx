@@ -278,7 +278,7 @@ function Dub3ModelMob() {
 
 
   return (
-    <primitive object={glb.scene} scale={[1.4, 1.4, 1.4]} position={[0, 0, 0]} />
+    <primitive object={glb.scene} scale={[1.2, 1.2, 1.2]} position={[0, 0, 0]} />
   );
 }
 
@@ -419,7 +419,7 @@ function Hero() {
 
         <div className=" w-full h-full absolute top-0 left-0 pt-10 px-8 lg:px-20">
           <div className=" w-full h-full flex flex-col justify-between">
-            <div className=" flex flex-col gap-5">
+            <div className=" flex flex-col gap-5 z-30 lg:z-0">
               <Navbar />
               <hr className=" w-full border-gray-300" />
               <div className=" flex flex-col justify-center lg:gap-3 -mt-8 lg:-mt-16">
@@ -701,15 +701,17 @@ function Hero() {
 
 
             {/* ----MOBILE VERSION---- */}
-            <div className="lg:hidden relative">
+            <div className="lg:hidden relative w-full">
               <motion.div
                 ref={dubRefMobile}
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute bottom-14 w-full  flex items-center justify-center  h-[15rem]  z-20"
+                className="absolute bottom-20 w-full  flex items-center justify-center  h-[15rem]  z-20"
               >
-                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+                <Canvas  resize={{ scroll: false, debounce: 0 }}
+                  camera={{ position: [0, 0, 5], fov: 50 }}
+                  style={{ width: "100%", height: "100%" }}>
                   
                   
 
@@ -770,7 +772,7 @@ function Hero() {
 
               <motion.div
                 initial={{ x: -100, rotateZ: 0 }}
-                animate={{ x: 0, rotateZ: 30 }}
+                animate={{ x: 15, rotateZ: 30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -779,7 +781,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute  -bottom-14 -right-24 h-[30rem] w-[20rem]  overflow-hidden"
+                className=" absolute  -bottom-16 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -822,7 +824,7 @@ function Hero() {
 
               <motion.div
                 initial={{ x: 100, rotateZ: 0 }}
-                animate={{ x: 0, rotateZ: -30 }}
+                animate={{ x: -15, rotateZ: -30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -831,7 +833,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute -bottom-14 -left-24 h-[30rem] w-[20rem] z-10 overflow-hidden"
+                className="absolute -bottom-16 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -877,6 +879,8 @@ function Hero() {
             </div>
           </div>
         </div>
+
+
 
         <div className=" w-full h-full absolute top-0 left-0 flex  justify-between">
           <div className="hidden md:flex items-center gap-32 w-full justify-between overflow-hidden">
