@@ -93,7 +93,7 @@ function SectionThree() {
       className="w-full h-[350vh] lg:h-[400vh] py-20 pt-32 relative  bg-gradient-to-b from-red-900 to-red-500"
     >
       <div className="sticky w-full top-20 flex flex-col gap-20 md:gap-10 items-center ">
-        <h1 className={`${thunder.className} text-5xl md:text-7xl uppercase`}>
+        <h1 className={`${thunder.className} text-5xl md:text-7xl uppercase text-white`}>
           explore our flavors
         </h1>
         <div className="w-96 h-96 rounded-full  flex items-center justify-center relative">
@@ -159,7 +159,7 @@ function SectionThree() {
             </>
           ))}
         </div>
-        <h1 className="w-[22.56rem] md:w-[600px] text-sm md:text-base text-center">
+        <h1 className="w-[22.56rem] md:w-[600px] text-sm md:text-base text-center text-white">
           Our Ice Cream is made with the finest natural ingredients, including
           fresh dairy and real fruits. Crafted for pure joy, every scoop is
           rich, creamy, and irresistibly delicious. Enjoy a treat that’s as

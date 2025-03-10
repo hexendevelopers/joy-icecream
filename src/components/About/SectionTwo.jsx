@@ -27,12 +27,12 @@ function SectionTwo() {
           <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3.2rem] lg:text-8xl leading-none  text-white uppercase`}>
             same great taste new different look
           </h1>
-          <h1>
+          <h1 className="text-white">
             Enjoy the flavors you love with a fresh new twist! We've given our
             brand a makeover, but rest assured your favorite delicious taste
             remains unchanged.{" "}
           </h1>
-          <h1>
+          <h1 className="text-white">
             From the creamy textures to the rich, irresistible flavors you love,
             every scoop is crafted with the same dedication that has made JOY a
             household favorite. Whether you're reliving cherished memories or

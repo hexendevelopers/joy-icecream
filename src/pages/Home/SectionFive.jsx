@@ -38,7 +38,7 @@ function SectionFive() {
       </div>
       
       <h1
-        className={`${thunderMedium.className} hidden z-10 pt-[6rem] lg:block text-[7.05rem] lg:text-[16.5rem] font-extrabold uppercase`}
+        className={`${thunderMedium.className} hidden text-white z-10 pt-[6rem] lg:block text-[7.05rem] lg:text-[16.5rem] font-extrabold uppercase`}
       >
         JOY in every bite
       </h1>

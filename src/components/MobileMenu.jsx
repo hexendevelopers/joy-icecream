@@ -53,7 +53,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
     >
       <div className="px-4 py-8">
         <div className="w-full flex items-center justify-between ">
-          <h1 className={`text-3xl ${thunderMedium.className}`}>MENU</h1>
+          <h1 className={`text-3xl text-white ${thunderMedium.className}`}>MENU</h1>
           <IoClose className="text-3xl" onClick={() => setShowMenu(false)} />
         </div>
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">

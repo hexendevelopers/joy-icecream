@@ -387,13 +387,13 @@ function Hero() {
                 <div className=" w-full  flex justify-evenly md:gap-12  flex-col md:flex-row ">
                   <h1
                     // className={`text-[10rem] md:text-[11rem] xl:text-[16.5rem] ${thunder.className} font-extrabold`}
-                    className={`text-[38.5vw] lg:text-[18vw] ${thunder.className} flex justify-center font-extrabold`}
+                    className={`text-[38.5vw] lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
                   >
                     SCOOP
                   </h1>
                   <h1
                     // className={`text-[8rem] md:text-[11rem]  xl:text-[16.5rem]  flex-1 ${thunder.className}  -mt-24 md:mt-0`}
-                    className={`text-[30vw] lg:text-[18vw] flex justify-center  flex-1 ${thunder.className}  -mt-24 md:mt-0`}
+                    className={`text-[30vw] lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 md:mt-0`}
                   >
                     THE JOY!
                   </h1>

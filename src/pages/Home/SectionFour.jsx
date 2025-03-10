@@ -34,11 +34,11 @@ function SectionFour() {
       <div className="w-full h-full flex flex-col gap-5 lg:gap-0 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center py-32 lg:py-0">
           <h1
-            className={`${thunderSemibold.className} lg:${thunderSemibold.className} uppercase lg:uppercase text-[3.6rem] md:font-semibold md:text-[12rem] md:uppercase font-bold`}
+            className={`${thunderSemibold.className} lg:${thunderSemibold.className} uppercase text-white lg:uppercase text-[3.6rem] md:font-semibold md:text-[12rem] md:uppercase font-bold`}
           >
             Ice Cream Bars
           </h1>
-          <h1 className=" text-center w-[22.56rem] lg:-mt-24 lg:w-[30rem] -mt-16">
+          <h1 className=" text-center w-[22.56rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
             It’s about turning simple moments into delightful experiences. Ice
             cream isn’t just a dessert; it’s a way to bring happiness, share
             smiles, and create lasting memories.{" "}

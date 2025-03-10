@@ -58,10 +58,10 @@ useEffect(() => {
       <div
         className={` flex flex-col gap-0 md:gap-5 items-center relative h-full  py-16  md:py-0 w-full`}
       >
-        <h1 className={`${thunder.className} text-7xl uppercase font-bold`}>
+        <h1 className={`${thunder.className} text-7xl uppercase font-bold text-white`}>
           IT's about biringing joy in every scoop
         </h1>
-        <h1 className="w-full md:w-[30rem] text-sm md:text-base leading-6 md:leading-normal -mt-3 text-start md:text-center">
+        <h1 className="w-full md:w-[30rem] text-white text-sm md:text-base leading-6 md:leading-normal -mt-3 text-start md:text-center">
           It’s about turning simple moments into delightful experiences. Ice
           cream isn’t just a dessert; it’s a way to bring happiness, share
           smiles, and create lasting memories.{" "}

@@ -82,7 +82,7 @@ function Main() {
             ></textarea>
           </div>
           <button
-            className={`${thunderSemibold.className} uppercase lg:hidden w-full rounded-lg bg-red-600 py-1.5 lg:py-0 text-3xl`}
+            className={`${thunderSemibold.className} uppercase lg:hidden text-white w-full rounded-lg bg-red-600 py-1.5 lg:py-0 text-3xl`}
           >
             submit
           </button>

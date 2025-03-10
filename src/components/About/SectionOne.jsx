@@ -34,12 +34,12 @@ function SectionOne() {
           <h1 className={`${thunder.className} text-[1.32rem] lg:text-4xl font-bold uppercase`}>
             indian ice cream industry, since 1948
           </h1>
-          <h1 className="w-full text-[1rem] lg:w-[650px]">
+          <h1 className="w-full text-[1rem] lg:w-[650px] text-white">
             Since our beginning, Joy Ice Cream has been spreading smiles with
             every scoop. While trends change, our passion for rich, creamy
             perfection remains the same.
           </h1>
-          <h1 className="w-full text-[1rem] lg:w-[550px]">
+          <h1 className="w-full text-[1rem] lg:w-[550px] text-white">
             Come for the indulgent classics and signature scoops. Stay for the
             endless flavors of joy.
           </h1>

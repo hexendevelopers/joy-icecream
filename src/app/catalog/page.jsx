@@ -241,7 +241,7 @@ function page() {
           />
         </div>
         <div className=" flex justify-center w-full ">
-          <h1 className="w-96 text-center">
+          <h1 className="w-96 text-center text-white">
             Vibrant elavated flavor combos made to delight and refresh you every
             time
           </h1>

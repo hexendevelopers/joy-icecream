@@ -36,7 +36,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="px-2 lg:hidden">
-        <HiMenu onClick={() => setShowMenu(true)} className="text-3xl " />
+        <HiMenu onClick={() => setShowMenu(true)} className="text-3xl text-white" />
       </div>
     </div>
   );
