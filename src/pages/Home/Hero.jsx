@@ -18,6 +18,7 @@ import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
 
+
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
   weight: "100 900",
@@ -31,13 +32,6 @@ const manrope = Manrope({
   weight: "600",
   subsets: ["latin"],
 });
- 
-
-
-
-
-
-
 
 // -----STARWBERRY TUB CODE----
 
@@ -53,14 +47,12 @@ function Dub2Model({ value, rotateY }) {
         // child.material.roughness = 0.1; // Lower roughness for more reflective surface
         // child.material.metalness = 0.7; // Higher metalness for better reflections
 
+        // Adjust for plastic-like material
+        child.material.roughness = 0.5; // Adjust value between 0-1
+        child.material.metalness = 0.3; // Adjust value between 0-1
+        child.material.envMapIntensity = 1.2; // Keep environment reflections
+        child.material.needsUpdate = true;
 
-
-      // Adjust for plastic-like material
-      child.material.roughness = 0.5; // Adjust value between 0-1
-      child.material.metalness = 0.3; // Adjust value between 0-1
-      child.material.envMapIntensity = 1.2; // Keep environment reflections
-      child.material.needsUpdate = true;
-        
         // Enable shadows
         child.castShadow = true;
         child.receiveShadow = true;
@@ -70,48 +62,41 @@ function Dub2Model({ value, rotateY }) {
 
   useFrame(() => {
     if (rotateY && modelRef.current) {
-      modelRef.current.rotation.y += 0.01;  //Adjustment of Y rotation desktop
+      modelRef.current.rotation.y += 0.01; //Adjustment of Y rotation desktop
     }
   });
-  
+
   return (
     <primitive
       ref={modelRef}
       object={glb.scene}
       scale={[3.4, 3.2, 3.2]}
       position={[0, 0, 0]}
-      rotation={[0, value * 0.00915, 0]}  //Adjustment of facing position on stage desktop
+      rotation={[0, value * 0.00915, 0]} //Adjustment of facing position on stage desktop
     />
   );
 }
 
-
-
-
-
-
-
-
 // Add this new component to create dynamic lighting based on scroll position
 function SpotlightFollower({ value }) {
   const spotlightRef = useRef();
-  
+
   useFrame(() => {
     if (spotlightRef.current) {
       // Move spotlight based on scroll value for dynamic reflections
       const normalizedValue = Math.min(value / 300, 1);
       spotlightRef.current.position.x = 3 - normalizedValue * 6;
       spotlightRef.current.position.y = 4 - normalizedValue * 2;
-      
+
       // Increase intensity slightly during rotation phase
       if (value > 400) {
-        spotlightRef.current.intensity = 15 + (Math.sin(Date.now() * 0.002) * 3);
+        spotlightRef.current.intensity = 15 + Math.sin(Date.now() * 0.002) * 3;
       } else {
         spotlightRef.current.intensity = 12;
       }
     }
   });
-  
+
   return (
     <spotLight
       ref={spotlightRef}
@@ -126,20 +111,11 @@ function SpotlightFollower({ value }) {
   );
 }
 
-
-
 // ---------ENDS HERE--------
-
-
-
- 
-
-
-
 
 function Dub1Model() {
   const glb = useGLTF("/assets/HERO 3D/SPANISH.glb");
-  
+
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
@@ -156,12 +132,8 @@ function Dub1Model() {
   );
 }
 
- 
-
 function Dub3Model() {
   const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
-
-
 
   useEffect(() => {
     glb.scene.traverse((child) => {
@@ -174,11 +146,8 @@ function Dub3Model() {
     });
   }, [glb]);
 
-
-
-  
   return (
-    <primitive object={glb.scene} scale={[2 ,2, 2]} position={[0, 0, 0]} />
+    <primitive object={glb.scene} scale={[2, 2, 2]} position={[0, 0, 0]} />
   );
 }
 
@@ -198,23 +167,19 @@ function Dub1ModelMob() {
     });
   }, [glb]);
 
-
   return (
-    <primitive object={glb.scene} scale={[1.2, 1.2, 1.2]} position={[0, 0, 0]} />
+    <primitive
+      object={glb.scene}
+      scale={[1.2, 1.2, 1.2]}
+      position={[0, 0, 0]}
+    />
   );
 }
-
-
-
-
 
 function Dub2ModelMob({ mobileValue, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
   const modelRef = useRef();
 
-
-
-  
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
@@ -223,24 +188,18 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
         // child.material.roughness = 0.1; // Lower roughness for more reflective surface
         // child.material.metalness = 0.7; // Higher metalness for better reflections
 
+        // Adjust for plastic-like material
+        child.material.roughness = 0.5; // Adjust value between 0-1
+        child.material.metalness = 0.3; // Adjust value between 0-1
+        child.material.envMapIntensity = 1.2; // Keep environment reflections
+        child.material.needsUpdate = true;
 
-
-      // Adjust for plastic-like material
-      child.material.roughness = 0.5; // Adjust value between 0-1
-      child.material.metalness = 0.3; // Adjust value between 0-1
-      child.material.envMapIntensity = 1.2; // Keep environment reflections
-      child.material.needsUpdate = true;
-        
         // Enable shadows
         child.castShadow = true;
         child.receiveShadow = true;
       }
     });
   }, [glb]);
-
-
-
-
 
   useFrame(() => {
     if (rotateY && modelRef.current) {
@@ -253,12 +212,10 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
       object={glb.scene}
       scale={[3.9, 3.1, 3.9]}
       position={[0, 0, 0]}
-      rotation={[0, mobileValue * 0.0082, 0]}  //Adjustment of facing position on stage mobile
+      rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
     />
   );
 }
-
-
 
 function Dub3ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
@@ -274,15 +231,14 @@ function Dub3ModelMob() {
     });
   }, [glb]);
 
-
-
   return (
-    <primitive object={glb.scene} scale={[1.2, 1.2, 1.2]} position={[0, 0, 0]} />
+    <primitive
+      object={glb.scene}
+      scale={[1.2, 1.2, 1.2]}
+      position={[0, 0, 0]}
+    />
   );
 }
-
-
-
 
 function Hero() {
   const [value, setValue] = useState(0);
@@ -322,7 +278,6 @@ function Hero() {
     }
   }, [dubTopMobile, stageTopMobile]);
 
-
   // useEffect(() => {
   //   console.log(dubTop, "dubTop");
   //   console.log(stageTop, "stageTop");
@@ -332,12 +287,11 @@ function Hero() {
   //   console.log(limitMobile, "limit");
   // }, [limitMobile]);
 
-
   useEffect(() => {
     if (!hasSetDubTop.current) {
       setDubTop(dubBounds.top + dubBounds.height);
       if (dubBounds.top != 0) {
-        hasSetDubTop.current = true; 
+        hasSetDubTop.current = true;
       }
     }
   }, [dubBounds]);
@@ -346,12 +300,10 @@ function Hero() {
     if (!hasSetDubTopMobile.current) {
       setDubTopMobile(dubBoundsMobile.top + dubBoundsMobile.height);
       if (dubBoundsMobile.top != 0) {
-        hasSetDubTopMobile.current = true; 
+        hasSetDubTopMobile.current = true;
       }
     }
   }, [dubBoundsMobile]);
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -397,13 +349,11 @@ function Hero() {
     };
   }, [limitMobile]);
 
-
-
   return (
     <>
       <div
         ref={containerRef}
-        className=" w-full h-screen  bg-gradient-to-b from-red-900 to-red-500  relative"
+        className=" w-full h-screen  bg-gradient-to-b from-black to-red-900  relative"
       >
         <Image
           src={bg}
@@ -445,189 +395,102 @@ function Hero() {
             </div>
 
             <div className="hidden lg:block relative">
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-            <motion.div
-  ref={dubRef}
-  style={{
-    transform: `translateY(${value}px)`,
-  }}
-  className="absolute bottom-11 w-full flex items-center justify-center h-[24rem] z-20"
->
-  <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-
-
-
-    
-    {/* Create environment for reflections */}
-     {/* <Environment 
+              <motion.div
+                ref={dubRef}
+                style={{
+                  transform: `translateY(${value}px)`,
+                }}
+                className="absolute bottom-11 w-full flex items-center justify-center h-[24rem] z-20"
+              >
+                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+                  {/* Create environment for reflections */}
+                  {/* <Environment 
     preset="sunset"
     background={false}
     intensity={0.3}
   /> */}
-    
-    {/* Base ambient light */}
-    <ambientLight intensity={2} />
-    
-      
-    
-    {/* Directional lights to enhance form and add edge highlights */}
-    <directionalLight 
-      position={[2, 0, 1]} 
-      intensity={1}
-      shadow-camera-left={1} 
-      shadow-camera-right={1}
 
-      />
-    
-    <directionalLight 
-      position={[-2, 0, 1]} 
-      intensity={1}
+                  {/* Base ambient light */}
+                  <ambientLight intensity={2} />
 
-      />
-    
-    {/* Rim light to create separation from background */}
-    <spotLight
-      position={[-5, 2, -8]}
-      angle={0.5}
-      penumbra={0.8}
-      intensity={8}
-      color="#ff9999"
-    />
-    
-    {/* Environmental reflection simulation */}
-    <hemisphereLight
-      intensity={0.8}
-      groundColor="#111111"
-      color="#EA2424"
-    />
-    
-    {/* Dynamic reflection effect that changes with scroll */}
-    <SpotlightFollower value={value} />
-    
-    {/* Main model */}
-    <Dub2Model value={value} rotateY={rotateY} />
-  </Canvas>
-</motion.div>
+                  {/* Directional lights to enhance form and add edge highlights */}
+                  <directionalLight
+                    position={[2, 0, 1]}
+                    intensity={1}
+                    shadow-camera-left={1}
+                    shadow-camera-right={1}
+                  />
 
+                  <directionalLight position={[-2, 0, 1]} intensity={1} />
 
+                  {/* Rim light to create separation from background */}
+                  <spotLight
+                    position={[-5, 2, -8]}
+                    angle={0.5}
+                    penumbra={0.8}
+                    intensity={8}
+                    color="#ff9999"
+                  />
 
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={0.8}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
 
+                  {/* Dynamic reflection effect that changes with scroll */}
+                  <SpotlightFollower value={value} />
 
+                  {/* Main model */}
+                  <Dub2Model value={value} rotateY={rotateY} />
+                </Canvas>
+              </motion.div>
 
+              <motion.div
+                initial={{ x: -150, rotateZ: 0 }}
+                animate={{ x: 0, rotateZ: 30 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  mass: 1,
+                }}
+                className=" absolute  -bottom-14 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
+              >
+                <Canvas
+                  resize={{ scroll: false, debounce: 0 }}
+                  camera={{ position: [0, 0, 5], fov: 50 }}
+                  style={{ width: "100%", height: "100%" }}
+                >
+                  {/* Base ambient light */}
+                  <ambientLight intensity={4} />
 
+                  {/* Side specular highlight */}
+                  <spotLight
+                    position={[8, 3, 8]}
+                    angle={0.4}
+                    penumbra={0.7}
+                    intensity={22}
+                    distance={12}
+                  />
 
+                  <directionalLight position={[2, 0, 1]} intensity={1.8} />
 
+                  <directionalLight position={[-2, 0, 1]} intensity={1.8} />
 
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={1}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              
-
-  <motion.div
-  initial={{ x: -150, rotateZ: 0 }}
-  animate={{ x: 0, rotateZ: 30 }}
-  transition={{
-    delay: 0.5,
-    duration: 0.5,
-    type: "spring",
-    stiffness: 100,
-    damping: 20,
-    mass: 1,
-  }}
-  className=" absolute  -bottom-14 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
->
-  <Canvas
-    resize={{ scroll: false, debounce: 0 }}
-    camera={{ position: [0, 0, 5], fov: 50 }}
-    style={{ width: "100%", height: "100%" }}
-  >
-          
-     
-{/* Base ambient light */}
-<ambientLight intensity={4} />
-
- {/* Side specular highlight */}
-<spotLight
-  position={[8, 3, 8]}
-  angle={0.4}
-  penumbra={0.7}
-  intensity={22}
-  distance={12}
-/>
-    
-<directionalLight 
-  position={[2, 0, 1]} 
-  intensity={1.8}
- />
-
-<directionalLight 
-  position={[-2, 0, 1]} 
-  intensity={1.8}
- />
-
-{/* Environmental reflection simulation */}
-<hemisphereLight
-  intensity={1}
-  groundColor="#111111"
-  color="#EA2424"
-/>
-
-    <Dub3Model />
-  </Canvas>
-
-
-
-
-
-
-  
-</motion.div>
+                  <Dub3Model />
+                </Canvas>
+              </motion.div>
               <motion.div
                 initial={{ x: 150, rotateZ: 0 }}
                 animate={{ x: 0, rotateZ: -30 }}
@@ -645,61 +508,35 @@ function Hero() {
                   resize={{ scroll: false, debounce: 0 }}
                   camera={{ position: [0, 0, 5], fov: 50 }}
                   style={{ width: "100%", height: "100%" }}
-                  
-                  
                 >
-     
-{/* Base ambient light */}
-<ambientLight intensity={3} />
- 
-{/* Side specular highlight */}
-<spotLight
-  position={[8, 3, 8]}
-  angle={0.4}
-  penumbra={0.7}
-  intensity={22}
-  distance={12}
-/>
-  
+                  {/* Base ambient light */}
+                  <ambientLight intensity={3} />
 
-{/* Subtle fill light */}
-<directionalLight 
-  position={[-3, 0, 1]} 
-  intensity={2.2}
-/>
+                  {/* Side specular highlight */}
+                  <spotLight
+                    position={[8, 3, 8]}
+                    angle={0.4}
+                    penumbra={0.7}
+                    intensity={22}
+                    distance={12}
+                  />
 
+                  {/* Subtle fill light */}
+                  <directionalLight position={[-3, 0, 1]} intensity={2.2} />
 
-{/* Subtle fill light */}
-<directionalLight 
-  position={[3, 0, 1]} 
-  intensity={2.2}
-/>
+                  {/* Subtle fill light */}
+                  <directionalLight position={[3, 0, 1]} intensity={2.2} />
 
-{/* Environmental reflection simulation */}
-<hemisphereLight
-  intensity={2}
-  groundColor="#111111"
-  color="#EA2424"
-/>
-   <Dub1Model />
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={2}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
+                  <Dub1Model />
                 </Canvas>
               </motion.div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             {/* ----MOBILE VERSION---- */}
             <div className="lg:hidden relative w-full">
@@ -710,62 +547,49 @@ function Hero() {
                 }}
                 className="absolute bottom-20 w-full  flex items-center justify-center  h-[15rem]  z-20"
               >
-                <Canvas  resize={{ scroll: false, debounce: 0 }}
+                <Canvas
+                  resize={{ scroll: false, debounce: 0 }}
                   camera={{ position: [0, 0, 5], fov: 50 }}
-                  style={{ width: "100%", height: "100%" }}>
-                  
-                  
-
-
-
-    
-    {/* Create environment for reflections */}
-     {/* <Environment 
+                  style={{ width: "100%", height: "100%" }}
+                >
+                  {/* Create environment for reflections */}
+                  {/* <Environment 
     preset="sunset"
     background={false}
     intensity={0.3}
   /> */}
-    
-    {/* Base ambient light */}
-    <ambientLight intensity={2} />
-    
-      
-    
-    {/* Directional lights to enhance form and add edge highlights */}
-    <directionalLight 
-      position={[2, 0, 1]} 
-      intensity={1}
-      shadow-camera-left={1} 
-      shadow-camera-right={1}
 
-      />
-    
-    <directionalLight 
-      position={[-2, 0, 1]} 
-      intensity={1}
+                  {/* Base ambient light */}
+                  <ambientLight intensity={2} />
 
-      />
-    
-    {/* Rim light to create separation from background */}
-    <spotLight
-      position={[-5, 2, -8]}
-      angle={0.5}
-      penumbra={0.8}
-      intensity={8}
-      color="#ff9999"
-    />
-    
-    {/* Environmental reflection simulation */}
-    <hemisphereLight
-      intensity={0.8}
-      groundColor="#111111"
-      color="#EA2424"
-    />
-    
-    {/* Dynamic reflection effect that changes with scroll */}
-    <SpotlightFollower value={value} />
+                  {/* Directional lights to enhance form and add edge highlights */}
+                  <directionalLight
+                    position={[2, 0, 1]}
+                    intensity={1}
+                    shadow-camera-left={1}
+                    shadow-camera-right={1}
+                  />
 
+                  <directionalLight position={[-2, 0, 1]} intensity={1} />
 
+                  {/* Rim light to create separation from background */}
+                  <spotLight
+                    position={[-5, 2, -8]}
+                    angle={0.5}
+                    penumbra={0.8}
+                    intensity={8}
+                    color="#ff9999"
+                  />
+
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={0.8}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
+
+                  {/* Dynamic reflection effect that changes with scroll */}
+                  <SpotlightFollower value={value} />
 
                   <Dub2ModelMob mobileValue={mobileValue} rotateY={rotateY} />
                 </Canvas>
@@ -789,36 +613,28 @@ function Hero() {
                   camera={{ position: [0, 0, 5], fov: 50 }}
                   style={{ width: "100%", height: "100%" }}
                 >
-                  
-     
-{/* Base ambient light */}
-<ambientLight intensity={4} />
+                  {/* Base ambient light */}
+                  <ambientLight intensity={4} />
 
-{/* Side specular highlight */}
-<spotLight
- position={[8, 3, 8]}
- angle={0.4}
- penumbra={0.7}
- intensity={22}
- distance={12}
-/>
-   
-<directionalLight 
- position={[2, 0, 1]} 
- intensity={1.8}
-/>
+                  {/* Side specular highlight */}
+                  <spotLight
+                    position={[8, 3, 8]}
+                    angle={0.4}
+                    penumbra={0.7}
+                    intensity={22}
+                    distance={12}
+                  />
 
-<directionalLight 
- position={[-2, 0, 1]} 
- intensity={1.8}
-/>
+                  <directionalLight position={[2, 0, 1]} intensity={1.8} />
 
-{/* Environmental reflection simulation */}
-<hemisphereLight
- intensity={1}
- groundColor="#111111"
- color="#EA2424"
-/>
+                  <directionalLight position={[-2, 0, 1]} intensity={1.8} />
+
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={1}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
                   <Dub3ModelMob />
                 </Canvas>
               </motion.div>
@@ -841,47 +657,36 @@ function Hero() {
                   camera={{ position: [0, 0, 5], fov: 50 }}
                   style={{ width: "100%", height: "100%" }}
                 >
-                      
-{/* Base ambient light */}
-<ambientLight intensity={3} />
- 
- {/* Side specular highlight */}
- <spotLight
-   position={[8, 3, 8]}
-   angle={0.4}
-   penumbra={0.7}
-   intensity={22}
-   distance={12}
- />
-   
- 
- {/* Subtle fill light */}
- <directionalLight 
-   position={[-3, 0, 1]} 
-   intensity={2.2}
- />
- 
- 
- {/* Subtle fill light */}
- <directionalLight 
-   position={[3, 0, 1]} 
-   intensity={2.2}
- />
- 
- {/* Environmental reflection simulation */}
- <hemisphereLight
-   intensity={2}
-   groundColor="#111111"
-   color="#EA2424"
- />
+                  {/* Base ambient light */}
+                  <ambientLight intensity={3} />
+
+                  {/* Side specular highlight */}
+                  <spotLight
+                    position={[8, 3, 8]}
+                    angle={0.4}
+                    penumbra={0.7}
+                    intensity={22}
+                    distance={12}
+                  />
+
+                  {/* Subtle fill light */}
+                  <directionalLight position={[-3, 0, 1]} intensity={2.2} />
+
+                  {/* Subtle fill light */}
+                  <directionalLight position={[3, 0, 1]} intensity={2.2} />
+
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={2}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
                   <Dub1ModelMob />
                 </Canvas>
               </motion.div>
             </div>
           </div>
         </div>
-
-
 
         <div className=" w-full h-full absolute top-0 left-0 flex  justify-between">
           <div className="hidden md:flex items-center gap-32 w-full justify-between overflow-hidden">

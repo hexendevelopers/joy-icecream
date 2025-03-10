@@ -31,7 +31,7 @@ function SectionFour() {
       <div className="absolute z-0 top-0 left-0 hidden lg:block">
         <Image src={halfCircle} className="w-full h-full" />
       </div>
-      <div className="w-full h-full flex flex-col gap-5 lg:gap-0 justify-around lg:justify-normal items-center">
+      <div className="w-full h-full flex flex-col gap-5 lg:gap-0 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center py-32 lg:py-0">
           <h1
             className={`${thunderSemibold.className} lg:${thunderSemibold.className} uppercase lg:uppercase text-[3.6rem] md:font-semibold md:text-[12rem] md:uppercase font-bold`}
@@ -47,7 +47,7 @@ function SectionFour() {
         <Image src={bar} alt="" width={1400} className=" -mt-80 hidden " />
         {/* ----BARS DESKTOP ANIMATION--- */}
         <div className="hidden lg:block w-full h-1/2 relative">
-          <div className="absolute z-50 -bottom-32 left-1/2 transform -translate-x-1/2">
+          <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">
             <Image src={barMain} className="w-[12.5rem]" />
           </div>
           <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
