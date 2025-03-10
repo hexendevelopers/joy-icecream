@@ -24,7 +24,7 @@ function IceCreamModel() {
   return (
     <primitive
       object={gltf.scene}
-      scale={[3.3, 3.3, 3.3]}
+      scale={[5.38, 4.28, 5.38]}
       rotation={[-6.3, Math.PI / 50, 0]}
       position={[0, 0, 0]}
     />
@@ -58,8 +58,8 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
         </div>
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">
           <div className=" w-full h-screen flex items-center justify-center absolute top-0 left-0">
-            <div className=" flex flex-col justify-between pb-32 w-full h-full">
-              <div className={` w-full flex flex-col text-white py-10 -mt-5  `}>
+            <div className=" flex flex-col justify-between gap-14 pb-32 w-full h-full">
+              <div className={` w-full flex flex-col text-white mt-5  `}>
                 <Link onClick={() => setShowMenu(false)} href={"/"}>
                   <button
                     className={`${thunderSemibold.className} text-5xl py-1.5  `}
@@ -91,11 +91,11 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
               </div>
            
               <div className="w-full flex flex-col gap-1  items-center" >
-                <div className="relative w-full flex md:hidden flex-col  items-center  ">
+                <div className="relative w-full  flex md:hidden flex-col items-center  ">
                   {/* Increased container size from 400px to 500px for both width and height */}
                   <div
-                    style={{ width: "450px", height: "450px" }}
-                    className="absolute bottom-4   left-[48.5%] transform -translate-x-1/2 "
+                    // style={{ width: "450px", height: "450px" }}
+                    className="absolute bottom-[5.5rem] h-[16rem] w-[20rem] "
                   >
                     <Canvas>
                       <Suspense fallback={null}>
@@ -131,11 +131,11 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                       </Suspense>
                     </Canvas>
                   </div>
+                 
                   <Image
                     src={menuStage}
                     alt="stage"
-                    width={350}
-                    className=" -bottom-1"
+                    className="h-[8rem]"
                   />
                 </div>
               </div>

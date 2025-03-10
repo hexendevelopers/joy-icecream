@@ -15,7 +15,7 @@ const thunderLight = localFont({
 
 function SectionOne() {
   return (
-    <div className=" w-full h-[600px] relative text-white">
+    <div className=" w-full flex flex-col gap-5 lg:block lg:h-[600px] h-auto relative text-white">
       <Image
         src={vintageImage}
         alt="old joy factory"
@@ -24,9 +24,9 @@ function SectionOne() {
       <Image
         src={vintageImageMobile}
         alt="old joy factory"
-        className=" w-full h-1/2 lg:hidden object-cover rounded-xl"
+        className=" w-full  lg:hidden object-cover rounded-xl"
       />
-      <div className="absolute bottom-0 lg:top-0 left-0 w-full h-1/2 lg:h-full flex items-center justify-center">
+      <div className="lg:absolute bottom-0 lg:top-0 left-0 w-full h-1/2 lg:h-full flex items-center justify-center">
         <div className=" flex flex-col mt-20 lg:mt-0 gap-3 lg:gap-5 lg:text-center lg:items-center text-white">
           <h1 className={` uppercase leading-none lg:leading-normal text-[3.2rem] w-full lg:w-auto lg:text-9xl text-white ${thunder.className}`}>
             about joy ice cream

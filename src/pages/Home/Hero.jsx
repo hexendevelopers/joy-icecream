@@ -18,7 +18,6 @@ import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
 
-
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
   weight: "100 900",
@@ -177,7 +176,6 @@ function Dub1ModelMob() {
       scale={[1.2, 1.2, 1.2]}
       position={[0, 0, 0]}
       rotation={[0, 0, Math.PI / 6]} // Rotate 30 degrees on Z-axis
-
     />
   );
 }
@@ -247,7 +245,6 @@ function Dub3ModelMob() {
       scale={[1.2, 1.2, 1.2]}
       position={[0, 0, 0]}
       rotation={[0, 0, -Math.PI / 6]} // Rotate 30 degrees on Z-axis
-
     />
   );
 }
@@ -365,7 +362,7 @@ function Hero() {
     <>
       <div
         ref={containerRef}
-        className=" w-full h-screen  bg-gradient-to-b from-red-500 to-red-900  relative text-white"
+        className=" w-screen h-screen  bg-gradient-to-b from-red-500 to-red-900  relative text-white overflow-x-clip"
       >
         <Image
           src={bg}
@@ -380,7 +377,7 @@ function Hero() {
 
         <div className=" w-full h-full absolute top-0 left-0 pt-10 px-8 lg:px-20">
           <div className=" w-full h-full flex flex-col justify-between">
-            <div className=" flex flex-col gap-5 z-30 lg:z-0">
+            <div className=" flex flex-col gap-5 z-30 lg:z-50">
               <Navbar />
               <hr className=" w-full border-gray-300" />
               <div className=" flex flex-col justify-center lg:gap-3 -mt-8 lg:-mt-16">
@@ -608,8 +605,8 @@ function Hero() {
               </motion.div>
 
               <motion.div
-                initial={{ x: -100}}
-                animate={{ x: 15}}
+                initial={{ x: -100 }}
+                animate={{ x: 15 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -652,8 +649,8 @@ function Hero() {
               </motion.div>
 
               <motion.div
-                initial={{ x: 100}}
-                animate={{ x: -15}}
+                initial={{ x: 100 }}
+                animate={{ x: -15 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -747,12 +744,12 @@ function Hero() {
                 damping: 10,
                 mass: 1,
               }}
-              className=" z-10 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+              className=" z-50 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
             >
               <Image src={berry} width={120} />
             </motion.div>
             <motion.div
-              className=" "
+              className="z-50 -mt-56 transform -translate-y-1/2 animate-float-fast"
               initial={{ x: 0, y: 300 }}
               animate={{ x: 0, y: 0 }}
               transition={{
@@ -764,11 +761,7 @@ function Hero() {
                 mass: 1,
               }}
             >
-              <Image
-                src={caramel}
-                width={140}
-                className=" -mt-56 transform -translate-y-1/2 animate-float-fast"
-              />
+              <Image src={caramel} width={140} />
             </motion.div>
             <motion.div
               initial={{ x: -300, y: 300 }}
@@ -815,7 +808,7 @@ function Hero() {
                 damping: 10,
                 mass: 1,
               }}
-              className="absolute top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+              className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
             >
               <Image src={choclate} width={65} className="" />
             </motion.div>
@@ -830,12 +823,12 @@ function Hero() {
                 damping: 10,
                 mass: 1,
               }}
-              className="absolute top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+              className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
             >
               <Image src={berry} width={65} />
             </motion.div>
             <motion.div
-              className="absolute top-[20rem] left-[15.5rem]"
+              className="absolute z-20 top-[20rem] left-[15.5rem]"
               initial={{ x: -20, y: 300, opacity: 0 }}
               animate={{ x: 0, y: 0, opacity: 1 }}
               transition={{
