@@ -22,7 +22,6 @@ const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
   weight: "100 900",
 });
-
 const BebasNeue = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
