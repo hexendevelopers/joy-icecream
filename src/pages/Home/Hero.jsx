@@ -365,7 +365,7 @@ function Hero() {
     <>
       <div
         ref={containerRef}
-        className=" w-full h-screen  bg-gradient-to-b from-red-500 to-red-900  relative"
+        className=" w-full h-screen  bg-gradient-to-b from-red-500 to-red-900  relative text-white"
       >
         <Image
           src={bg}

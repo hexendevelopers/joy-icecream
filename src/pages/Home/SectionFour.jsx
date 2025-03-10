@@ -27,7 +27,7 @@ const thunderBold = localFont({
 
 function SectionFour() {
   return (
-    <div className=" w-full h-screen relative lg:flex lg:items-center   lg:justify-center bg-gradient-to-b from-red-500 to-red-900">
+    <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-500 to-red-900">
       <div className="absolute z-0 top-0 left-0 hidden lg:block">
         <Image src={halfCircle} className="w-full h-full" />
       </div>

@@ -10,7 +10,7 @@ function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className=" w-full flex justify-between items-center z-20 overflow-hidden">
+    <div className=" w-full flex justify-between items-center z-20 overflow-hidden text-white">
       <MobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
       <Link className="flex items-center justify-start" href={"/"}>
       <div className=" flex items-center gap-5 justify-start ">

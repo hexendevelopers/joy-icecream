@@ -36,7 +36,7 @@ const SectionFive = ({scrollYProgress2}) => {
       scale:scale,
       translateY:translateY
     }}
-    className="sticky hidden lg:block lg:mt-[100vh] top-0 h-screen w-screen bg-gradient-to-r from-red-900 to-red-500 overflow-hidden">
+    className="sticky hidden lg:block lg:mt-[100vh] top-0 h-screen text-white w-screen bg-gradient-to-r from-red-900 to-red-500 overflow-hidden">
        <div className="relative ">
        <div className="z-0 absolute right-0 top-0 w-full h-full">
       <Image src={rode} className="bg-cover h-full w-full hidden lg:block"/>

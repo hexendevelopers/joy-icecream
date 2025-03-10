@@ -15,7 +15,7 @@ const thunderLight = localFont({
 
 function SectionOne() {
   return (
-    <div className=" w-full h-[600px] relative">
+    <div className=" w-full h-[600px] relative text-white">
       <Image
         src={vintageImage}
         alt="old joy factory"

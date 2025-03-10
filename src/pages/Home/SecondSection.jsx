@@ -54,7 +54,7 @@ useEffect(() => {
 
 
   return (
-    <div className=" w-full h-screen bg-gradient-to-b from-red-500 to-red-900 py-16 px-7 md:px-20 flex items-center justify-center">
+    <div className=" w-full h-screen bg-gradient-to-b from-red-500 to-red-900 py-16 px-7 md:px-20 flex items-center justify-center text-white">
       <div
         className={` flex flex-col gap-0 md:gap-5 items-center relative h-full  py-16  md:py-0 w-full`}
       >

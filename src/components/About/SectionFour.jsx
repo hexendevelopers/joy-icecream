@@ -44,7 +44,7 @@ const SectionFour = ({ scrollYProgress2 }) => {
         scale: scale,
         translateY: translateY,
       }}
-      className="sticky hidden lg:block top-0 h-auto lg:h-screen w-screen bg-gradient-to-r from-[#EC3D3D] to-[#ea2729] z-20"
+      className="sticky hidden lg:block top-0 h-auto lg:h-screen w-screen text-white bg-gradient-to-r from-[#EC3D3D] to-[#ea2729] z-20"
     >
       <div className="relative h-full">
         <motion.div

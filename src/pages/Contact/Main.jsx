@@ -13,7 +13,7 @@ const thunderSemibold = localFont({
 
 function Main() {
   return (
-    <div className=" w-full flex  justify-center lg:pb-9">
+    <div className=" w-full flex  justify-center lg:pb-9 text-white">
       <div className=" flex items-center flex-col gap-10">
         <div className=" flex flex-col gap-1 w-full lg:w-auto items-center">
           <h1

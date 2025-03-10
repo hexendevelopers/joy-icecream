@@ -21,7 +21,7 @@ const thunderSemibold = localFont({
 
 function SectionTwo() {
   return (
-    <div className=" w-full h-auto lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-8 lg:px-20 lg:pt-20">
+    <div className=" w-full h-auto text-white lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-8 lg:px-20 lg:pt-20">
       <div className=" w-full flex flex-col lg:flex-row lg:items-start items-center gap-10 justify-between">
         <div className="w-full lg:w-1/2 flex flex-col gap-5">
           <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3.2rem] lg:text-8xl leading-none  text-white uppercase`}>

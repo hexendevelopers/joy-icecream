@@ -49,7 +49,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
     <div
       className={`${
         showMenu ? "block" : "hidden"
-      } overflow-y-hidden z-50 fixed top-0 left-0 w-screen h-screen p-3 bg-gradient-to-b from-red-900 to-red-500`}
+      } overflow-y-hidden z-50 fixed top-0 left-0 w-screen h-screen p-3 bg-gradient-to-b from-red-900 to-red-500 text-white`}
     >
       <div className="px-4 py-8">
         <div className="w-full flex items-center justify-between ">
