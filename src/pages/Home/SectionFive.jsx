@@ -33,12 +33,12 @@ const thunderMedium = localFont({
 function SectionFive() {
   return (
     <div className=" w-full h-96 lg:h-[80vh] bg-gradient-to-b from-red-800 to-red-500 flex items-center justify-center relative text-white overflow-x-clip">
-      <div className="absolute inset-0 w-full">
+      <div className="absolute inset-0 h-full w-full flex items-center">
       <Image src={rode} className="w-full hidden lg:block" />
       </div>
       
       <h1
-        className={`${thunderMedium.className} w-full hidden text-white z-10 pt-[6rem] lg:flex justify-center text-[7.05rem] lg:text-[18vw] font-extrabold uppercase`}
+        className={`${thunderMedium.className} w-full h-full hidden text-white z-10  lg:flex justify-center items-center text-[18vw] font-extrabold uppercase`}
       >
         JOY in every bite
       </h1>
@@ -129,13 +129,15 @@ function SectionFive() {
 
 
       {/* ----MOBILE-VERSION---- */}
-      <Image src={RoundBg} className="w-full lg:hidden" />
-      <div className="lg:hidden absolute top-0 left-0 w-full h-full flex pt-4 flex-col justify-center items-center">
-        <h1 className={`${thunderMedium.className} text-[6rem] leading-none `}>
+      <div className="absolute  lg:hidden inset-0 h-full flex items-center w-full">
+      <Image src={RoundBg} className="w-full " />
+      </div>
+      <div className="lg:hidden w-full h-full flex flex-col justify-center items-center z-10">
+        <h1 className={`${thunderMedium.className} text-[24vw] leading-none `}>
           JOY IN
         </h1>
         <h1
-          className={`${thunderMedium.className} text-[6rem] leading-none -mt-3`}
+          className={`${thunderMedium.className} text-[24vw] leading-none -mt-3`}
         >
           EVERY BITE
         </h1>
@@ -146,7 +148,7 @@ function SectionFive() {
           whileInView={{ width: 100 }}
           viewport={{ once: false, amount: 0.99 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="absolute top-[6.5rem] left-6"
+          className="absolute top-[6.5rem] left-6 z-20"
         >
           <Image className="w-full" src={dub1Mob} />
         </motion.div>
@@ -155,7 +157,7 @@ function SectionFive() {
           whileInView={{ width: 112 }}
           viewport={{ once: false, amount: 0.99 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="absolute top-[6rem] right-6"
+          className="absolute top-[6rem] right-6 z-20"
         >
           <Image className="w-full" src={dub2Mob} />
         </motion.div>
@@ -164,7 +166,7 @@ function SectionFive() {
           whileInView={{ width: 100 }}
           viewport={{ once: false, amount: 0.99 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="absolute top-[14.5rem] right-3"
+          className="absolute top-[14.5rem] right-3 z-20"
         >
           <Image className="w-full" src={dub3Mob} />
         </motion.div>
@@ -173,7 +175,7 @@ function SectionFive() {
           whileInView={{ width: 105 }}
           viewport={{ once: false, amount: 0.99 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="absolute top-[14rem] right-[8.2rem]"
+          className="absolute top-[14rem] right-[8.2rem] z-20"
         >
           <Image className="w-full" src={bar1Mob} />
         </motion.div>
@@ -182,7 +184,7 @@ function SectionFive() {
           whileInView={{ width: 90 }}
           viewport={{ once: false, amount: 0.99 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="absolute top-[8rem] right-1"
+          className="absolute top-[8rem] right-1 z-20"
         >
           <Image className="w-full" src={bar2Mob} />
         </motion.div>

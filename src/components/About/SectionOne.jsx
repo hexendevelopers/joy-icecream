@@ -12,10 +12,14 @@ const thunderLight = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
   weight: "100 900",
 });
+const thunderSemibold = localFont({
+  src: "../../app/fonts/Thunder-SemiBoldLC.otf",
+  weight: "600",
+});
 
 function SectionOne() {
   return (
-    <div className=" w-full flex flex-col justify-between lg:justify-normal gap-10 lg:gap-0 lg:block lg:h-[600px] h-auto relative text-white">
+    <div className=" w-full flex flex-col justify-between lg:justify-normal gap-14 lg:gap-0 lg:block lg:h-[75vh] h-auto relative text-white">
       <Image
         src={vintageImage}
         alt="old joy factory"
@@ -26,9 +30,9 @@ function SectionOne() {
         alt="old joy factory"
         className=" w-full  lg:hidden object-cover rounded-xl"
       />
-      <div className="lg:absolute bottom-0 lg:top-0 left-0 w-full h-1/2 lg:h-full flex items-center justify-center">
-        <div className=" flex flex-col lg:mt-0 gap-3 lg:gap-5 lg:text-center lg:items-center text-white">
-          <h1 className={` uppercase leading-none lg:leading-normal text-[3.2rem] w-full lg:w-auto lg:text-9xl text-white ${thunder.className}`}>
+      <div className="lg:absolute bottom-0 lg:top-0 left-0 w-full lg:h-full flex items-center justify-center">
+        <div className=" flex flex-col w-full  gap-3 lg:gap-5 lg:text-center lg:items-center text-white">
+          <h1 className={` uppercase leading-none lg:leading-normal text-[3.2rem] w-full flex lg:w-auto lg:text-9xl text-white ${thunder.className}`}>
             about joy ice cream
           </h1>
           <h1 className={`${thunder.className} text-[1.32rem] lg:text-4xl font-bold uppercase`}>

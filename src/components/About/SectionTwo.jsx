@@ -21,13 +21,14 @@ const thunderSemibold = localFont({
 
 function SectionTwo() {
   return (
-    <div className=" w-full h-auto text-white lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-5 lg:px-20">
+    <div className=" w-full h-auto text-white lg:h-auto flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-5 lg:px-20">
       <div className=" w-full py-10 lg:py-0 gap-10 lg:gap-0 flex flex-col lg:flex-row  items-center justify-between">
-        <div className="w-full lg:w-1/2 flex flex-col gap-5">
-          <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3rem] lg:text-8xl leading-none  text-white uppercase`}>
+        <div className="w-full lg:w-[55%] flex flex-col gap-5 lg:gap-0">
+          <h1 className={`${thunder.className} text-[3rem] lg:text-[7.5vw] w-full leading-none  text-white uppercase`}>
             same great taste new different look
           </h1>
-          <h1 className="text-white text-sm lg:text-base">
+         <div className="flex flex-col gap-3">
+         <h1 className="text-white text-sm lg:text-base">
             Enjoy the flavors you love with a fresh new twist! We've given our
             brand a makeover, but rest assured your favorite delicious taste
             remains unchanged.{" "}
@@ -38,6 +39,7 @@ function SectionTwo() {
             household favorite. Whether you're reliving cherished memories or
             creating new ones{" "}
           </h1>
+         </div>
         </div>
         <div className="w-full lg:w-1/3">
           <div className="w-full h-full overflow-hidden rounded-3xl">

@@ -56,36 +56,36 @@ const SectionFour = ({ scrollYProgress2 }) => {
           className="absolute top-0 left-0 w-full h-full bg-[#F5A5A5] z-30 "
         ></motion.div>
         <div className="w-full h-full flex gap-7 lg:gap-0 flex-col-reverse lg:flex-row">
-          <div className="lg:w-[55%] ">
-            <div className="h-full w-full flex flex-col gap-5 lg:gap-16 px-5 lg:px-14 lg:pt-16 lg:pb-20">
+          <div className="lg:w-[60%] ">
+            <div className="h-full w-full flex flex-col gap-5 lg:gap-14 px-5 lg:px-14 lg:pt-16 lg:pb-20">
               <div className="w-full">
                 <h1
-                  className={` uppercase ${thunderMedium.className} text-2xl text-white lg:text-6xl leading-normal lg:leading-none`}
+                  className={` uppercase ${thunderMedium.className} text-2xl text-white lg:text-[4vw] leading-normal lg:leading-none`}
                 >
                   Founder of Joy
                 </h1>
                 <h1
-                  className={`${thunderSemibold.className} text-5xl text-white lg:text-[7rem] uppercase leading-none`}
+                  className={`${thunderSemibold.className} text-5xl text-white lg:text-[8vw] uppercase leading-none`}
                 >
                   Late Shri. L.C.Java
                 </h1>
               </div>
 
-              <div className="w-full flex flex-col gap-4 lg:gap-7 py-7 lg:py-0">
-                <h2 className={`${thunderMedium.className} text-4xl lg:text-6xl text-white`}>1948</h2>
-                <p className={`text-sm lg:text-xl text-white`}>
+              <div className="w-full flex flex-col gap-4 lg:gap-4 py-7 lg:py-0">
+                <h2 className={`${thunderMedium.className} text-4xl lg:text-[4.5vw] text-white`}>1948</h2>
+                <p className={` text-white`}>
                   JOY’s Founder, Late Shri L.C. Java, a B.Sc. Honors in Geology
                   and an assistant mines manager at Killick Nixon, went to
                   London for training at the Cornwall School of Mines.
                 </p>
-                <p className={`text-sm lg:text-xl text-white`}>
+                <p className={` text-white`}>
                   {" "}
                   A series of mine accidents led him to opt out of the mining
                   industry. He enrolled himself at Blackpool School of Food
                   Technology, where his course included a stint at the UK Ice
                   Cream Alliances.
                 </p>
-                <p className={`text-sm lg:text-xl text-white`}>
+                <p className={` text-white`}>
                   After learning more about ice creams and their manufacturing
                   process, he came back to India to start JOY Ice Creams. Mr.
                   Java leased the basement at Rhythm House in Kala Ghoda for ₹12
@@ -95,7 +95,7 @@ const SectionFour = ({ scrollYProgress2 }) => {
             </div>
           </div>
 
-          <div className="lg:w-[45%] h-full relative">
+          <div className="lg:w-[40%] h-full relative">
             <div className="absolute w-full h-full top-0 left-0 flex items-end justify-center">
               <div className="py-16 pl-12 w-full flex flex-col gap-6">
                 <h1

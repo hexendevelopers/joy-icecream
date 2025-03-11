@@ -62,7 +62,7 @@ function page() {
   },[])
 
   return (
-    <div className=" w-full  flex flex-col gap-0 bg-yellow-400 overflow-clip">
+    <div className=" w-full  flex flex-col overflow-clip">
       <div className=" flex h-screen bg-gradient-to-b from-red-500 to-red-900 flex-col w-full gap-8 lg:gap-10 px-5 lg:px-20 pt-6 ">
         <div className=" flex flex-col gap-5 ">
           <Navbar />
