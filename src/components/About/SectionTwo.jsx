@@ -21,8 +21,8 @@ const thunderSemibold = localFont({
 
 function SectionTwo() {
   return (
-    <div className=" w-full h-auto text-white lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-8 lg:px-20 lg:pt-20">
-      <div className=" w-full py-10 gap-10 flex flex-col lg:flex-row lg:items-start items-center justify-between">
+    <div className=" w-full h-auto text-white lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-5 lg:px-20">
+      <div className=" w-full py-10 lg:py-0 gap-10 lg:gap-0 flex flex-col lg:flex-row  items-center justify-between">
         <div className="w-full lg:w-1/2 flex flex-col gap-5">
           <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3rem] lg:text-8xl leading-none  text-white uppercase`}>
             same great taste new different look
@@ -39,7 +39,7 @@ function SectionTwo() {
             creating new ones{" "}
           </h1>
         </div>
-        <div className="w-full lg:w-1/3 lg-mt-10 lg:py-0">
+        <div className="w-full lg:w-1/3">
           <div className="w-full h-full overflow-hidden rounded-3xl">
             <ReactCompareImage
               className="w-full h-full"

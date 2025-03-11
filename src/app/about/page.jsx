@@ -62,7 +62,7 @@ function page() {
   },[])
 
   return (
-    <div className=" w-full  flex flex-col gap-0  overflow-clip">
+    <div className=" w-full  flex flex-col gap-0 bg-yellow-400 overflow-clip">
       <div className=" flex h-screen bg-gradient-to-b from-red-500 to-red-900 flex-col w-full gap-8 lg:gap-10 px-5 lg:px-20 pt-6 ">
         <div className=" flex flex-col gap-5 ">
           <Navbar />
@@ -71,10 +71,10 @@ function page() {
         <SectionOne />
       </div>
       <SectionTwo />
-      <div ref={ContainerRef1} className="h-[500vh] bg-green-500 w-full z-0 overflow-clip">
+      <div ref={ContainerRef1} className="h-[500vh] w-full z-0 overflow-clip">
         <SectionThree scrollYProgress1={scrollYProgress1} />
       </div>
-      <div ref={ContainerRef2} className="h-[400vh] bg-yellow-400 w-full z-10 relative ">
+      <div ref={ContainerRef2} className="h-[400vh]  w-full z-10 relative ">
         <div className={`w-screen h-screen top-0 ${isFixed ? "fixed" : "hidden"}`}>
         <Image src={tubBg}  className="h-full lg:h-auto object-cover lg:w-full"/>
         </div>
