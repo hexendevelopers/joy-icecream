@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import SectionOne from "../../components/About/SectionOne";
 import SectionTwo from "../../components/About/SectionTwo";
 import Footer from "../../pages/Home/Footer";
-import { motion, useScroll } from "framer-motion";
+import {useScroll } from "framer-motion";
 import Image from "next/image";
 import tubBg from '../assets/ABOUT US/tub-bg.png';
 import dynamic from 'next/dynamic';
@@ -27,7 +27,7 @@ const SectionFive = dynamic(() => import('@/components/About/SectionFive'), {
 
 function page() {
 
-  const [isFixed,setIsFixed] = useState(true);
+  const [isFixed,setIsFixed] = useState(false);
   const ContainerRef1 = useRef();
   const ContainerRef2 = useRef();
 
@@ -62,7 +62,7 @@ function page() {
   },[])
 
   return (
-    <div className=" w-full  flex flex-col gap-0  ">
+    <div className=" w-full  flex flex-col gap-0  overflow-clip">
       <div className=" flex h-screen bg-gradient-to-b from-red-500 to-red-900 flex-col w-full gap-8 lg:gap-10 px-8 lg:px-20 pt-6 lg:pt-10">
         <div className=" flex flex-col gap-2 lg:gap-5">
           <Navbar />
