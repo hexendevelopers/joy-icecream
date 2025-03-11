@@ -1,13 +1,15 @@
 "use client";
 import localFont from "next/font/local";
 import Link from "next/link";
-import React, { useEffect, Suspense } from "react";
+import React, { useEffect, Suspense, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import menuStage from "../app/assets/MOBILE/menu-stage.png";
 import dub from "../app/assets/HERO-SECTION/132.png";
 import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
+import useMeasure from "react-use-measure";
+
 
 const thunderMedium = localFont({
   src: "../app/fonts/Thunder-LC.ttf",
@@ -32,6 +34,20 @@ function IceCreamModel() {
 }
 
 const MobileMenu = ({ showMenu, setShowMenu }) => {
+
+  const [stageHeight,setStageHeight] = useState(50)
+
+  const [stageRef, stageBounds] = useMeasure({
+    scroll: true,
+    debounce: 50,
+  });
+
+  useEffect(() => {
+    if(stageBounds.height){
+      setStageHeight(stageBounds.height)
+    }
+  },[stageBounds])
+
   //---CONTROLLING SCROLL IN MENU ----
   useEffect(() => {
     if (showMenu) {
@@ -51,14 +67,14 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
         showMenu ? "block" : "hidden"
       } overflow-y-hidden z-50 fixed top-0 left-0 w-screen h-screen p-3 bg-gradient-to-b from-red-900 to-red-500 text-white`}
     >
-      <div className="px-4 py-8">
+      <div className="px-4 py-4">
         <div className="w-full flex items-center justify-between ">
           <h1 className={`text-3xl text-white ${thunderMedium.className}`}>MENU</h1>
           <IoClose className="text-3xl" onClick={() => setShowMenu(false)} />
         </div>
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">
           <div className=" w-full h-screen flex items-center justify-center absolute top-0 left-0">
-            <div className=" flex flex-col justify-between gap-14 pb-32 w-full h-full">
+            <div className=" flex flex-col justify-between pb-20 w-full h-full">
               <div className={` w-full flex flex-col text-white mt-5  `}>
                 <Link onClick={() => setShowMenu(false)} href={"/"}>
                   <button
@@ -90,12 +106,13 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                 </Link>
               </div>
            
-              <div className="w-full flex flex-col gap-1  items-center" >
-                <div className="relative w-full  flex md:hidden flex-col items-center  ">
+              <div className="w-full flex  items-center" >
+                <div className="relative w-full  flex lg:hidden flex-col items-center  ">
                   {/* Increased container size from 400px to 500px for both width and height */}
                   <div
                     // style={{ width: "450px", height: "450px" }}
-                    className="absolute bottom-[5.5rem] h-[16rem] w-[20rem] "
+                    className={` absolute  h-[16rem] w-[20rem]`}
+                    style={{ bottom: `${stageHeight-35}px` }}
                   >
                     <Canvas>
                       <Suspense fallback={null}>
@@ -133,9 +150,10 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                   </div>
                  
                   <Image
+                  ref={stageRef}
                     src={menuStage}
                     alt="stage"
-                    className="h-[8rem]"
+                    className="w-[80%]"
                   />
                 </div>
               </div>

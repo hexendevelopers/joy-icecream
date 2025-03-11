@@ -31,20 +31,19 @@ function SectionFour() {
       <div className="absolute z-0 top-0 left-0 hidden lg:block">
         <Image src={halfCircle} className="w-full h-full" />
       </div>
-      <div className="w-full h-full flex flex-col gap-5 lg:gap-0 justify-around lg:justify-between items-center">
-        <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center py-32 lg:py-0">
+      <div className="w-full h-full flex flex-col gap-10 lg:gap-0 justify-around lg:justify-between items-center">
+        <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
           <h1
             className={`${thunderSemibold.className} lg:${thunderSemibold.className} uppercase text-white lg:uppercase text-[3.6rem] md:font-semibold md:text-[12rem] md:uppercase font-bold`}
           >
             Ice Cream Bars
           </h1>
-          <h1 className=" text-center w-[22.56rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
+          <h1 className=" text-center text-sm lg:text-base w-[22rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
             It’s about turning simple moments into delightful experiences. Ice
             cream isn’t just a dessert; it’s a way to bring happiness, share
             smiles, and create lasting memories.{" "}
           </h1>
         </div>
-        <Image src={bar} alt="" width={1400} className=" -mt-80 hidden " />
         {/* ----BARS DESKTOP ANIMATION--- */}
         <div className="hidden lg:block w-full h-1/2 relative">
           <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">

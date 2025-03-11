@@ -41,9 +41,9 @@ const SectionFive = ({scrollYProgress2}) => {
        <div className="z-0 absolute right-0 top-0 w-full h-full">
       <Image src={rode} className="bg-cover h-full w-full hidden lg:block"/>
       </div>
-      <div className="w-full h-full bg-transparent flex flex-col lg:flex-row z-10">
-        <div className="lg:w-[55%] pt-8 lg:pt-0">
-          <div className="h-full w-full flex flex-col gap-5 lg:gap-16 px-5 lg:px-14 lg:py-20">
+      <div className="w-full h-full bg-transparent justify-between lg:justify-normal flex flex-col lg:flex-row z-10">
+        <div className="lg:w-[55%] pt-7 lg:pt-0">
+          <div className="h-full w-full flex flex-col gap-4 lg:gap-16 px-5 lg:px-14 lg:py-20">
             <div className="w-full text-white">
               <h1 className={` uppercase ${thunderMedium.className} text-2xl lg:text-6xl leading-normal lg:leading-none`}>
               Same Great Taste, New Look
@@ -51,7 +51,7 @@ const SectionFive = ({scrollYProgress2}) => {
               <h1 className={`${thunderSemibold.className} text-5xl lg:text-[7rem] uppercase leading-none`}>YOUR FAVOURITE JOY</h1>
             </div>
 
-            <div className="w-full flex flex-col gap-4 lg:gap-7 z-20 text-white">
+            <div className="w-full flex flex-col lg:gap-7 z-20 text-white">
                 <h2 className={`${thunderMedium.className} text-4xl lg:text-6xl`}>2025</h2>
                 <p className={`text-sm lg:text-xl`}>JOY has grown from strength to strength; it has been a household name across the nation for decades. JOY has come to become synonymous with trust and pure happiness.</p>
                 <p className={`text-sm lg:text-xl`}>People of almost all age groups are able to relate to JOY and its products. Some of the most well-known products include the JOY Ball, Cassata, and many more.</p>
@@ -60,8 +60,8 @@ const SectionFive = ({scrollYProgress2}) => {
           </div>
         </div>
 
-        <div className="lg:w-[45%] z-20 flex items-center justify-center">
-            <Image src={dub} className="w-[70%]"/>
+        <div className="w-full lg:w-[45%] z-20 flex items-center justify-center">
+            <Image src={dub} className=" w-[20%] lg:w-[60%]"/>
         </div>
       </div>
        </div>
@@ -98,8 +98,8 @@ const SectionFive = ({scrollYProgress2}) => {
           </div>
         </div>
 
-        <div className="lg:w-[45%] z-20 flex items-center pt-10 lg:pt-0 justify-center">
-            <Image src={dub} className="w-[60%] lg:w-[70%]"/>
+        <div className="lg:w-[45%] w-full z-20 flex items-center justify-center">
+            <Image src={dub} className="w-[50%] lg:w-[70%]"/>
         </div>
       </div>
        </div>

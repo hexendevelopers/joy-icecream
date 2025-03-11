@@ -14,9 +14,9 @@ const signatie = localFont({
 
 function Footer() {
   return (
-    <div className="z-10 w-full h-screen lg:h-auto bg-gradient-to-b from-red-500 to-red-900 flex items-center justify-center pt-20 text-white overflow-clip">
-      <div className="flex flex-col gap-8">
-        <div className=" flex flex-col gap-5  items-center">
+    <div className="z-10 w-full h-auto lg:h-auto bg-gradient-to-b from-red-500 to-red-900 flex items-center justify-center text-white overflow-clip">
+      <div className="flex flex-col justify-around items-center gap-5">
+        <div className=" flex flex-col gap-5   items-center">
           <h1
             className={`text-[3.57rem] lg:text-6xl ${thunder.className} font-semibold text-center uppercase leading-none lg:leading-[1] w-[24.12rem] lg:w-[30rem] text-white`}
           >

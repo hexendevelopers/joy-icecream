@@ -51,8 +51,7 @@ const SectionFour = ({ scrollYProgress2 }) => {
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
           transition={{
-            delay: 0.1,
-            duration: 0.5,
+            duration: 0.2,
           }}
           className="absolute top-0 left-0 w-full h-full bg-[#F5A5A5] z-30 "
         ></motion.div>

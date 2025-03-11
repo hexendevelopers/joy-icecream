@@ -22,24 +22,24 @@ const thunderSemibold = localFont({
 function SectionTwo() {
   return (
     <div className=" w-full h-auto text-white lg:h-[500px] flex justify-center bg-gradient-to-b from-red-900 to-red-500 px-8 lg:px-20 lg:pt-20">
-      <div className=" w-full flex flex-col lg:flex-row lg:items-start items-center gap-10 justify-between">
+      <div className=" w-full py-10 gap-10 flex flex-col lg:flex-row lg:items-start items-center justify-between">
         <div className="w-full lg:w-1/2 flex flex-col gap-5">
-          <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3.2rem] lg:text-8xl leading-none  text-white uppercase`}>
+          <h1 className={`${thunderSemibold.className} lg:${thunder.className} text-[3rem] lg:text-8xl leading-none  text-white uppercase`}>
             same great taste new different look
           </h1>
-          <h1 className="text-white">
+          <h1 className="text-white text-sm lg:text-base">
             Enjoy the flavors you love with a fresh new twist! We've given our
             brand a makeover, but rest assured your favorite delicious taste
             remains unchanged.{" "}
           </h1>
-          <h1 className="text-white">
+          <h1 className="text-white text-sm lg:text-base">
             From the creamy textures to the rich, irresistible flavors you love,
             every scoop is crafted with the same dedication that has made JOY a
             household favorite. Whether you're reliving cherished memories or
             creating new ones{" "}
           </h1>
         </div>
-        <div className="w-full lg:w-1/3 -mt-10 py-12 lg:py-0">
+        <div className="w-full lg:w-1/3 lg-mt-10 lg:py-0">
           <div className="w-full h-full overflow-hidden rounded-3xl">
             <ReactCompareImage
               className="w-full h-full"

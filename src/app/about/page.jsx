@@ -27,7 +27,7 @@ const SectionFive = dynamic(() => import('@/components/About/SectionFive'), {
 
 function page() {
 
-  const [isFixed,setIsFixed] = useState(false);
+  const [isFixed,setIsFixed] = useState(true);
   const ContainerRef1 = useRef();
   const ContainerRef2 = useRef();
 
@@ -40,6 +40,8 @@ function page() {
     target: ContainerRef2,
     offset: ["start start", "end end"],
   });
+
+
   useEffect(()=>{
     const handleScroll = () => {
       const containerTop = ContainerRef2.current.getBoundingClientRect().top;
@@ -69,7 +71,6 @@ function page() {
         <SectionOne />
       </div>
       <SectionTwo />
-
       <div ref={ContainerRef1} className="h-[500vh] w-full z-0 overflow-clip">
         <SectionThree scrollYProgress1={scrollYProgress1} />
       </div>
