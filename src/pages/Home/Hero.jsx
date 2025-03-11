@@ -375,28 +375,35 @@ function Hero() {
           className=" w-full h-full  md:hidden object-contain object-bottom "
         />
 
-        <div className=" w-full h-full absolute top-0 left-0 pt-10 px-8 lg:px-20">
+        <div className=" w-full h-full absolute top-0 left-0 pt-6 px-5 lg:px-20">
           <div className=" w-full h-full flex flex-col justify-between">
             <div className=" flex flex-col gap-5 z-30 lg:z-50">
               <Navbar />
               <hr className=" w-full border-gray-300" />
-              <div className=" flex flex-col justify-center lg:gap-3 -mt-8 lg:-mt-16">
-                <div className=" w-full  flex justify-evenly md:gap-12  flex-col md:flex-row ">
+              <div className=" flex flex-col justify-between ">
+              <div className=" w-full  flex  justify-center  ">
                   <h1
-                    // className={`text-[10rem] md:text-[11rem] xl:text-[16.5rem] ${thunder.className} font-extrabold`}
-                    className={`text-[38.5vw] lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
+                    className={`text-[38.5vw] leading-none w-full justify-center lg:text-[17vw] xl:text-[18.5vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
+                  >
+                    SCOOP THE JOY!
+                  </h1>
+                 
+                </div>
+                {/* ----MOBILE VERSION--- */}
+                <div className=" w-full lg:hidden  flex justify-evenly gap-16 md:gap-0  flex-col ">
+                  <h1
+                    className={`text-[38.5vw] leading-none lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
                   >
                     SCOOP
                   </h1>
                   <h1
-                    // className={`text-[8rem] md:text-[11rem]  xl:text-[16.5rem]  flex-1 ${thunder.className}  -mt-24 md:mt-0`}
-                    className={`text-[30vw] lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 md:mt-0`}
+                    className={`text-[30vw] leading-none lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 md:mt-0`}
                   >
                     THE JOY!
                   </h1>
                 </div>
                 <h1
-                  className={` ${manrope.className} w-full lg:w-72 -mt-10 leading-7 lg:leading-9 text-center lg:text-start  text-white text-xl lg:text-[1.75rem] font-semibold lg:-mt-32 `}
+                  className={` ${manrope.className} w-full lg:-mt-8 lg:w-72 leading-7 lg:leading-9 text-center lg:text-start  text-white text-xl lg:text-[1.75rem] font-semibold`}
                 >
                   Indulge in the creamiest flavors, crafted with love!
                 </h1>

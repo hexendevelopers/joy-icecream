@@ -12,7 +12,7 @@ function page() {
       <Image src={bg} alt="bg" className=" w-full h-full hidden lg:block" />
       <div className=" absolute top-0 w-full left-0 flex flex-col gap-10">
         <div className=" w-full flex flex-col gap-5">
-          <div className="pt-10 px-7 lg:px-20 flex flex-col gap-5">
+          <div className="pt-6 px-5 lg:px-20 flex flex-col gap-5">
             <Navbar />
             <hr />
           </div>
