@@ -129,7 +129,7 @@ function SectionFive() {
 
 
       {/* ----MOBILE-VERSION---- */}
-      <div className="absolute  lg:hidden inset-0 h-full flex items-center w-full">
+      <div className="absolute  lg:hidden left-0 top-0 h-full flex items-center w-full">
       <Image alt="rounded rode" src={RoundBg} className="w-full " />
       </div>
       <div className="lg:hidden w-full h-full flex flex-col justify-center items-center z-10">

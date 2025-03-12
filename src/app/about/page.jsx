@@ -71,7 +71,7 @@ function page() {
         <SectionOne />
       </div>
       <SectionTwo />
-      <div ref={ContainerRef1} className="h-[500vh] w-full z-0 overflow-clip">
+      <div ref={ContainerRef1} className="h-[400vh] w-screen z-0 overflow-clip">
         <SectionThree scrollYProgress1={scrollYProgress1} />
       </div>
       <div ref={ContainerRef2} className="h-[400vh]  w-full z-10 relative ">

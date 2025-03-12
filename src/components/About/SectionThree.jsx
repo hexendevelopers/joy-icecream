@@ -11,7 +11,7 @@ const thunderSemibold = localFont({
 
 const SectionThree = ({scrollYProgress1}) => {
 
-  const scale = useTransform(scrollYProgress1, [0,0.100,1], [1,20,55]);
+  const scale = useTransform(scrollYProgress1, [0,0.8,1], [1,15,55]);
   const translateY = useTransform(
     scrollYProgress1,
     [0,1],

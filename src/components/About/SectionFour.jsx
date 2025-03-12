@@ -56,7 +56,7 @@ const SectionFour = ({ scrollYProgress2 }) => {
           className="absolute top-0 left-0 w-full h-full bg-[#F5A5A5] z-30 "
         ></motion.div>
         <div className="w-full h-full flex gap-7 lg:gap-0 flex-col-reverse lg:flex-row">
-          <div className="lg:w-[60%] ">
+          <div className="lg:w-[55%] ">
             <div className="h-full w-full flex flex-col gap-5 lg:gap-14 px-5 lg:px-14 lg:pt-16 lg:pb-20">
               <div className="w-full">
                 <h1
@@ -95,20 +95,20 @@ const SectionFour = ({ scrollYProgress2 }) => {
             </div>
           </div>
 
-          <div className="lg:w-[40%] h-full relative">
+          <div className="lg:w-[45%] h-full relative">
             <div className="absolute w-full h-full top-0 left-0 flex items-end justify-center">
-              <div className="py-16 pl-12 w-full flex flex-col gap-6">
+              <div className="py-16 pl-12 w-full flex flex-col gap-3">
                 <h1
-                  className={`${signatie.className} text-2xl text-white lg:text-5xl mt-16 font-semibold`}
+                  className={`${signatie.className} text-2xl text-white lg:text-4xl  font-semibold`}
                 >
                   Shri LC Java
                 </h1>
-                <p className="text-xl font-extralight text-white">
+                <p className="text-base font-extralight text-white">
                   The Father of The Indian Ice Cream Industry
                 </p>
               </div>
             </div>
-            <Image alt="fonuder of joy ice creams ,LC Java" src={lcJava} className="h-full" />
+            <Image alt="fonuder of joy ice creams ,LC Java" src={lcJava} className="h-full object-contain object-right" />
           </div>
         </div>
       </div>

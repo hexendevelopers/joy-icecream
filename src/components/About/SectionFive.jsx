@@ -73,7 +73,7 @@ const SectionFive = ({scrollYProgress2}) => {
       scale:scaleMobile,
       translateY:translateYMobile
     }}
-    className="sticky lg:hidden mt-[50vh] top-0 h-screen w-screen bg-gradient-to-r from-red-900 to-red-500 overflow-hidden">
+    className="sticky lg:hidden mt-[50vh] top-0 h-screen w-screen bg-gradient-to-b from-red-900 to-red-500 overflow-hidden">
        <div className="relative w-full h-full">
        <div className="z-0 absolute right-0 bottom-0  w-full ">
       <Image alt="red rode" src={rodeMobile} className="bg-cover h-full w-full  lg:hidden"/>
