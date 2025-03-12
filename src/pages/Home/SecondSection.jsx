@@ -56,7 +56,7 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
   return (
     <div className=" w-screen h-screen bg-gradient-to-b from-red-900 to-red-800 pt-16 flex items-center justify-center text-white overflow-x-clip ">
       <div
-        className={` flex flex-col gap-10 items-center relative h-full  w-full`}
+        className={` flex flex-col justify-between items-center relative h-full  w-full`}
       >
         <div className="flex flex-col gap-5 items-center px-7 mt-10 md:px-20 ">
           <h1
@@ -69,7 +69,7 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
             cream isn’t just a dessert; it’s a way to bring happiness
           </h1>
         </div>
-        <div className=" flex w-screen items-center gap-5 overflow-hidden">
+        <div className=" flex flex-col justify-between w-screen items-center  overflow-hidden">
           <Marquee
             autoFill
             className="w-full flex items-center gap-5 overflow-x-hidden"
@@ -85,8 +85,7 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
               scoop up!
             </h1>
           </Marquee>
-          {/* <div className=" absolute left-0 top-0 w-full h-full flex items-end justify-center pb-14 lg:pb-0"> */}
-          <div className="hidden lg:flex absolute bottom-4 left-0 w-full justify-center">
+          <div className="hidden lg:flex w-full justify-center">
             <Image
               ref={stageRef}
               src={stage}
@@ -96,7 +95,7 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
             />
           </div>
           {/* ----MOBILE VERSION---- */}
-          <div className="absolute bottom-4 left-0  w-full flex lg:hidden justify-center ">
+          <div className=" w-full flex lg:hidden justify-center ">
             <Image
               ref={stageRefMobile}
               src={stage}
@@ -105,7 +104,6 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
               className=""
             />
           </div>
-          {/* </div> */}
         </div>
       </div>
     </div>

@@ -873,7 +873,7 @@ function Hero() {
       </div>
 
       <div className=" w-full h-full relative hidden md:block">
-         <div className=" absolute w-full h-screen flex items-end justify-center top-[12rem]">
+         <div className=" absolute w-full h-screen flex items-end justify-center top-[25vh]">
               <Image src={newRound} alt="new" className="z-0 "/>
           </div>         
       </div>
