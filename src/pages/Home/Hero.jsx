@@ -619,7 +619,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute flex justify-center Z-50  bottom-0 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
+                className=" absolute flex justify-center Z-10  bottom-0 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -663,7 +663,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute flex justify-center bottom-0 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-50 overflow-hidden"
+                className="absolute flex justify-center bottom-0 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
