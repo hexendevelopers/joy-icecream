@@ -12,10 +12,20 @@ const thunderSemibold = localFont({
 const SectionThree = ({scrollYProgress1}) => {
 
   const scale = useTransform(scrollYProgress1, [0,0.8,1], [1,15,55]);
+  const translateYMobile = useTransform(
+    scrollYProgress1,
+    [0,1],
+    [0,2300]
+  );
   const translateY = useTransform(
     scrollYProgress1,
     [0,1],
-    [0,500]
+    [0,2800]
+  );
+  const translateXMobile = useTransform(
+    scrollYProgress1,
+    [0,1],
+    [0,30]
   );
   const translateX = useTransform(
     scrollYProgress1,
@@ -39,8 +49,8 @@ const SectionThree = ({scrollYProgress1}) => {
     <motion.div
     style={{
       scale:scale,
-      // translateY:translateY,
-      // translateX:translateX
+      translateY:translateYMobile,
+      translateX:translateXMobile
     }}
      className='lg:hidden sticky top-0 left-0 w-screen h-screen bg-gradient-to-b from-red-500 to-red-900 flex items-center justify-center overflow-hidden z-0'>
         <h1 className={`${thunderSemibold.className} text-[#F5A5A5] text-[5rem] lg:text-[15rem]`}>THE JOURNEY</h1>
