@@ -27,10 +27,8 @@ const thunderBold = localFont({
 
 function SectionFour() {
   return (
-    <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-500 to-red-900 overflow-x-clip">
-      <div className="absolute z-0 top-0 left-0 hidden lg:block">
-        <Image alt="balloon" src={halfCircle} className="w-full h-full" />
-      </div>
+    <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-900 to-red-800 overflow-x-clip">
+      <div className="absolute z-0 top-0 left-0 hidden lg:block"></div>
       <div className="w-full h-full flex flex-col gap-10 lg:gap-0 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
           <h1
@@ -45,14 +43,14 @@ function SectionFour() {
           </h1>
         </div>
         {/* ----BARS DESKTOP ANIMATION--- */}
-        <div className="hidden lg:block w-full h-1/2 relative">
+        <div className="hidden lg:block mt-5 w-full h-1/2 relative">
           <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">
             <Image alt="ice cream bar" src={barMain} className="w-[12.5rem]" />
           </div>
-          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
+          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[12.5rem]">
             <motion.div
-              initial={{ rotateZ: 0, x: 0 }}
-              whileInView={{ rotateZ: 40, x: 130 }}
+              initial={{ rotateZ: 0, x: 0, scale: 0 }}
+              whileInView={{ rotateZ: 40, x: 130, scale: 1 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -66,10 +64,10 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar1} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[10.5rem] ">
+          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[12.5rem] ">
             <motion.div
-               initial={{ rotateZ: 0, x: 0, y: 0 }}
-               whileInView={{ rotateZ: 60, x: 185, y: 20 }}
+              initial={{ rotateZ: 0, x: 0, y: 0, scale: 0 }}
+              whileInView={{ rotateZ: 60, x: 185, y: 20, scale: 1 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -83,10 +81,10 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar2} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
+          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[12.5rem]">
             <motion.div
-              initial={{ rotateZ: 0, x: 0 }}
-              whileInView={{ rotateZ: -40, x: -130 }}
+              initial={{ rotateZ: 0, x: 0, scale: 0 }}
+              whileInView={{ rotateZ: -40, x: -130, scale: 1 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -100,10 +98,10 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar3} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[10.5rem] ">
+          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[12.5rem]  ">
             <motion.div
-                 initial={{ rotateZ: 0, x: 0, y: 0 }}
-                 whileInView={{ rotateZ: -60, x: -185, y: 20 }}
+              initial={{ rotateZ: 0, x: 0, y: 0, scale: 0 }}
+              whileInView={{ rotateZ: -60, x: -185, y: 20, scale: 1 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -143,8 +141,8 @@ function SectionFour() {
           </div>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] ">
             <motion.div
-               initial={{ rotateZ: 0, x: 0 }}
-               whileInView={{ rotateZ: 35, x: 100 }}
+              initial={{ rotateZ: 0, x: 0 }}
+              whileInView={{ rotateZ: 35, x: 100 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,
@@ -177,8 +175,8 @@ function SectionFour() {
           </div>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] ">
             <motion.div
-               initial={{ rotateZ: 0, x: 0 }}
-               whileInView={{ rotateZ: -35, x: -100 }}
+              initial={{ rotateZ: 0, x: 0 }}
+              whileInView={{ rotateZ: -35, x: -100 }}
               viewport={{ once: true, amount: 0.99 }}
               transition={{
                 duration: 0.7,

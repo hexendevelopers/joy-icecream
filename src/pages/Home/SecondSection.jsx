@@ -17,6 +17,10 @@ const thunderLight = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
   weight: "100 900",
 });
+const thunderSemiBold = localFont({
+  src: "../../app/fonts/Thunder-SemiBoldLC.otf",
+  weight: "500",
+});
 
 function SecondSection({ setStageTopMobile, setStageTop }) {
   const hasSetStageTop = useRef(false); // Tracks if value was set
@@ -50,20 +54,19 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
   }, [stageBoundsMobile]);
 
   return (
-    <div className=" w-screen h-screen bg-gradient-to-b from-red-500 to-red-900 pt-16 flex items-center justify-center text-white overflow-x-clip ">
+    <div className=" w-screen h-screen bg-gradient-to-b from-red-900 to-red-800 pt-16 flex items-center justify-center text-white overflow-x-clip ">
       <div
         className={` flex flex-col gap-10 items-center relative h-full  w-full`}
       >
-        <div className="flex flex-col gap-5 items-center px-7 md:px-20 ">
+        <div className="flex flex-col gap-5 items-center px-7 mt-10 md:px-20 ">
           <h1
-            className={`${thunder.className} text-7xl uppercase font-bold text-white`}
+            className={`${thunderSemiBold.className} text-8xl uppercase font-bold text-white`}
           >
-            IT's about biringing joy in every scoop
+            joy in every scoop
           </h1>
           <h1 className="w-full md:w-[30rem] text-white text-sm md:text-base leading-6 md:leading-normal -mt-3 text-start md:text-center">
             It’s about turning simple moments into delightful experiences. Ice
-            cream isn’t just a dessert; it’s a way to bring happiness, share
-            smiles, and create lasting memories.{" "}
+            cream isn’t just a dessert; it’s a way to bring happiness
           </h1>
         </div>
         <div className=" flex w-screen items-center gap-5 overflow-hidden">
@@ -83,25 +86,25 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
             </h1>
           </Marquee>
           {/* <div className=" absolute left-0 top-0 w-full h-full flex items-end justify-center pb-14 lg:pb-0"> */}
-            <div className="hidden lg:flex absolute bottom-4 left-0 w-full justify-center">
-              <Image
-                ref={stageRef}
-                src={stage}
-                alt="stage"
-                width={600}
-                className=""
-              />
-            </div>
-            {/* ----MOBILE VERSION---- */}
-            <div className="absolute bottom-4 left-0  w-full flex lg:hidden justify-center ">
-              <Image
-                ref={stageRefMobile}
-                src={stage}
-                alt="stage"
-                width={300}
-                className=""
-              />
-            </div>
+          <div className="hidden lg:flex absolute bottom-4 left-0 w-full justify-center">
+            <Image
+              ref={stageRef}
+              src={stage}
+              alt="stage"
+              width={600}
+              className=""
+            />
+          </div>
+          {/* ----MOBILE VERSION---- */}
+          <div className="absolute bottom-4 left-0  w-full flex lg:hidden justify-center ">
+            <Image
+              ref={stageRefMobile}
+              src={stage}
+              alt="stage"
+              width={300}
+              className=""
+            />
+          </div>
           {/* </div> */}
         </div>
       </div>

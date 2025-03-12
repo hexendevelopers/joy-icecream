@@ -32,7 +32,7 @@ const thunderMedium = localFont({
 
 function SectionFive() {
   return (
-    <div className=" w-full h-96 lg:h-[80vh] bg-gradient-to-b from-red-900 to-red-500 flex items-center justify-center relative text-white overflow-x-clip">
+    <div className=" w-full h-96 lg:h-[80vh] bg-gradient-to-b from-red-800 to-red-900 flex items-center justify-center relative text-white overflow-x-clip">
       <div className="absolute inset-0 h-full w-full flex items-center">
       <Image alt="rounded rode" src={rode} className="w-full hidden lg:block" />
       </div>

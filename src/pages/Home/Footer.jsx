@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import localFont from "next/font/local";
 import ellipseImg from "../../app/assets/MOBILE/HOME/Ellipse.png";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const signatie = localFont({
 
 function Footer() {
   return (
-    <div className="z-10 w-full h-auto lg:h-auto bg-gradient-to-b from-red-500 to-red-900 flex items-center justify-center text-white overflow-clip">
+    <div className="z-10 w-full h-auto lg:h-auto bg-gradient-to-b from-red-900 to-red-800 flex items-center justify-center text-white overflow-clip">
       <div className="flex flex-col justify-around items-center gap-5">
         <div className=" flex flex-col gap-5   items-center">
           <h1

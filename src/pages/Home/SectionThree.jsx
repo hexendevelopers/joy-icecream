@@ -90,7 +90,7 @@ function SectionThree() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-500 overflow-x-clip"
+      className="w-full h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-800 to-red-900 overflow-x-clip"
     >
       <div className="sticky w-full top-20 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
         <h1 className={`${thunder.className} text-5xl md:text-7xl uppercase text-white`}>

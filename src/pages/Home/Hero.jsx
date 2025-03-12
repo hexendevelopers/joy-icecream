@@ -17,6 +17,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
+import newRound from '@/app/assets/HERO-SECTION/hero-bg.png'
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -362,13 +363,9 @@ function Hero() {
     <>
       <div
         ref={containerRef}
-        className=" w-screen h-screen  bg-gradient-to-b from-red-500 to-red-900  relative text-white overflow-x-clip"
+        className=" w-screen h-screen  bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
-        <Image
-          src={bg}
-          alt="bg"
-          className=" w-full h-full hidden lg:block bg-cover"
-        />
+
         <Image
           src={mobBg}
           alt="bg"
@@ -377,7 +374,7 @@ function Hero() {
         <div className=" w-full h-full absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
           <div className=" flex flex-col gap-5 z-30 lg:z-50">
             <Navbar />
-            <hr className=" w-full border-gray-300" />
+            
           </div>
 
           {/* ----TEXT AND ICE CREAM CONTAINERS---- */}
@@ -385,9 +382,9 @@ function Hero() {
             <div className=" flex flex-col justify-between ">
               <div className=" w-full  flex  lg:justify-center  ">
                 <h1
-                  className={`text-[38.5vw] leading-none w-full justify-center lg:text-[17vw] xl:text-[18.5vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
+                  className={`text-[38.5vw] mt-12 leading-none w-full justify-center lg:text-[17vw] xl:text-[16.8vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
                 >
-                  SCOOP THE JOY!
+                  SHARING THE JOY!
                 </h1>
               </div>
               {/* ----MOBILE VERSION--- */}
@@ -474,7 +471,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute  bottom-6 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
+                className=" absolute z-10  bottom-6 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -622,7 +619,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute flex justify-center  bottom-0 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
+                className=" absolute flex justify-center Z-50  bottom-0 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -666,7 +663,7 @@ function Hero() {
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute flex justify-center bottom-0 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-10 overflow-hidden"
+                className="absolute flex justify-center bottom-0 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-50 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -873,6 +870,12 @@ function Hero() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className=" w-full h-full relative hidden md:block">
+         <div className=" absolute w-full h-screen flex items-end justify-center top-[12rem]">
+              <Image src={newRound} alt="new" className="z-0 "/>
+          </div>         
       </div>
 
       <SecondSection
