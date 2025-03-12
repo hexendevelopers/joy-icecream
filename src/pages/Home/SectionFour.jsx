@@ -29,7 +29,7 @@ function SectionFour() {
   return (
     <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-500 to-red-900 overflow-x-clip">
       <div className="absolute z-0 top-0 left-0 hidden lg:block">
-        <Image src={halfCircle} className="w-full h-full" />
+        <Image alt="balloon" src={halfCircle} className="w-full h-full" />
       </div>
       <div className="w-full h-full flex flex-col gap-10 lg:gap-0 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
@@ -47,7 +47,7 @@ function SectionFour() {
         {/* ----BARS DESKTOP ANIMATION--- */}
         <div className="hidden lg:block w-full h-1/2 relative">
           <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">
-            <Image src={barMain} className="w-[12.5rem]" />
+            <Image alt="ice cream bar" src={barMain} className="w-[12.5rem]" />
           </div>
           <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
             <motion.div
@@ -63,7 +63,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar1} className="w-full" />
+              <Image alt="ice cream bar" src={bar1} className="w-full" />
             </motion.div>
           </div>
           <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[10.5rem] ">
@@ -80,7 +80,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar2} className="w-full" />
+              <Image alt="ice cream bar" src={bar2} className="w-full" />
             </motion.div>
           </div>
           <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[10.5rem]">
@@ -97,7 +97,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar3} className="w-full" />
+              <Image alt="ice cream bar" src={bar3} className="w-full" />
             </motion.div>
           </div>
           <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[10.5rem] ">
@@ -114,7 +114,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar4} className="w-full" />
+              <Image alt="ice cream bar" src={bar4} className="w-full" />
             </motion.div>
           </div>
         </div>
@@ -122,7 +122,7 @@ function SectionFour() {
         {/* -----BARS ANIMATION MOBILE VERSION--- */}
         <div className="lg:hidden w-full h-1/2  relative">
           <div className="absolute z-50 bottom-0 left-1/2 transform -translate-x-1/2">
-            <Image src={barMain} className="w-[9.5rem]" />
+            <Image alt="ice cream bar" src={barMain} className="w-[9.5rem]" />
           </div>
           <div className="absolute bottom-28 left-1/2 z-20 transform -translate-x-1/2  w-[7rem]">
             <motion.div
@@ -138,7 +138,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar1} className="w-full" />
+              <Image alt="ice cream bar" src={bar1} className="w-full" />
             </motion.div>
           </div>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] ">
@@ -155,7 +155,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar2} className="w-full" />
+              <Image alt="ice cream bar" src={bar2} className="w-full" />
             </motion.div>
           </div>
           <div className="absolute bottom-28 left-1/2 z-20 transform -translate-x-1/2  w-[7rem]">
@@ -172,7 +172,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar3} className="w-full" />
+              <Image alt="ice cream bar" src={bar3} className="w-full" />
             </motion.div>
           </div>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] ">
@@ -189,7 +189,7 @@ function SectionFour() {
                 mass: 1,
               }}
             >
-              <Image src={bar4} className="w-full" />
+              <Image alt="ice cream bar" src={bar4} className="w-full" />
             </motion.div>
           </div>
         </div>

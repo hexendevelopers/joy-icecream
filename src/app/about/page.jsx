@@ -75,8 +75,8 @@ function page() {
         <SectionThree scrollYProgress1={scrollYProgress1} />
       </div>
       <div ref={ContainerRef2} className="h-[400vh]  w-full z-10 relative ">
-        <div className={`w-screen h-screen top-0 ${isFixed ? "fixed" : "hidden"}`}>
-        <Image src={tubBg}  className="h-full lg:h-auto object-cover lg:w-full"/>
+        <div className={`w-screen h-screen overflow-clip top-0 ${isFixed ? "fixed" : "hidden"}`}>
+        <Image src={tubBg}  className="h-screen w-screen object-cover overflow-clip"/>
         </div>
         
         <SectionFour scrollYProgress2={scrollYProgress2} />

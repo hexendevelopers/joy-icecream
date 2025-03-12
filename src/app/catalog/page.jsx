@@ -250,10 +250,10 @@ function page() {
       <div className=" px-20 md:flex items-center justify-center gap-5 hidden">
         {catalog.map((items, index) => {
           return (
-            <div className=" uppercase flex text-xl items-center gap-2 px-5 py-2 rounded-lg border-[0.5px] border-gray-200 mt-5">
+            <div key={index} className=" uppercase flex text-xl items-center gap-2 px-5 py-2 rounded-lg border-[0.5px] border-gray-200 mt-5">
               <div className=" w-10 h-10 ">
 
-              <Image src={frame} sizes="10" className=" w-full h-full object-cover"/>
+              <Image alt="frame" src={frame} sizes="10" className=" w-full h-full object-cover"/>
               </div>
               <h1 className=" font-semibold ">{items}</h1>
             </div>
@@ -273,6 +273,7 @@ function page() {
                 <div className="relative">
                   <div className="z-0">
                     <Image
+                    alt="image"
                       src={card.img}
                       width={200}
                       className="z-50 group-hover:scale-125 duration-500"

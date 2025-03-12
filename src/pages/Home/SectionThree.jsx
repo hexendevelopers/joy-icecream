@@ -108,7 +108,7 @@ function SectionThree() {
                 NATURAL
               </div>
             </div> */}
-            <Image src={centerText} className="w-[45%] lg:w-[60%]" />
+            <Image alt="text describing icecream" src={centerText} className="w-[45%] lg:w-[60%]" />
           </div>
 
           {/* Ice cream containers */}

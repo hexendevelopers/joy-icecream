@@ -76,7 +76,7 @@ const SectionFive = ({scrollYProgress2}) => {
     className="sticky lg:hidden mt-[50vh] top-0 h-screen w-screen bg-gradient-to-r from-red-900 to-red-500 overflow-hidden">
        <div className="relative w-full h-full">
        <div className="z-0 absolute right-0 bottom-0  w-full ">
-      <Image src={rodeMobile} className="bg-cover h-full w-full  lg:hidden"/>
+      <Image alt="red rode" src={rodeMobile} className="bg-cover h-full w-full  lg:hidden"/>
       </div>
       <div className="w-full h-full bg-transparent flex flex-col justify-around lg:flex-row z-10">
         <div className="lg:w-[55%] pt-8 lg:pt-0">
@@ -98,7 +98,7 @@ const SectionFive = ({scrollYProgress2}) => {
         </div>
 
         <div className="lg:w-[45%] w-full z-20 flex items-center justify-center">
-            <Image src={dub} className="w-[50%] lg:w-[70%]"/>
+            <Image alt="ice cream container" src={dub} className="w-[50%] lg:w-[70%]"/>
         </div>
       </div>
        </div>

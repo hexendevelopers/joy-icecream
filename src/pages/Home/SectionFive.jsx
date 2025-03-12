@@ -32,9 +32,9 @@ const thunderMedium = localFont({
 
 function SectionFive() {
   return (
-    <div className=" w-full h-96 lg:h-[80vh] bg-gradient-to-b from-red-800 to-red-500 flex items-center justify-center relative text-white overflow-x-clip">
+    <div className=" w-full h-96 lg:h-[80vh] bg-gradient-to-b from-red-900 to-red-500 flex items-center justify-center relative text-white overflow-x-clip">
       <div className="absolute inset-0 h-full w-full flex items-center">
-      <Image src={rode} className="w-full hidden lg:block" />
+      <Image alt="rounded rode" src={rode} className="w-full hidden lg:block" />
       </div>
       
       <h1
@@ -51,7 +51,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[10.5rem] left-8"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub1}  />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub1} alt="ice cream container"  />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -60,7 +60,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[17rem] left-[31rem] z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub2} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub2} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -69,7 +69,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[22.5rem] left-[14.5rem] z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub3} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub3} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 80 }}
@@ -78,16 +78,16 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[9.5rem] right-[37.5rem] z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub4} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub4} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
-          whileInView={{ width: 150 }}
+          whileInView={{ width: 150 }} 
           viewport={{ once: false, amount: 0.99 }}
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[17rem] right-20 z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub5} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub5} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -96,7 +96,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[20.5rem] right-[21.5rem] z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub6} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={dub6} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 60 }}
@@ -105,7 +105,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[10rem] right-1 z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar1} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar1} alt="ice cream bar" />
         </motion.div>
         <motion.div
           initial={{ width: 75 }}
@@ -114,7 +114,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[10rem] left-[14rem] z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar2} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar2} alt="ice cream bar" />
         </motion.div>
         <motion.div
           initial={{ width: 100 }}
@@ -123,14 +123,14 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[20rem] right-[35.5rem] z-30"
         >
-          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar3} />
+          <Image className="w-full transform -translate-y-1/2 animate-float-fast" src={bar3} alt="ice cream bar" />
         </motion.div>
       </div>
 
 
       {/* ----MOBILE-VERSION---- */}
       <div className="absolute  lg:hidden inset-0 h-full flex items-center w-full">
-      <Image src={RoundBg} className="w-full " />
+      <Image alt="rounded rode" src={RoundBg} className="w-full " />
       </div>
       <div className="lg:hidden w-full h-full flex flex-col justify-center items-center z-10">
         <h1 className={`${thunderMedium.className} text-[24vw] leading-none `}>
@@ -150,7 +150,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[6.5rem] left-6 z-20"
         >
-          <Image className="w-full" src={dub1Mob} />
+          <Image className="w-full" src={dub1Mob} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 80 }}
@@ -159,7 +159,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[6rem] right-6 z-20"
         >
-          <Image className="w-full" src={dub2Mob} />
+          <Image className="w-full" src={dub2Mob} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 80 }}
@@ -168,7 +168,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[14.5rem] right-3 z-20"
         >
-          <Image className="w-full" src={dub3Mob} />
+          <Image className="w-full" src={dub3Mob} alt="ice cream container" />
         </motion.div>
         <motion.div
           initial={{ width: 80 }}
@@ -177,7 +177,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[14rem] right-[8.2rem] z-20"
         >
-          <Image className="w-full" src={bar1Mob} />
+          <Image className="w-full" src={bar1Mob} alt="ice cream bar" />
         </motion.div>
         <motion.div
           initial={{ width: 75 }}
@@ -186,7 +186,7 @@ function SectionFive() {
           transition={{ duration: 0.4, delay: 0.4 }}
           className="absolute top-[8rem] right-1 z-20"
         >
-          <Image className="w-full" src={bar2Mob} />
+          <Image className="w-full" src={bar2Mob} alt="ice cream bar" />
         </motion.div>
       </div>
     </div>

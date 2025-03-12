@@ -36,7 +36,7 @@ function ContactFooter() {
           Shri LC Java
         </h1>
       </div>
-      <Image src={ellipseImg} alt="image" className='w-full  h-[40vh] object-contain' />
+      <Image src={ellipseImg} alt="image" className='w-full  lg:h-[40vh] object-contain' />
     </div>
   );
 }

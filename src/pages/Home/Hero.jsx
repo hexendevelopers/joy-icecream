@@ -367,37 +367,35 @@ function Hero() {
         <Image
           src={bg}
           alt="bg"
-          className=" w-full h-full hidden md:block bg-cover"
+          className=" w-full h-full hidden lg:block bg-cover"
         />
         <Image
           src={mobBg}
           alt="bg"
-          className=" w-full h-full  md:hidden object-contain object-bottom "
+          className=" w-full h-full  lg:hidden object-contain object-bottom "
         />
-
-        <div className=" w-full h-full absolute top-0 left-0 pt-6 px-5 lg:px-20">
+        <div className=" w-full h-full absolute top-0 left-0 pt-6 px-5 lg:px-20 z-">
           <div className=" w-full h-full flex flex-col justify-between">
             <div className=" flex flex-col gap-5 z-30 lg:z-50">
               <Navbar />
               <hr className=" w-full border-gray-300" />
               <div className=" flex flex-col justify-between ">
-              <div className=" w-full  flex  justify-center  ">
+                <div className=" w-full  flex  lg:justify-center  ">
                   <h1
                     className={`text-[38.5vw] leading-none w-full justify-center lg:text-[17vw] xl:text-[18.5vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
                   >
                     SCOOP THE JOY!
                   </h1>
-                 
                 </div>
                 {/* ----MOBILE VERSION--- */}
-                <div className=" w-full lg:hidden  flex justify-evenly gap-16 md:gap-0  flex-col ">
+                <div className=" w-full lg:hidden  flex justify-evenly gap-16 lg:gap-0  flex-col ">
                   <h1
-                    className={`text-[38.5vw] leading-none lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
+                    className={`text-[38.5vw] w-full leading-none lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
                   >
                     SCOOP
                   </h1>
                   <h1
-                    className={`text-[30vw] leading-none lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 md:mt-0`}
+                    className={`text-[30vw] w-full leading-none lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 lg:mt-0`}
                   >
                     THE JOY!
                   </h1>
@@ -407,6 +405,176 @@ function Hero() {
                 >
                   Indulge in the creamiest flavors, crafted with love!
                 </h1>
+              </div>
+
+
+              <div className=" w-full h-full absolute top-0 left-0 flex justify-between">
+                <div className="hidden lg:flex items-center gap-32 w-full justify-between overflow-hidden">
+                  <motion.div
+                    initial={{ x: 300, y: 200 }}
+                    animate={{ x: 0, y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className=" -ml-20 mt-20 z-50 transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image alt="coconut" src={coconut} width={200} />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: 100, y: 300 }}
+                    animate={{ x: 0, y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className=" relative -mt-[30rem] ml-16 bg-whit   z-50 flex flex-shrink-0"
+                  >
+                    <Image
+                    alt="choclate"
+                      src={choclate}
+                      width={130}
+                      className="z-50 mt-44 transform -translate-y-1/2 animate-float-fast"
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: 100, y: 300 }}
+                    animate={{ x: 0, y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className=" z-50 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image alt="berry" src={berry} width={120} />
+                  </motion.div>
+                  <motion.div
+                    className="z-50 -mt-56 transform -translate-y-1/2 animate-float-fast"
+                    initial={{ x: 0, y: 300 }}
+                    animate={{ x: 0, y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                  >
+                    <Image alt="caramel" src={caramel} width={140} />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: -300, y: 300 }}
+                    animate={{ x: 0, y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className=" z-20 -mt-54 -mr-16 -mt-28 transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image alt="flower" src={flower} width={160} />
+                  </motion.div>
+                </div>
+
+                {/* ---MOBILE VERSION---- */}
+                <div className="lg:hidden relative h-screen w-screen overflow-hidden">
+                  <motion.div
+                    initial={{ x: 100, y: 300, opacity: 0 }}
+                    animate={{ x: 0, y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className="absolute top-[13rem] -left-9 transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image alt="coconut" src={coconut} width={110} />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: -50, y: 300, opacity: 0 }}
+                    animate={{ x: 0, y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image alt="choclate" src={choclate} width={65} className="" />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: 0, y: 300, opacity: 0 }}
+                    animate={{ x: 0, y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image alt="berry" src={berry} width={65} />
+                  </motion.div>
+                  <motion.div
+                    className="absolute z-20 top-[20rem] left-[15.5rem]"
+                    initial={{ x: -20, y: 300, opacity: 0 }}
+                    animate={{ x: 0, y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                  >
+                    <Image
+                    alt="caramel"
+                      src={caramel}
+                      width={90}
+                      className=" transform -translate-y-1/2 animate-float-fast"
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: -100, y: 300, opacity: 0 }}
+                    animate={{ x: 0, y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      mass: 1,
+                    }}
+                    className="absolute -right-11 top-[10rem] transform -translate-y-1/2 animate-float-fast"
+                  >
+                    <Image src={flower} alt="flower" width={110} />
+                  </motion.div>
+                </div>
               </div>
             </div>
 
@@ -701,173 +869,6 @@ function Hero() {
                 </Canvas>
               </motion.div>
             </div>
-          </div>
-        </div>
-
-        <div className=" w-full h-full absolute top-0 left-0 flex  justify-between">
-          <div className="hidden md:flex items-center gap-32 w-full justify-between overflow-hidden">
-            <motion.div
-              initial={{ x: 300, y: 200 }}
-              animate={{ x: 0, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className=" -ml-20 mt-20 z-50 transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={coconut} width={200} />
-            </motion.div>
-            <motion.div
-              initial={{ x: 100, y: 300 }}
-              animate={{ x: 0, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className=" relative -mt-[30rem] ml-16 bg-whit   z-50 flex flex-shrink-0"
-            >
-              <Image
-                src={choclate}
-                width={130}
-                className="z-50 mt-44 transform -translate-y-1/2 animate-float-fast"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ x: 100, y: 300 }}
-              animate={{ x: 0, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className=" z-50 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={berry} width={120} />
-            </motion.div>
-            <motion.div
-              className="z-50 -mt-56 transform -translate-y-1/2 animate-float-fast"
-              initial={{ x: 0, y: 300 }}
-              animate={{ x: 0, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-            >
-              <Image src={caramel} width={140} />
-            </motion.div>
-            <motion.div
-              initial={{ x: -300, y: 300 }}
-              animate={{ x: 0, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className=" z-20 -mt-54 -mr-16 -mt-28 transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={flower} width={160} />
-            </motion.div>
-          </div>
-
-          {/* ---MOBILE VERSION---- */}
-          <div className="md:hidden relative h-screen w-screen overflow-hidden">
-            <motion.div
-              initial={{ x: 100, y: 300, opacity: 0 }}
-              animate={{ x: 0, y: 0, opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className="absolute top-[13rem] -left-9 transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={coconut} width={110} />
-            </motion.div>
-            <motion.div
-              initial={{ x: -50, y: 300, opacity: 0 }}
-              animate={{ x: 0, y: 0, opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={choclate} width={65} className="" />
-            </motion.div>
-            <motion.div
-              initial={{ x: 0, y: 300, opacity: 0 }}
-              animate={{ x: 0, y: 0, opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={berry} width={65} />
-            </motion.div>
-            <motion.div
-              className="absolute z-20 top-[20rem] left-[15.5rem]"
-              initial={{ x: -20, y: 300, opacity: 0 }}
-              animate={{ x: 0, y: 0, opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-            >
-              <Image
-                src={caramel}
-                width={90}
-                className=" transform -translate-y-1/2 animate-float-fast"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ x: -100, y: 300, opacity: 0 }}
-              animate={{ x: 0, y: 0, opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-              }}
-              className="absolute -right-11 top-[10rem] transform -translate-y-1/2 animate-float-fast"
-            >
-              <Image src={flower} width={110} />
-            </motion.div>
           </div>
         </div>
       </div>

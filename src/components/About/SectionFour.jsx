@@ -108,7 +108,7 @@ const SectionFour = ({ scrollYProgress2 }) => {
                 </p>
               </div>
             </div>
-            <Image src={lcJava} className="h-full" />
+            <Image alt="fonuder of joy ice creams ,LC Java" src={lcJava} className="h-full" />
           </div>
         </div>
       </div>
@@ -185,7 +185,7 @@ const SectionFour = ({ scrollYProgress2 }) => {
                 </p>
               </div>
             </div>
-            <Image src={lcJava} className="h-full" />
+            <Image alt="founder of joy ice creams ,LC Java" src={lcJava} className="h-full" />
           </div>
         </div>
       </div>

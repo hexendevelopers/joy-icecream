@@ -13,7 +13,7 @@ const thunderSemibold = localFont({
 
 function Main() {
   return (
-    <div className=" w-full flex  justify-center lg:pb-9 text-white">
+    <div className=" w-full flex h-screen  justify-center  text-white">
       <div className=" flex items-center flex-col gap-10">
         <div className=" flex flex-col gap-1 w-full lg:w-auto items-center">
           <h1
@@ -82,7 +82,7 @@ function Main() {
             ></textarea>
           </div>
           <button
-            className={`${thunderSemibold.className} uppercase lg:hidden text-white w-full rounded-lg bg-red-600 py-1.5 lg:py-0 text-3xl`}
+            className={`${thunderSemibold.className} uppercase text-white w-full rounded-lg bg-red-600 py-1.5 lg:py-0 text-3xl`}
           >
             submit
           </button>

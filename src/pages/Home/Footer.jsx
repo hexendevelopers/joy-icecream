@@ -38,7 +38,7 @@ function Footer() {
             Shri LC Java
           </h1>
         </div>
-        <Image src={ellipseImg} className="w-full lg:w-[40%]  h-auto" />
+        <Image src={ellipseImg} alt="half red circle" className="w-full lg:w-[40%]  h-auto" />
       </div>
     </div>
   );
