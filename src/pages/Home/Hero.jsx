@@ -363,7 +363,7 @@ function Hero() {
     <>
       <div
         ref={containerRef}
-        className=" w-screen h-screen  bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
+        className=" w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
 
         <Image
@@ -382,7 +382,7 @@ function Hero() {
             <div className=" flex flex-col justify-between ">
               <div className=" w-full  flex  lg:justify-center  ">
                 <h1
-                  className={`text-[38.5vw] mt-12 leading-none w-full justify-center lg:text-[17vw] xl:text-[16.8vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
+                  className={`mt-10 leading-none w-full justify-center lg:text-[17vw] xl:text-[16.5vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
                 >
                   SHARING THE JOY!
                 </h1>
@@ -872,9 +872,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className=" w-full h-full relative hidden md:block">
-         <div className=" absolute w-full h-screen flex items-end justify-center top-[25vh]">
-              <Image src={newRound} alt="new" className="z-0 "/>
+      <div className="w-full h-screen absolute hidden lg:block top-[45vh] z-0 ">
+         <div className="w-full h-full mx-auto">
+              <Image src={newRound} alt="new" className=""/>
           </div>         
       </div>
 
