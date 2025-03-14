@@ -45,6 +45,7 @@ function Navbar() {
           className="text-3xl text-white"
         />
       </div>
+
     </div>
   );
 }

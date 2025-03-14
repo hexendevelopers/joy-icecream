@@ -41,7 +41,7 @@ const SectionThree = ({scrollYProgress1}) => {
       translateY:translateY,
       translateX:translateX
     }}
-     className='hidden lg:flex sticky text-white top-0 left-0 w-screen h-screen bg-gradient-to-b from-red-500 to-red-900  items-center justify-center overflow-hidden z-0'>
+     className='hidden lg:flex sticky text-white top-0 left-0 w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  items-center justify-center overflow-hidden z-0'>
         <h1 className={`${thunderSemibold.className} text-[#F5A5A5] text-[5rem] lg:text-[15rem]`}>THE JOURNEY</h1>
     </motion.div>
 

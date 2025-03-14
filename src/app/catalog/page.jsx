@@ -195,7 +195,7 @@ function page() {
     }
   ]
   return (
-    <div className="w-full h-auto flex flex-col gap-10 bg-gradient-to-b from-red-900 to-red-500 text-white">
+    <div className="w-full h-auto flex flex-col gap-10 bg-gradient-to-b from-red-800 to-red-900 text-white">
       <div className=" px-5 lg:px-20 pt-6 flex flex-col gap-5  z-[60]">
         <Navbar />
         <hr />

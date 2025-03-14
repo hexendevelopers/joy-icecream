@@ -1,8 +1,7 @@
 import React from "react";
 import localFont from "next/font/local";
 import Image from "next/image";
-import ellipseImg from '../../app/assets/MOBILE/HOME/Ellipse.png'
-
+import ellipseImg from "../../app/assets/MOBILE/HOME/Ellipse.png";
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-BoldLC.otf",
@@ -15,7 +14,7 @@ const signatie = localFont({
 
 function ContactFooter() {
   return (
-    <div className=" w-full h-auto bg-gradient-to-b from-red-500 to-red-900  flex flex-col  pt-20  items-center justify-center text-white">
+    <div className=" w-full h-auto bg-gradient-to-b from-red-900 to-red-800  flex flex-col  py-20  items-center justify-center text-white">
       <div className=" flex flex-col gap-5 items-center px-7 lg:px-0 text-white">
         <h1
           className={` text-6xl ${thunder.className} font-semibold text-center uppercase text-[3rem] lg:w-[30rem]`}
@@ -32,11 +31,13 @@ function ContactFooter() {
           <h1>twitter</h1>
           <h1>pintrest</h1>
         </div>
-        <h1 className={`${signatie.className} text-2xl lg:text-4xl mt-16 font-semibold`}>
+        <h1
+          className={`${signatie.className} text-2xl lg:text-4xl mt-16 font-semibold`}
+        >
           Shri LC Java
         </h1>
       </div>
-      <Image src={ellipseImg} alt="image" className='w-full  lg:h-[40vh] object-contain' />
+
     </div>
   );
 }

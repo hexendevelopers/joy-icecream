@@ -12,12 +12,12 @@ import dynamic from 'next/dynamic';
 
 const SectionThree = dynamic(() => import('@/components/About/SectionThree'), {
   ssr: false,
-  loading: () => <div className="h-[700vh] w-full bg-gradient-to-b from-red-500 to-red-900" />
+  loading: () => <div className="h-[700vh] w-full bg-gradient-to-b from-red-800 to-red-900" />
 });
 
 const SectionFour = dynamic(() => import('@/components/About/SectionFour'), {
   ssr: false,
-  loading: () => <div className="h-screen w-full bg-gradient-to-r from-[#EC3D3D] to-[#ea2729]" />
+  loading: () => <div className="h-screen w-full bg-gradient-to-r from-red-900 to-red-800" />
 });
 
 const SectionFive = dynamic(() => import('@/components/About/SectionFive'), {
@@ -63,7 +63,7 @@ function page() {
 
   return (
     <div className=" w-full  flex flex-col overflow-clip">
-      <div className=" flex h-screen bg-gradient-to-b from-red-500 to-red-900 flex-col w-full gap-8 lg:gap-10 px-5 lg:px-20 pt-6 ">
+      <div className=" flex h-screen bg-gradient-to-b from-red-800 to-red-900 flex-col w-full gap-8 lg:gap-10 px-5 lg:px-20 pt-6 ">
         <div className=" flex flex-col gap-5 ">
           <Navbar />
           <hr />

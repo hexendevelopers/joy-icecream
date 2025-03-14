@@ -14,7 +14,7 @@ const signatie = localFont({
 
 function Footer() {
   return (
-    <div className="z-10 w-full h-auto lg:h-auto bg-gradient-to-b from-red-900 to-red-800 flex items-center justify-center text-white overflow-clip">
+    <div className="z-10 w-full h-auto lg:h-auto bg-gradient-to-b from-red-900 to-red-800 flex items-center pb-10 justify-center text-white overflow-clip">
       <div className="flex flex-col justify-around items-center gap-5">
         <div className=" flex flex-col gap-5   items-center">
           <h1
@@ -38,7 +38,7 @@ function Footer() {
             Shri LC Java
           </h1>
         </div>
-        <Image src={ellipseImg} alt="half red circle" className="w-full lg:w-[40%]  h-auto" />
+        {/* <Image src={ellipseImg} alt="half red circle" className="w-full lg:w-[40%]  h-auto" /> */}
       </div>
     </div>
   );
