@@ -17,7 +17,7 @@ const SectionThree = dynamic(() => import('@/components/About/SectionThree'), {
 
 const SectionFour = dynamic(() => import('@/components/About/SectionFour'), {
   ssr: false,
-  loading: () => <div className="h-screen w-full bg-gradient-to-r from-red-900 to-red-800" />
+  loading: () => <div className="h-screen w-full bg-gradient-to-r from-red-900 to-[#ea2729]" />
 });
 
 const SectionFive = dynamic(() => import('@/components/About/SectionFive'), {
