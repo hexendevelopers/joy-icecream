@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import React from "react";
-import lcJava from "../../app/assets/ABOUT US/lcjava.png";
+import lcJava from "../../app/assets/ABOUT US/lcjava.webp";
 import Image from "next/image";
 import { motion, useTransform } from "framer-motion";
 

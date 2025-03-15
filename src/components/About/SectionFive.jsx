@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
 import React from "react";
 import lcJava from '../../app/assets/ABOUT US/lcjava.png'
-import rode from '../../app/assets/ABOUT US/rode.png'
-import rodeMobile from '../../app/assets/MOBILE/HOME/RoundBg.png'
-import dub from '../../app/assets/ABOUT US/icetub.png'
+import rode from '../../app/assets/ABOUT US/rode.webp'
+import rodeMobile from '../../app/assets/MOBILE/HOME/RoundBgg.webp'
+import dub from '../../app/assets/ABOUT US/icetub.webp'
 import Image from "next/image";
 import { motion, useTransform } from "framer-motion";
 

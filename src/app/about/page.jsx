@@ -7,7 +7,7 @@ import SectionTwo from "../../components/About/SectionTwo";
 import Footer from "../../pages/Home/Footer";
 import {useScroll } from "framer-motion";
 import Image from "next/image";
-import tubBg from '../assets/ABOUT US/tub-bg.png';
+import tubBg from '../assets/ABOUT US/tub-bg.webp';
 import dynamic from 'next/dynamic';
 
 const SectionThree = dynamic(() => import('@/components/About/SectionThree'), {

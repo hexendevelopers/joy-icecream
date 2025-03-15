@@ -1,8 +1,8 @@
 import React from "react";
 import localFont from "next/font/local";
-import vintageImage from "../../app/assets/ABOUT US/HERO.png";
+import vintageImage from "../../app/assets/ABOUT US/HERO.webp";
 import Image from "next/image";
-import vintageImageMobile from '../../app/assets/MOBILE/ABOUT/HERO.png'
+import vintageImageMobile from '../../app/assets/MOBILE/ABOUT/HERO.webp'
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-BoldLC.otf",

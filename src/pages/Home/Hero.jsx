@@ -5,19 +5,19 @@ import { Bebas_Neue, Montez } from "next/font/google";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 import bg from "../../app/assets/HERO-SECTION/background-one.png";
-import mobBg from "../../app/assets/MOBILE/HOME/mobile-background1.png";
+import mobBg from "../../app/assets/MOBILE/HOME/mobile-background1.webp";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import coconut from "../../app/assets/HERO-SECTION/sunlover-cocco-1.png";
-import choclate from "../../app/assets/HERO-SECTION/CHOCOLATE.png";
-import berry from "../../app/assets/HERO-SECTION/straw.png";
-import caramel from "../../app/assets/HERO-SECTION/caramel.png";
-import flower from "../../app/assets/HERO-SECTION/sunlover-vanilla-1.png";
+import coconut from "../../app/assets/HERO-SECTION/sunlover-cocco-1.webp";
+import choclate from "../../app/assets/HERO-SECTION/CHOCOLATE.webp";
+import berry from "../../app/assets/HERO-SECTION/straw.webp";
+import caramel from "../../app/assets/HERO-SECTION/caramel.webp";
+import flower from "../../app/assets/HERO-SECTION/sunlover-vanilla-1.webp";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
-import newRound from '@/app/assets/HERO-SECTION/hero-bg.png'
+import newRound from '@/app/assets/HERO-SECTION/hero-bg.webp'
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -704,8 +704,8 @@ function Hero() {
           <div className=" w-full h-full absolute top-0 left-0 flex justify-between">
             <div className="hidden lg:flex items-center gap-32 w-full justify-between overflow-hidden">
               <motion.div
-                initial={{ x: 300, y: 200 }}
-                animate={{ x: 0, y: 0 }}
+                initial={{ x: 300, y: 200, opacity : 0 }}
+                animate={{ x: 0, y: 0 , opacity : 1 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -714,13 +714,13 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className=" -ml-20 mt-20 z-50 transform -translate-y-1/2 animate-float-fast"
+                className=" -ml-20 mt-20 z-50 "
               >
-                <Image alt="coconut" src={coconut} width={200} />
+                <Image alt="coconut" className="transform -translate-y-1/2 animate-float-fast" src={coconut} width={200} />
               </motion.div>
               <motion.div
-                initial={{ x: 100, y: 300 }}
-                animate={{ x: 0, y: 0 }}
+                initial={{ x: 100, y: 300, opacity : 0 }}
+                animate={{ x: 0, y: 0, opacity : 1 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -739,8 +739,8 @@ function Hero() {
                 />
               </motion.div>
               <motion.div
-                initial={{ x: 100, y: 300 }}
-                animate={{ x: 0, y: 0 }}
+                initial={{ x: 100, y: 300, opacity : 0 }}
+                animate={{ x: 0, y: 0, opacity : 1 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -749,14 +749,14 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className=" z-50 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                className=" z-50 -mt-32  ml-56 flex flex-shrink-0 "
               >
-                <Image alt="berry" src={berry} width={120} />
+                <Image alt="berry" src={berry} width={120} className="transform -translate-y-1/2 animate-float-fast" />
               </motion.div>
               <motion.div
-                className="z-50 -mt-56 transform -translate-y-1/2 animate-float-fast"
-                initial={{ x: 0, y: 300 }}
-                animate={{ x: 0, y: 0 }}
+                className="z-50 -mt-56"
+                initial={{ x: 0, y: 300, opacity : 0 }}
+                animate={{ x: 0, y: 0 , opacity : 1 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -766,11 +766,11 @@ function Hero() {
                   mass: 1,
                 }}
               >
-                <Image alt="caramel" src={caramel} width={140} />
+                <Image alt="caramel" src={caramel} width={140} className="transform -translate-y-1/2 animate-float-fast" />
               </motion.div>
               <motion.div
-                initial={{ x: -300, y: 300 }}
-                animate={{ x: 0, y: 0 }}
+                initial={{ x: -300, y: 300, opacity : 0 }}
+                animate={{ x: 0, y: 0, opacity : 1 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -779,9 +779,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className=" z-20 -mt-54 -mr-16 -mt-28 transform -translate-y-1/2 animate-float-fast"
+                className=" z-20 -mt-54 -mr-16 -mt-28 "
               >
-                <Image alt="flower" src={flower} width={160} />
+                <Image alt="flower" src={flower} width={160} className="transform -translate-y-1/2 animate-float-fast" />
               </motion.div>
             </div>
 
@@ -798,9 +798,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute top-[13rem] -left-9 transform -translate-y-1/2 animate-float-fast"
+                className="absolute top-[13rem] -left-9 "
               >
-                <Image alt="coconut" src={coconut} width={110} />
+                <Image alt="coconut" src={coconut} width={110} className="transform -translate-y-1/2 animate-float-fast" />
               </motion.div>
               <motion.div
                 initial={{ x: -50, y: 300, opacity: 0 }}
@@ -813,9 +813,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 "
               >
-                <Image alt="choclate" src={choclate} width={65} className="" />
+                <Image alt="choclate" src={choclate} width={65} className="transform -translate-y-1/2 animate-float-fast" />
               </motion.div>
               <motion.div
                 initial={{ x: 0, y: 300, opacity: 0 }}
@@ -828,9 +828,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0"
               >
-                <Image alt="berry" src={berry} width={65} />
+                <Image alt="berry" src={berry} width={65} className=" transform -translate-y-1/2 animate-float-fast" />
               </motion.div>
               <motion.div
                 className="absolute z-20 top-[20rem] left-[15.5rem]"

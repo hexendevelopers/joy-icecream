@@ -16,14 +16,14 @@ import frame from '../assets/CUTY/Frame 17.png'
 
 
 
-import Starwbeery from "../assets/CATALOG/TUB IMG/STRAWBERRY.png";
+import Starwbeery from "../assets/CATALOG/TUB IMG/STRAWBERRY.webp";
 import OneStrawbeey from "../assets/CATALOG/CATALOG CUT FRUITS/STRAWBERRY/1.png";
 import twoStrawbeey from "../assets/CATALOG/CATALOG CUT FRUITS/STRAWBERRY/2.png";
 import threeStrawbeey from "../assets/CATALOG/CATALOG CUT FRUITS/STRAWBERRY/3.png";
 import fourStrawbeey from "../assets/CATALOG/CATALOG CUT FRUITS/STRAWBERRY/4.png";
 
 
-import butterscotch from "../assets/CATALOG/TUB IMG/BUTTERSCOTCH.png";
+import butterscotch from "../assets/CATALOG/TUB IMG/BUTTERSCOTCH.webp";
 import Onebutterscotch from "../assets/CATALOG/CATALOG CUT FRUITS/BUTTER SCOTCH/1.png";
 import twobutterscotch from "../assets/CATALOG/CATALOG CUT FRUITS/BUTTER SCOTCH/2.png";
 import threebutterscotch from "../assets/CATALOG/CATALOG CUT FRUITS/BUTTER SCOTCH/3.png";
@@ -31,43 +31,43 @@ import fourbutterscotch from "../assets/CATALOG/CATALOG CUT FRUITS/BUTTER SCOTCH
 
 
 
-import Mango from "../assets/CATALOG/TUB IMG/MANGO.png";
+import Mango from "../assets/CATALOG/TUB IMG/MANGO.webp";
 import OneMango from "../assets/CATALOG/CATALOG CUT FRUITS/MANGO/1.png";
 import twoMango from "../assets/CATALOG/CATALOG CUT FRUITS/MANGO/2.png";
 import threeMango from "../assets/CATALOG/CATALOG CUT FRUITS/MANGO/2-1.png";
 import fourMango from "../assets/CATALOG/CATALOG CUT FRUITS/MANGO/4.png";
 
-import SpanishDelight from "../assets/CATALOG/TUB IMG/SPANISH DELIGHT.png";
+import SpanishDelight from "../assets/CATALOG/TUB IMG/SPANISH DELIGHT.webp";
 import OneSpanish from "../assets/CATALOG/CATALOG CUT FRUITS/SPANISH DELIGHT/1.png";
 import twoSpanish from "../assets/CATALOG/CATALOG CUT FRUITS/SPANISH DELIGHT/2.png";
 import threeSpanish from "../assets/CATALOG/CATALOG CUT FRUITS/SPANISH DELIGHT/3.png";
 import fourSpanish from "../assets/CATALOG/CATALOG CUT FRUITS/SPANISH DELIGHT/4.png";
 
-import Chikoo from "../assets/CATALOG/TUB IMG/CHIKOO.png";
+import Chikoo from "../assets/CATALOG/TUB IMG/CHIKOO.webp";
 import OneChikoo from "../assets/CATALOG/CATALOG CUT FRUITS/CHIKOO/1.png";
 import twoChikoo from "../assets/CATALOG/CATALOG CUT FRUITS/CHIKOO/2.png";
 import threeChikoo from "../assets/CATALOG/CATALOG CUT FRUITS/CHIKOO/3.png";
 import fourChikoo from "../assets/CATALOG/CATALOG CUT FRUITS/CHIKOO/4.png";
 
-import Kulfi from "../assets/CATALOG/TUB IMG/KULFI.png";
+import Kulfi from "../assets/CATALOG/TUB IMG/KULFI.webp";
 import OneKulfi from "../assets/CATALOG/CATALOG CUT FRUITS/KULFI/1.png";
 import twoKulfi from "../assets/CATALOG/CATALOG CUT FRUITS/KULFI/2.png";
 import threeKulfi from "../assets/CATALOG/CATALOG CUT FRUITS/KULFI/3.png";
 import fourKulfi from "../assets/CATALOG/CATALOG CUT FRUITS/KULFI/4.png";
 
-import Pista from "../assets/CATALOG/TUB IMG/PISTA GREEN.png";
+import Pista from "../assets/CATALOG/TUB IMG/PISTA GREEN.webp";
 import OnePista from "../assets/CATALOG/CATALOG CUT FRUITS/PISTA GREEN/1.png";
 import twoPista from "../assets/CATALOG/CATALOG CUT FRUITS/PISTA GREEN/2.png";
 import threePista from "../assets/CATALOG/CATALOG CUT FRUITS/PISTA GREEN/3.png";
 import fourPista from "../assets/CATALOG/CATALOG CUT FRUITS/PISTA GREEN/4.png";
 
-import Vanilla from "../assets/CATALOG/TUB IMG/VANILLA.png";
+import Vanilla from "../assets/CATALOG/TUB IMG/VANILLA.webp";
 import OneVanilla from "../assets/CATALOG/CATALOG CUT FRUITS/VANILLA/1.png";
 import twoVanilla from "../assets/CATALOG/CATALOG CUT FRUITS/VANILLA/2.png";
 import threeVanilla from "../assets/CATALOG/CATALOG CUT FRUITS/VANILLA/3.png";
 import fourVanilla from "../assets/CATALOG/CATALOG CUT FRUITS/VANILLA/4.png";
 
-import Coconut from "../assets/CATALOG/TUB IMG/TENDER COCONUT.png";
+import Coconut from "../assets/CATALOG/TUB IMG/TENDER COCONUT.webp";
 import OneCoconut from "../assets/CATALOG/CATALOG CUT FRUITS/TENDER COCONUT/1.png";
 import twoCoconut from "../assets/CATALOG/CATALOG CUT FRUITS/TENDER COCONUT/2.png";
 import threeCoconut from "../assets/CATALOG/CATALOG CUT FRUITS/TENDER COCONUT/3.png";
