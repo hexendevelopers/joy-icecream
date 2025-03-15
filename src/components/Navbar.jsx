@@ -12,7 +12,7 @@ function Navbar() {
   const pathname = usePathname();
 
   const isActive = (path) => {
-    return pathname === path ? "bg-white text-[#cc0000]" : "";
+    return pathname === path ? "bg-white text-[#cc0000]" : "text-white";
   };
 
   return (
@@ -25,22 +25,22 @@ function Navbar() {
       </Link>
       <div className="items-center gap-5 hidden lg:flex">
         <Link href="/">
-          <button className={`text-white px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/")}`}>
+          <button className={`px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/")}`}>
             Home
           </button>
         </Link>
         <Link href="/about">
-          <button className={`text-white px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/about")}`}>
+          <button className={`px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/about")}`}>
             About
           </button>
         </Link>
         <Link href="/contact">
-          <button className={`text-white px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/contact")}`}>
+          <button className={`px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/contact")}`}>
             Contact
           </button>
         </Link>
         <Link href="/catalog">
-          <button className={`text-white px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/catalog")}`}>
+          <button className={`px-5 py-2 border border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#cc0000] ${isActive("/catalog")}`}>
             Catalog
           </button>
         </Link>
