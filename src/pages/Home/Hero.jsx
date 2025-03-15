@@ -13,7 +13,7 @@ import choclate from "../../app/assets/HERO-SECTION/CHOCOLATE.webp";
 import berry from "../../app/assets/HERO-SECTION/straw.webp";
 import caramel from "../../app/assets/HERO-SECTION/caramel.webp";
 import flower from "../../app/assets/HERO-SECTION/sunlover-vanilla-1.webp";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
@@ -38,31 +38,38 @@ const manrope = Manrope({
 function Dub2Model({ value, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
   const modelRef = useRef();
+  const { gl } = useThree();
 
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
-        // Enhance materials for better reflections
+        // Fix blurring issue by adjusting material properties
+        child.material.roughness = 0.5;
+        child.material.metalness = 0.3;
+        child.material.envMapIntensity = 1.5;
 
-        // child.material.roughness = 0.1; // Lower roughness for more reflective surface
-        // child.material.metalness = 0.7; // Higher metalness for better reflections
+        // Fix rendering issues
+        child.material.transparent = false;
+        child.material.depthWrite = true;
+        child.material.depthTest = true;
 
-        // Adjust for plastic-like material
-        child.material.roughness = 0.5; // Adjust value between 0-1
-        child.material.metalness = 0.3; // Adjust value between 0-1
-        child.material.envMapIntensity = 1.2; // Keep environment reflections
-        child.material.needsUpdate = true;
+        // Improve texture clarity
+        const texture = child.material.map;
+        if (texture) {
+          texture.anisotropy = gl.capabilities.getMaxAnisotropy();
+          texture.needsUpdate = true;
+        }
 
-        // Enable shadows
         child.castShadow = true;
         child.receiveShadow = true;
+        child.material.needsUpdate = true;
       }
     });
-  }, [glb]);
+  }, [glb, gl]); // Add gl to dependency array
 
   useFrame(() => {
     if (rotateY && modelRef.current) {
-      modelRef.current.rotation.y += 0.01; //Adjustment of Y rotation desktop
+      modelRef.current.rotation.y += 0.01; // Smooth Y-axis rotation
     }
   });
 
@@ -72,23 +79,22 @@ function Dub2Model({ value, rotateY }) {
       object={glb.scene}
       scale={[3.4, 3.2, 3.2]}
       position={[0, 0, 0]}
-      rotation={[0, value * 0.00915, 0]} //Adjustment of facing position on stage desktop
+      rotation={[0, value * 0.00915, 0]} // Adjust rotation
     />
   );
 }
 
-// Add this new component to create dynamic lighting based on scroll position
+// Spotlight for dynamic lighting based on scroll position
 function SpotlightFollower({ value }) {
   const spotlightRef = useRef();
 
   useFrame(() => {
     if (spotlightRef.current) {
-      // Move spotlight based on scroll value for dynamic reflections
       const normalizedValue = Math.min(value / 300, 1);
       spotlightRef.current.position.x = 3 - normalizedValue * 6;
       spotlightRef.current.position.y = 4 - normalizedValue * 2;
 
-      // Increase intensity slightly during rotation phase
+      // Adjust light intensity dynamically
       if (value > 400) {
         spotlightRef.current.intensity = 15 + Math.sin(Date.now() * 0.002) * 3;
       } else {
@@ -415,7 +421,15 @@ function Hero() {
                 }}
                 className="absolute bottom-[7rem] w-full flex items-center justify-center h-[24rem] z-20"
               >
-                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}
+
+shadows
+dpr={[1, 2]} // High DPI rendering for better quality
+gl={{ antialias: true }} // Enable anti-aliasing
+                
+                
+                
+                >
                   {/* Create environment for reflections */}
                   {/* <Environment 
                      preset="sunset"
@@ -459,6 +473,18 @@ function Hero() {
                   <Dub2Model value={value} rotateY={rotateY} />
                 </Canvas>
               </motion.div>
+
+
+
+
+
+
+
+
+
+
+
+
 
               <motion.div
                 initial={{ x: -150, rotateZ: 0 }}
@@ -704,8 +730,8 @@ function Hero() {
           <div className=" w-full h-full absolute top-0 left-0 flex justify-between">
             <div className="hidden lg:flex items-center gap-32 w-full justify-between overflow-hidden">
               <motion.div
-                initial={{ x: 300, y: 200, opacity : 0 }}
-                animate={{ x: 0, y: 0 , opacity : 1 }}
+                initial={{ x: 300, y: 200 }}
+                animate={{ x: 0, y: 0 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -714,13 +740,13 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className=" -ml-20 mt-20 z-50 "
+                className=" -ml-20 mt-20 z-50 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="coconut" className="transform -translate-y-1/2 animate-float-fast" src={coconut} width={200} />
+                <Image alt="coconut" src={coconut} width={200} />
               </motion.div>
               <motion.div
-                initial={{ x: 100, y: 300, opacity : 0 }}
-                animate={{ x: 0, y: 0, opacity : 1 }}
+                initial={{ x: 100, y: 300 }}
+                animate={{ x: 0, y: 0 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -739,8 +765,8 @@ function Hero() {
                 />
               </motion.div>
               <motion.div
-                initial={{ x: 100, y: 300, opacity : 0 }}
-                animate={{ x: 0, y: 0, opacity : 1 }}
+                initial={{ x: 100, y: 300 }}
+                animate={{ x: 0, y: 0 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -749,14 +775,14 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className=" z-50 -mt-32  ml-56 flex flex-shrink-0 "
+                className=" z-50 -mt-32  ml-56 flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="berry" src={berry} width={120} className="transform -translate-y-1/2 animate-float-fast" />
+                <Image alt="berry" src={berry} width={120} />
               </motion.div>
               <motion.div
-                className="z-50 -mt-56"
-                initial={{ x: 0, y: 300, opacity : 0 }}
-                animate={{ x: 0, y: 0 , opacity : 1 }}
+                className="z-50 -mt-56 transform -translate-y-1/2 animate-float-fast"
+                initial={{ x: 0, y: 300 }}
+                animate={{ x: 0, y: 0 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -766,11 +792,11 @@ function Hero() {
                   mass: 1,
                 }}
               >
-                <Image alt="caramel" src={caramel} width={140} className="transform -translate-y-1/2 animate-float-fast" />
+                <Image alt="caramel" src={caramel} width={140} />
               </motion.div>
               <motion.div
-                initial={{ x: -300, y: 300, opacity : 0 }}
-                animate={{ x: 0, y: 0, opacity : 1 }}
+                initial={{ x: -300, y: 300 }}
+                animate={{ x: 0, y: 0 }}
                 transition={{
                   duration: 1,
                   delay: 0.5,
@@ -779,9 +805,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className=" z-20 -mt-54 -mr-16 -mt-28 "
+                className=" z-20 -mt-54 -mr-16 -mt-28 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="flower" src={flower} width={160} className="transform -translate-y-1/2 animate-float-fast" />
+                <Image alt="flower" src={flower} width={160} />
               </motion.div>
             </div>
 
@@ -798,9 +824,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute top-[13rem] -left-9 "
+                className="absolute top-[13rem] -left-9 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="coconut" src={coconut} width={110} className="transform -translate-y-1/2 animate-float-fast" />
+                <Image alt="coconut" src={coconut} width={110} />
               </motion.div>
               <motion.div
                 initial={{ x: -50, y: 300, opacity: 0 }}
@@ -813,9 +839,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 "
+                className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="choclate" src={choclate} width={65} className="transform -translate-y-1/2 animate-float-fast" />
+                <Image alt="choclate" src={choclate} width={65} className="" />
               </motion.div>
               <motion.div
                 initial={{ x: 0, y: 300, opacity: 0 }}
@@ -828,9 +854,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0"
+                className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="berry" src={berry} width={65} className=" transform -translate-y-1/2 animate-float-fast" />
+                <Image alt="berry" src={berry} width={65} />
               </motion.div>
               <motion.div
                 className="absolute z-20 top-[20rem] left-[15.5rem]"
