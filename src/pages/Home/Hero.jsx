@@ -215,7 +215,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.9, 3.1, 3.9]}
+      scale={[3.1, 3.1, 3.1]}
       position={[0, 0, 0]}
       rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
     />
