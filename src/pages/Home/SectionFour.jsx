@@ -29,10 +29,10 @@ function SectionFour() {
   return (
     <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-900 to-red-800 overflow-x-clip">
       <div className="absolute z-0 top-0 left-0 hidden lg:block"></div>
-      <div className="w-full h-full flex flex-col gap-10 lg:gap-0 justify-around lg:justify-between items-center">
+      <div className="w-full h-full flex flex-col gap-10 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
           <h1
-            className={`${thunderSemibold.className} lg:${thunderSemibold.className} uppercase text-white lg:uppercase text-[3.6rem] md:font-semibold md:text-[12rem] md:uppercase font-bold`}
+            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] lg:font-semibold lg:text-[11rem]  font-bold`}
           >
             Ice Cream Bars
           </h1>
@@ -43,7 +43,7 @@ function SectionFour() {
           </h1>
         </div>
         {/* ----BARS DESKTOP ANIMATION--- */}
-        <div className="hidden lg:block mt-5 w-full h-1/2 relative">
+        <div className="hidden lg:block w-full  relative">
           <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">
             <Image alt="ice cream bar" src={barMain} className="w-[12.5rem]" />
           </div>
@@ -118,7 +118,7 @@ function SectionFour() {
         </div>
 
         {/* -----BARS ANIMATION MOBILE VERSION--- */}
-        <div className="lg:hidden w-full h-1/2  relative">
+        <div className="lg:hidden w-full h-1/2 relative">
           <div className="absolute z-50 bottom-0 left-1/2 transform -translate-x-1/2">
             <Image alt="ice cream bar" src={barMain} className="w-[9.5rem]" />
           </div>

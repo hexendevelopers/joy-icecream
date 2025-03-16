@@ -37,9 +37,9 @@ export default function RootLayout({
       <body
         className={`${manrope.className} antialiased`}
       >
-      <SmoothScroll>
+      {/* <SmoothScroll> */}
         {children}
-      </SmoothScroll>
+      {/* </SmoothScroll> */}
       </body>
     </html>
   );

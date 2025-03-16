@@ -284,13 +284,13 @@ function Hero() {
   //Stop position adjustment of main Dub
   useEffect(() => {
     if (dubTop && stageTop) {
-      setLimit(stageTop - dubTop + 40);
+      setLimit(stageTop - dubTop + 55);
     }
   }, [dubTop, stageTop]);
 
   useEffect(() => {
     if (dubTopMobile && stageTopMobile) {
-      setLimitMobile(stageTopMobile - dubTopMobile + 25);
+      setLimitMobile(stageTopMobile - dubTopMobile + 35);
     }
   }, [dubTopMobile, stageTopMobile]);
 
