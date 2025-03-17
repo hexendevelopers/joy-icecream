@@ -17,6 +17,7 @@ import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
 import newRound from '@/app/assets/HERO-SECTION/hero-bg.webp'
 import heroCircleMob from '../../app/assets/MOBILE/hero-circle-mob.png'
+import Lenis from "@studio-freight/lenis";
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -291,9 +292,9 @@ function Hero() {
   //   console.log(stageTop, "stageTop");
   // }, [dubTop, stageTop]);
 
-  // useEffect(() => {
-  //   console.log(limitMobile, "limit");
-  // }, [limitMobile]);
+  useEffect(() => {
+    console.log(value, "value");
+  }, [value]);
 
   useEffect(() => {
     if (!hasSetDubTop.current) {
@@ -313,15 +314,57 @@ function Hero() {
     }
   }, [dubBoundsMobile]);
 
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!containerRef.current) return;
+
+  //     // Get the actual position relative to the viewport using offsetTop
+  //     const containerTop = Math.round(
+  //       containerRef.current.offsetTop - window.scrollY
+  //     );
+
+  //     // Round the value to the nearest multiple of 3
+  //     // const roundedTop = Math.round(containerTop / 3) * 3;
+
+  //     if (containerTop < -limit) {
+  //       if (value !== limit) {
+  //         setValue(limit);
+  //         setRotateY(true);
+  //       }
+  //     } else if (containerTop < 0) {
+  //       if (value !== -containerTop) {
+  //         setValue(-containerTop);
+  //         setRotateY(false);
+  //       }
+  //     } else {
+  //       setValue(0);
+  //       setRotateY(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [limit, value]);
+  
+
   useEffect(() => {
     const handleScroll = () => {
-      const containerTop = containerRef.current.getBoundingClientRect().top;
+      let containerTop = Math.round(containerRef.current.getBoundingClientRect().top);
+      containerTop = Math.round(containerTop / 3) * 3;
       if (containerTop < -limit) {
-        setValue(limit);
+        if(value !== limit){
+          setValue(limit);
         setRotateY(true);
+        }
       } else if (containerTop < 0) {
-        setValue(-containerTop);
-        setRotateY(false);
+        if(value !== -containerTop){
+          setValue(-containerTop);
+          setRotateY(false);
+        }
       } else {
         setValue(0);
         setRotateY(false);
@@ -334,6 +377,8 @@ function Hero() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [limit]);
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -412,8 +457,9 @@ function Hero() {
               </h1>
             </div>
 
-            <div className="hidden xl:block h-full  w-full relative">
+            <div data-lenis-ignore className="hidden xl:block h-full  w-full relative">
               <motion.div
+              data-lenis-ignore
                 ref={dubRef}
                 style={{
                   transform: `translateY(${value}px)`,
