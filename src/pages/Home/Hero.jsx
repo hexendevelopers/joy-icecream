@@ -4,8 +4,6 @@ import Navbar from "../../components/Navbar";
 import { Bebas_Neue, Montez } from "next/font/google";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
-import bg from "../../app/assets/HERO-SECTION/background-one.png";
-import mobBg from "../../app/assets/MOBILE/HOME/mobile-background1.webp";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import coconut from "../../app/assets/HERO-SECTION/sunlover-cocco-1.webp";
@@ -18,6 +16,7 @@ import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
 import newRound from '@/app/assets/HERO-SECTION/hero-bg.webp'
+import heroCircleMob from '../../app/assets/MOBILE/hero-circle-mob.png'
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -134,7 +133,7 @@ function Dub1Model() {
   }, [glb]);
 
   return (
-    <primitive object={glb.scene} scale={[2, 2, 2]} position={[0, 0, 0]} />
+    <primitive object={glb.scene} scale={[3.5, 3.5, 3.5]} position={[0, -1.65, 0]} />
   );
 }
 
@@ -153,7 +152,7 @@ function Dub3Model() {
   }, [glb]);
 
   return (
-    <primitive object={glb.scene} scale={[2, 2, 2]} position={[0, 0, 0]} />
+    <primitive object={glb.scene} scale={[3.5, 3.5, 3.5]} position={[0, -1.65, 0]} />
   );
 }
 
@@ -161,10 +160,6 @@ function Dub3Model() {
 
 function Dub1ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/SPANISH.glb");
-
-  useEffect(() => {
-    glb.scene.position.set(0, 0, 0); // Lock model position
-  }, [glb]);
 
   useEffect(() => {
     glb.scene.traverse((child) => {
@@ -180,8 +175,8 @@ function Dub1ModelMob() {
   return (
     <primitive
       object={glb.scene}
-      scale={[1.2, 1.2, 1.2]}
-      position={[0, 0, 0]}
+      scale={[3, 3, 3]}
+      position={[1, -1.3, 0]}
       rotation={[0, 0, Math.PI / 6]} // Rotate 30 degrees on Z-axis
     />
   );
@@ -221,8 +216,8 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.1, 3.1, 3.1]}
-      position={[0, 0, 0]}
+      scale={[3.5, 3.5, 3.5]}
+      position={[0, -1.65, 0]}
       rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
     />
   );
@@ -231,9 +226,6 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 function Dub3ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
 
-  useEffect(() => {
-    glb.scene.position.set(0, 0, 0); // Lock model position
-  }, [glb]);
 
   useEffect(() => {
     glb.scene.traverse((child) => {
@@ -249,8 +241,8 @@ function Dub3ModelMob() {
   return (
     <primitive
       object={glb.scene}
-      scale={[1.2, 1.2, 1.2]}
-      position={[0, 0, 0]}
+      scale={[3, 3, 3]}
+      position={[-1, -1.3, 0]}
       rotation={[0, 0, -Math.PI / 6]} // Rotate 30 degrees on Z-axis
     />
   );
@@ -372,19 +364,19 @@ function Hero() {
         className=" w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
 
-        <Image
+        {/* <Image
           src={mobBg}
           alt="bg"
           className=" w-full h-full  lg:hidden object-contain object-bottom "
-        />
-        <div className=" w-full h-full absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
-          <div className=" flex flex-col gap-5 z-30 lg:z-50">
-            <Navbar />
-            
-          </div>
+        /> */}
+        <div className=" w-screen h-screen absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
+         
 
           {/* ----TEXT AND ICE CREAM CONTAINERS---- */}
           <div className="flex h-full w-full flex-col justify-between">
+          <div className=" flex  z-30 lg:z-50">
+            <Navbar />
+          </div>
             <div className=" flex flex-col justify-between ">
               <div className=" w-full  flex  lg:justify-center  ">
                 <h1
@@ -413,13 +405,13 @@ function Hero() {
               </h1>
             </div>
 
-            <div className="hidden lg:block  w-full relative">
+            <div className="hidden lg:block h-full  w-full relative">
               <motion.div
                 ref={dubRef}
                 style={{
                   transform: `translateY(${value}px)`,
                 }}
-                className="absolute bottom-[7rem] w-full flex items-center justify-center h-[22rem] z-20"
+                className="absolute bottom-10 w-full  flex items-center justify-center h-[22rem] z-20"
               >
                 <Canvas camera={{ position: [0, 0, 5], fov: 50 }}
 
@@ -488,7 +480,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
 
               <motion.div
                 initial={{ x: -180, rotateZ: 0 }}
-                animate={{ x: -40, rotateZ: 30 }}
+                animate={{ x: 15, rotateZ: 30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -497,7 +489,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute z-10  -bottom-20 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
+                className=" absolute z-10  bottom-12 left-1/2 -translate-x-1/2 h-[15rem] w-[20rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -532,7 +524,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
               </motion.div>
               <motion.div
                 initial={{ x: 180, rotateZ: 0 }}
-                animate={{ x: 40, rotateZ: -30 }}
+                animate={{ x: 10, rotateZ: -30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -541,7 +533,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute -bottom-20 right-1/2 translate-x-1/2 h-[30rem] w-[20rem] z-10 overflow-hidden"
+                className="absolute bottom-[3.7rem] right-1/2 translate-x-1/2 h-[15rem] w-[20rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -578,13 +570,13 @@ gl={{ antialias: true }} // Enable anti-aliasing
             </div>
 
             {/* ----MOBILE VERSION---- */}
-            <div className="lg:hidden relative w-full">
+            <div className="lg:hidden relative h-full w-full">
               <motion.div
                 ref={dubRefMobile}
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute bottom-[9rem] w-full  flex items-center justify-center  h-[15rem]  z-20"
+                className="absolute bottom-10  w-full  flex items-center justify-center  h-[15rem]  z-20"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -636,7 +628,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
 
               <motion.div
                 initial={{ x: -100 }}
-                animate={{ x: 15 }}
+                animate={{ x: 50, }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -645,7 +637,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute flex justify-center Z-10  bottom-0 left-1/2 -translate-x-1/2 h-[30rem] w-[11rem]  overflow-hidden"
+                className=" absolute flex justify-center z-10  bottom-10 left-1/2 -translate-x-1/2 h-[12rem] w-[11rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -680,7 +672,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
 
               <motion.div
                 initial={{ x: 100 }}
-                animate={{ x: -15 }}
+                animate={{ x: -35 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -689,7 +681,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute flex justify-center bottom-0 right-1/2 translate-x-1/2 h-[30rem] w-[11rem] z-10 overflow-hidden"
+                className="absolute flex justify-center bottom-12 right-1/2 translate-x-1/2 h-[12rem] w-[11rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -901,6 +893,12 @@ gl={{ antialias: true }} // Enable anti-aliasing
       <div className="w-full h-screen absolute hidden lg:block top-[45vh] z-0 ">
          <div className="w-full h-full mx-auto">
               <Image src={newRound} alt="new" className=""/>
+          </div>         
+      </div>
+
+      <div className="w-full h-screen absolute  lg:hidden top-[75vh] z-0 ">
+         <div className="w-full h-full mx-auto">
+              <Image src={heroCircleMob} alt="new" className=""/>
           </div>         
       </div>
 

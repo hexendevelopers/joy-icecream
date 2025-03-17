@@ -32,7 +32,7 @@ function SectionFour() {
       <div className="w-full h-full flex flex-col gap-10 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
           <h1
-            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] lg:font-semibold lg:text-[11rem]  font-bold`}
+            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] lg:font-semibold lg:text-[9rem]  font-bold`}
           >
             Ice Cream Bars
           </h1>
@@ -43,11 +43,11 @@ function SectionFour() {
           </h1>
         </div>
         {/* ----BARS DESKTOP ANIMATION--- */}
-        <div className="hidden lg:block w-full  relative">
+        <div className="hidden lg:block h-1/2 w-full  relative">
           <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">
-            <Image alt="ice cream bar" src={barMain} className="w-[12.5rem]" />
+            <Image alt="ice cream bar" src={barMain} className="w-[11.5rem]" />
           </div>
-          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[12.5rem]">
+          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[11.5rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0, scale: 0 }}
               whileInView={{ rotateZ: 40, x: 130, scale: 1 }}
@@ -64,7 +64,7 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar1} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[12.5rem] ">
+          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[11.5rem] ">
             <motion.div
               initial={{ rotateZ: 0, x: 0, y: 0, scale: 0 }}
               whileInView={{ rotateZ: 60, x: 185, y: 20, scale: 1 }}
@@ -81,7 +81,7 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar2} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[12.5rem]">
+          <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[11.5rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0, scale: 0 }}
               whileInView={{ rotateZ: -40, x: -130, scale: 1 }}
@@ -98,7 +98,7 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar3} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[12.5rem]  ">
+          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2   w-[11.5rem]  ">
             <motion.div
               initial={{ rotateZ: 0, x: 0, y: 0, scale: 0 }}
               whileInView={{ rotateZ: -60, x: -185, y: 20, scale: 1 }}

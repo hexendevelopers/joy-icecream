@@ -54,17 +54,17 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
   }, [stageBoundsMobile]);
 
   return (
-    <div className=" w-screen  h-screen bg-gradient-to-b from-red-900 to-red-800 py-16 lg:py-5 flex justify-center items-center  text-white overflow-x-clip ">
+    <div className=" w-screen h-[80vh] lg:h-screen bg-gradient-to-b from-red-900 to-red-800 pb-16 lg:py-5 flex justify-center items-center  text-white overflow-x-clip ">
       <div
         className={` flex flex-col justify-between items-center relative h-full  w-full `}
       >
         <div className="flex flex-col gap-5 items-center px-7 lg:px-20 ">
           <h1
-            className={`${thunderSemiBold.className} text-5xl lg:text-8xl uppercase font-bold text-white`}
+            className={`${thunderSemiBold.className} text-4xl lg:text-8xl uppercase font-bold text-white`}
           >
             joy in every scoop
           </h1>
-          <h1 className="w-full md:w-[30rem] text-white text-sm md:text-base leading-6 lg:leading-normal -mt-3 text-center">
+          <h1 className="w-[80%] lg:w-[30rem] text-white text-xs lg:text-base leading-6 lg:leading-normal -mt-3 text-center">
             It’s about turning simple moments into delightful experiences. Ice
             cream isn’t just a dessert; it’s a way to bring happiness
           </h1>
