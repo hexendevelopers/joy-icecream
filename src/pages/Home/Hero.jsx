@@ -77,7 +77,7 @@ function Dub2Model({ value, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.74, 3.52, 3.52]}
+      scale={[3.50, 3.50, 3.50]}
       position={[0, -1.65, 0]}
       rotation={[0, value * 0.00915, 0]} // Adjust rotation
     />
