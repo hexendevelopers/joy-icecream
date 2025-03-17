@@ -77,8 +77,8 @@ function Dub2Model({ value, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.4, 3.2, 3.2]}
-      position={[0, 0, 0]}
+      scale={[3.74, 3.52, 3.52]}
+      position={[0, -1.65, 0]}
       rotation={[0, value * 0.00915, 0]} // Adjust rotation
     />
   );
@@ -419,7 +419,7 @@ function Hero() {
                 style={{
                   transform: `translateY(${value}px)`,
                 }}
-                className="absolute bottom-[7rem] w-full flex items-center justify-center h-[24rem] z-20"
+                className="absolute bottom-[7rem] w-full flex items-center justify-center h-[22rem] z-20"
               >
                 <Canvas camera={{ position: [0, 0, 5], fov: 50 }}
 
@@ -487,8 +487,8 @@ gl={{ antialias: true }} // Enable anti-aliasing
 
 
               <motion.div
-                initial={{ x: -150, rotateZ: 0 }}
-                animate={{ x: 0, rotateZ: 30 }}
+                initial={{ x: -180, rotateZ: 0 }}
+                animate={{ x: -40, rotateZ: 30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -497,7 +497,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute z-10  bottom-6 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
+                className=" absolute z-10  -bottom-20 left-1/2 -translate-x-1/2 h-[30rem] w-[20rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -531,8 +531,8 @@ gl={{ antialias: true }} // Enable anti-aliasing
                 </Canvas>
               </motion.div>
               <motion.div
-                initial={{ x: 150, rotateZ: 0 }}
-                animate={{ x: 0, rotateZ: -30 }}
+                initial={{ x: 180, rotateZ: 0 }}
+                animate={{ x: 40, rotateZ: -30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -541,7 +541,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute bottom-6 right-1/2 translate-x-1/2 h-[30rem] w-[20rem] z-10 overflow-hidden"
+                className="absolute -bottom-20 right-1/2 translate-x-1/2 h-[30rem] w-[20rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
