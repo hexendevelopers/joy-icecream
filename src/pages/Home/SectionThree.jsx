@@ -93,7 +93,7 @@ function SectionThree() {
       className="w-full h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-800 to-red-900 overflow-x-clip"
     >
       <div className="sticky w-full h-screen top-0 py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
-        <h1 className={`${thunder.className} text-5xl lg:text-7xl uppercase text-white`}>
+        <h1 className={`${thunder.className} text-5xl md:text-6xl lg:text-7xl uppercase text-white`}>
           explore our flavors
         </h1>
         <div className="w-96 h-96 rounded-full  flex items-center justify-center relative">

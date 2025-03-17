@@ -19,7 +19,7 @@ const thunderSemibold = localFont({
 
 function SectionOne() {
   return (
-    <div className=" w-full flex flex-col justify-between lg:justify-normal gap-8 lg:gap-0 lg:block lg:h-[75vh] h-auto relative text-white">
+    <div className=" w-full flex flex-col justify-between lg:justify-normal  lg:gap-0 lg:block lg:h-[75vh] h-screen relative text-white">
       <Image
         src={vintageImage}
         alt="old joy factory"
@@ -30,7 +30,7 @@ function SectionOne() {
         alt="old joy factory"
         className=" w-full  lg:hidden object-cover rounded-xl"
       />
-      <div className="lg:absolute bottom-0 lg:top-0 left-0 w-full lg:h-full flex items-center justify-center">
+      <div className="lg:absolute bottom-0 lg:top-0 left-0 w-full lg:h-full flex items-center justify-center py-10 lg:py-0">
         <div className=" flex flex-col w-full  gap-3 lg:gap-5 lg:text-center lg:items-center text-white">
           <h1 className={` uppercase leading-none lg:leading-normal text-[3.2rem] w-full flex lg:w-auto lg:text-9xl text-white ${thunder.className}`}>
             about joy ice cream

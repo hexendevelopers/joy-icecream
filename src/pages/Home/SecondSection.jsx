@@ -60,11 +60,11 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
       >
         <div className="flex flex-col gap-5 items-center px-7 lg:px-20 ">
           <h1
-            className={`${thunderSemiBold.className} text-4xl lg:text-8xl uppercase font-bold text-white`}
+            className={`${thunderSemiBold.className} text-4xl md:text-6xl lg:text-8xl uppercase font-bold text-white`}
           >
             joy in every scoop
           </h1>
-          <h1 className="w-[80%] lg:w-[30rem] text-white text-xs lg:text-base leading-6 lg:leading-normal -mt-3 text-center">
+          <h1 className="w-[80%] lg:w-[30rem] text-white text-xs md:text-base leading-6 lg:leading-normal -mt-3 text-center">
             It’s about turning simple moments into delightful experiences. Ice
             cream isn’t just a dessert; it’s a way to bring happiness
           </h1>
@@ -100,8 +100,8 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
               ref={stageRefMobile}
               src={stage}
               alt="stage"
-              width={300}
-              className=""
+              // width={300}
+              className="w-[18.75rem] md:w-[30rem]"
             />
           </div>
         </div>

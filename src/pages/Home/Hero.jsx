@@ -364,11 +364,18 @@ function Hero() {
         className=" w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
 
-        {/* <Image
-          src={mobBg}
-          alt="bg"
-          className=" w-full h-full  lg:hidden object-contain object-bottom "
-        /> */}
+<div className="w-full h-screen absolute hidden lg:block -bottom-[45vh] z-0 ">
+         <div className="w-full h-full mx-auto">
+              <Image src={newRound} alt="new" className=""/>
+          </div>         
+      </div>
+
+      <div className="w-full h-screen absolute  lg:hidden -bottom-[75vh] md:-bottom-[60vh] z-0 ">
+         <div className="w-full h-full mx-auto">
+              <Image src={heroCircleMob} alt="new" className=""/>
+          </div>         
+      </div>
+        
         <div className=" w-screen h-screen absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
          
 
@@ -380,7 +387,7 @@ function Hero() {
             <div className=" flex flex-col justify-between ">
               <div className=" w-full  flex  lg:justify-center  ">
                 <h1
-                  className={`mt-10 leading-none w-full justify-center lg:text-[17vw] xl:text-[16.5vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
+                  className={`mt-10 leading-none w-full justify-center lg:text-[16vw] xl:text-[16.5vw] hidden lg:flex ${thunder.className} text-white font-extrabold`}
                 >
                   SHARING THE JOY!
                 </h1>
@@ -399,13 +406,13 @@ function Hero() {
                 </h1>
               </div>
               <h1
-                className={` ${manrope.className} w-full lg:-mt-8 lg:w-72 leading-7 lg:leading-9 text-center lg:text-start  text-white text-xl lg:text-[1.75rem] font-semibold`}
+                className={` ${manrope.className} w-full lg:-mt-8 lg:w-72 leading-7 lg:leading-9 text-center lg:text-start  text-white text-xl md:text-2xl lg:text-[1.75rem] font-semibold`}
               >
                 Indulge in the creamiest flavors, crafted with love!
               </h1>
             </div>
 
-            <div className="hidden lg:block h-full  w-full relative">
+            <div className="hidden xl:block h-full  w-full relative">
               <motion.div
                 ref={dubRef}
                 style={{
@@ -570,13 +577,13 @@ gl={{ antialias: true }} // Enable anti-aliasing
             </div>
 
             {/* ----MOBILE VERSION---- */}
-            <div className="lg:hidden relative h-full w-full">
+            <div className="xl:hidden relative h-full w-full">
               <motion.div
                 ref={dubRefMobile}
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute bottom-10  w-full  flex items-center justify-center  h-[15rem]  z-20"
+                className="absolute bottom-3  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -637,7 +644,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute flex justify-center z-10  bottom-10 left-1/2 -translate-x-1/2 h-[12rem] w-[11rem]  overflow-hidden"
+                className=" absolute flex justify-center z-10  bottom-4 left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -672,7 +679,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
 
               <motion.div
                 initial={{ x: 100 }}
-                animate={{ x: -35 }}
+                animate={{ x: -30 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -681,7 +688,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute flex justify-center bottom-12 right-1/2 translate-x-1/2 h-[12rem] w-[11rem] z-10 overflow-hidden"
+                className="absolute flex justify-center bottom-5 right-1/2 translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -890,17 +897,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
         </div>
       </div>
 
-      <div className="w-full h-screen absolute hidden lg:block top-[45vh] z-0 ">
-         <div className="w-full h-full mx-auto">
-              <Image src={newRound} alt="new" className=""/>
-          </div>         
-      </div>
-
-      <div className="w-full h-screen absolute  lg:hidden top-[75vh] z-0 ">
-         <div className="w-full h-full mx-auto">
-              <Image src={heroCircleMob} alt="new" className=""/>
-          </div>         
-      </div>
+     
 
       <SecondSection
         setStageTopMobile={setStageTopMobile}
