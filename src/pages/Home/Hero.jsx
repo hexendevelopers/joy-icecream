@@ -187,7 +187,7 @@ function Dub1ModelMob() {
 function Dub2ModelMob({ mobileValue, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
   const modelRef = useRef();
-
+  const { gl } = useThree();
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
@@ -196,10 +196,22 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
         // child.material.roughness = 0.1; // Lower roughness for more reflective surface
         // child.material.metalness = 0.7; // Higher metalness for better reflections
 
+         // Fix rendering issues
+         child.material.transparent = false;
+         child.material.depthWrite = true;
+         child.material.depthTest = true;
+
+           // Improve texture clarity
+        const texture = child.material.map;
+        if (texture) {
+          texture.anisotropy = gl.capabilities.getMaxAnisotropy();
+          texture.needsUpdate = true;
+        }
+
         // Adjust for plastic-like material
         child.material.roughness = 0.5; // Adjust value between 0-1
         child.material.metalness = 0.3; // Adjust value between 0-1
-        child.material.envMapIntensity = 1.2; // Keep environment reflections
+        child.material.envMapIntensity = 1.5; // Keep environment reflections
         child.material.needsUpdate = true;
 
         // Enable shadows
@@ -207,22 +219,19 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
         child.receiveShadow = true;
       }
     });
-  }, [glb]);
+  }, [glb,gl]);
 
-  // useFrame(() => {
-  //   if (rotateY && modelRef.current) {
-  //     modelRef.current.rotation.y += 0.01; 
-  //     Adjustment of Y rotation mobile
-  //   }
-  // });
+  useFrame(() => {
+    if (rotateY && modelRef.current) {
+      modelRef.current.rotation.y += 0.01; //Adjustment of Y rotation mobile
+    }
+  });
   return (
     <primitive
       ref={modelRef}
       object={glb.scene}
-      // scale={[3.5, 3.5, 3.5]}
-      scale={[1.3, 1.4, 1.3]}  // TO BE REMOVED
-      // position={[0, -1.65 , 0]}
-      position={[0, 0.7- mobileValue * 0.003 , 0]}   //TO BE REMOVED
+      scale={[3.5, 3.5, 3.5]}
+      position={[0, -1.65 , 0]}
       rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
     />
   );
@@ -379,8 +388,7 @@ function Hero() {
     const handleScroll = () => {
       const containerTop = Math.round(containerRef.current.getBoundingClientRect().top);
       if (containerTop < -limitMobile) {
-        // setMobileValue(limitMobile);
-        setMobileValue(-containerTop); // TO BE REMOVED
+        setMobileValue(limitMobile);
         setRotateY(true);
       } else if (containerTop < 0) {
         setMobileValue(-containerTop);
@@ -623,15 +631,17 @@ gl={{ antialias: true }} // Enable anti-aliasing
               <motion.div
                 ref={dubRefMobile}
                 style={{
-                  // transform: `translateY(${mobileValue}px)`,
+                  transform: `translateY(${mobileValue}px)`,
                 }}
-                // className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
-                className="absolute -bottom-[60vh]  w-full  flex items-center justify-center  h-[95vh]  md:h-[25rem]  z-20" //TO BE REMOVED
+                className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
                   camera={{ position: [0, 0, 5], fov: 50 }}
                   style={{ width: "100%", height: "100%" }}
+                  shadows
+dpr={[1, 2]} // High DPI rendering for better quality
+gl={{ antialias: true }} // Enable anti-aliasing
                 >
                   {/* Create environment for reflections */}
                   {/* <Environment 
