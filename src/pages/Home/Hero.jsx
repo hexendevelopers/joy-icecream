@@ -218,8 +218,10 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.5, 3.5, 3.5]}
-      position={[0, -1.65, 0]}
+      // scale={[3.5, 3.5, 3.5]}
+      scale={[1.3, 1.4, 1.3]}  // TO BE REMOVED
+      // position={[0, -1.65 , 0]}
+      position={[0, 0.7- mobileValue * 0.003 , 0]}   //TO BE REMOVED
       rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
     />
   );
@@ -376,7 +378,8 @@ function Hero() {
     const handleScroll = () => {
       const containerTop = Math.round(containerRef.current.getBoundingClientRect().top);
       if (containerTop < -limitMobile) {
-        setMobileValue(limitMobile);
+        // setMobileValue(limitMobile);
+        setMobileValue(-containerTop); // TO BE REMOVED
         setRotateY(true);
       } else if (containerTop < 0) {
         setMobileValue(-containerTop);
@@ -619,9 +622,10 @@ gl={{ antialias: true }} // Enable anti-aliasing
               <motion.div
                 ref={dubRefMobile}
                 style={{
-                  transform: `translateY(${mobileValue}px)`,
+                  // transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+                // className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+                className="absolute -bottom-[60vh]  w-full  flex items-center justify-center  h-[95vh]  md:h-[25rem]  z-20" //TO BE REMOVED
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
