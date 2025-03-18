@@ -209,11 +209,12 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
     });
   }, [glb]);
 
-  useFrame(() => {
-    if (rotateY && modelRef.current) {
-      modelRef.current.rotation.y += 0.01; //Adjustment of Y rotation mobile
-    }
-  });
+  // useFrame(() => {
+  //   if (rotateY && modelRef.current) {
+  //     modelRef.current.rotation.y += 0.01; 
+  //     Adjustment of Y rotation mobile
+  //   }
+  // });
   return (
     <primitive
       ref={modelRef}
