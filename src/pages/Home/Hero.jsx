@@ -374,7 +374,7 @@ function Hero() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const containerTop = containerRef.current.getBoundingClientRect().top;
+      const containerTop = Math.round(containerRef.current.getBoundingClientRect().top);
       if (containerTop < -limitMobile) {
         setMobileValue(limitMobile);
         setRotateY(true);
