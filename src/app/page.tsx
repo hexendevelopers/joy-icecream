@@ -17,6 +17,9 @@ import caramel from '@/app/assets/HERO-SECTION/caramel.webp';
 import vanilla from '@/app/assets/HERO-SECTION/sunlover-vanilla-1.webp';
 import heroBg from '@/app/assets/HERO-SECTION/hero-bg.webp';
 
+//Import about page image
+import tubBg from '../app/assets/ABOUT US/tub-bg.webp';
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -35,7 +38,7 @@ export default function Home() {
           ];
 
           // Define image files array with imported images
-          const images = [mobileBg, coconut, chocolate, straw, caramel, vanilla, heroBg];
+          const images = [mobileBg, coconut, chocolate, straw, caramel, vanilla, heroBg,tubBg];
           const totalAssets = glbFiles.length + images.length;
           let loadedAssets = 0;
 

@@ -36,7 +36,7 @@ const SectionFive = ({scrollYProgress2}) => {
       scale:scale,
       translateY:translateY
     }}
-    className="sticky hidden lg:block lg:mt-[100vh] top-0 h-screen text-white w-screen bg-gradient-to-r from-red-800 to-red-500 overflow-hidden">
+    className="sticky hidden lg:block lg:mt-[100vh] top-0 h-screen text-white w-screen bg-gradient-to-b from-red-600 to-red-900 overflow-hidden">
        <div className="relative w-full h-full">
        <div className="z-0 absolute right-0 top-0 w-full h-full">
       <Image src={rode} className="bg-cover h-full w-full hidden lg:block"/>
@@ -73,7 +73,7 @@ const SectionFive = ({scrollYProgress2}) => {
       scale:scaleMobile,
       translateY:translateYMobile
     }}
-    className="sticky lg:hidden mt-[50vh] top-0 h-screen w-screen bg-gradient-to-b from-red-900 to-red-500 overflow-hidden">
+    className="sticky lg:hidden mt-[50vh] top-0 h-screen w-screen bg-gradient-to-b from-red-600 to-red-900 overflow-hidden">
        <div className="relative w-full h-full">
        <div className="z-0 absolute right-0 bottom-0  w-full ">
       <Image alt="red rode" src={rodeMobile} className="bg-cover h-full w-full  lg:hidden"/>
