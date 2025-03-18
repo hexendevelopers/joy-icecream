@@ -18,6 +18,7 @@ import useMeasure from "react-use-measure";
 import newRound from '@/app/assets/HERO-SECTION/hero-bg.webp'
 import heroCircleMob from '../../app/assets/MOBILE/hero-circle-mob.png'
 import Lenis from "@studio-freight/lenis";
+import { useLenisScroll } from "@/components/SmoothScroll";
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -79,7 +80,7 @@ function Dub2Model({ value, rotateY }) {
       object={glb.scene}
       scale={[3.50, 3.50, 3.50]}
       position={[0, -1.65, 0]}
-      rotation={[0, value * 0.00915, 0]} // Adjust rotation
+      rotation={[0,value * 0.00915, 0]} // Adjust rotation
     />
   );
 }
@@ -260,6 +261,7 @@ function Hero() {
   const [limitMobile, setLimitMobile] = useState(500);
   const [rotateY, setRotateY] = useState(false);
 
+  const scrollY = useLenisScroll();
   const containerRef = useRef();
 
   const hasSetDubTop = useRef(false); // Tracks if value was set
@@ -292,9 +294,9 @@ function Hero() {
   //   console.log(stageTop, "stageTop");
   // }, [dubTop, stageTop]);
 
-  useEffect(() => {
-    console.log(value, "value");
-  }, [value]);
+  // useEffect(() => {
+  //   console.log(Math.round(value), "value");
+  // }, [value]);
 
   useEffect(() => {
     if (!hasSetDubTop.current) {
@@ -315,46 +317,11 @@ function Hero() {
   }, [dubBoundsMobile]);
 
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!containerRef.current) return;
-
-  //     // Get the actual position relative to the viewport using offsetTop
-  //     const containerTop = Math.round(
-  //       containerRef.current.offsetTop - window.scrollY
-  //     );
-
-  //     // Round the value to the nearest multiple of 3
-  //     // const roundedTop = Math.round(containerTop / 3) * 3;
-
-  //     if (containerTop < -limit) {
-  //       if (value !== limit) {
-  //         setValue(limit);
-  //         setRotateY(true);
-  //       }
-  //     } else if (containerTop < 0) {
-  //       if (value !== -containerTop) {
-  //         setValue(-containerTop);
-  //         setRotateY(false);
-  //       }
-  //     } else {
-  //       setValue(0);
-  //       setRotateY(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [limit, value]);
   
 
   useEffect(() => {
     const handleScroll = () => {
-      let containerTop = Math.round(containerRef.current.getBoundingClientRect().top);
-      containerTop = Math.round(containerTop / 3) * 3;
+      const containerTop = containerRef.current.getBoundingClientRect().top;
       if (containerTop < -limit) {
         if(value !== limit){
           setValue(limit);
@@ -378,6 +345,31 @@ function Hero() {
     };
   }, [limit]);
 
+
+  // IF USING LENIS USE THIS USEEFFECT INSTEAD OF THE ABOVE ONE
+
+  // useEffect(() => {
+  //   if (!containerRef.current) return;
+    // const containerTop = Math.round(scrollY); 
+  //   const containerTop = Math.round(scrollY / 2) * 2; 
+  //   console.log(containerTop,"containertop");
+    
+  
+  //   if (containerTop > limit) { 
+  //     if (value !== limit) {
+  //       setValue(limit);
+  //       setRotateY(true);
+  //     }
+  //   } else if (containerTop > 0) { 
+  //     if (value !== containerTop) {
+  //       setValue(containerTop);
+  //       setRotateY(false);
+  //     }
+  //   } else {
+  //     setValue(0);
+  //     setRotateY(false);
+  //   }
+  // }, [scrollY, limit]); 
 
 
   useEffect(() => {
@@ -415,7 +407,7 @@ function Hero() {
           </div>         
       </div>
 
-      <div className="w-full h-screen absolute  lg:hidden -bottom-[75vh] md:-bottom-[60vh] z-0 ">
+      <div className="w-full h-screen absolute  lg:hidden -bottom-[72vh] md:-bottom-[60vh] z-0 ">
          <div className="w-full h-full mx-auto">
               <Image src={heroCircleMob} alt="new" className=""/>
           </div>         
@@ -457,9 +449,9 @@ function Hero() {
               </h1>
             </div>
 
-            <div data-lenis-ignore className="hidden xl:block h-full  w-full relative">
+            <div className="hidden xl:block h-full  w-full relative">
               <motion.div
-              data-lenis-ignore
+             
                 ref={dubRef}
                 style={{
                   transform: `translateY(${value}px)`,

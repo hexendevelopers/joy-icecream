@@ -1,8 +1,19 @@
 "use client"
-import { useEffect } from 'react'
+import { useEffect, createContext, useState, useContext} from 'react'
 import Lenis from '@studio-freight/lenis'
 
+const ScrollContext = createContext(0)
+
+export function useLenisScroll() {
+  return useContext(ScrollContext);
+  
+}
+
 export default function SmoothScroll({ children }) {
+
+  const [scrollY, setScrollY] = useState(0);
+
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 5,
@@ -14,6 +25,14 @@ export default function SmoothScroll({ children }) {
       touchMultiplier: 2,
       smoothWheel : true
     })
+
+ 
+
+    //  Update state with Lenis scroll position
+     lenis.on("scroll", (e) => {
+      setScrollY(e.scroll);
+    });
+
 
     function raf(time) {
       lenis.raf(time)
@@ -27,5 +46,5 @@ export default function SmoothScroll({ children }) {
     }
   }, [])
 
-  return <>{children}</>
+  return  <ScrollContext.Provider value={scrollY}>{children}</ScrollContext.Provider>;
 }
