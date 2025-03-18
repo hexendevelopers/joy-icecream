@@ -621,7 +621,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute bottom-3  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+                className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -682,7 +682,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className=" absolute flex justify-center z-10  bottom-4 left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
+                className=" absolute flex justify-center z-10  bottom-10 left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
@@ -726,7 +726,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   damping: 20,
                   mass: 1,
                 }}
-                className="absolute flex justify-center bottom-5 right-1/2 translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+                className="absolute flex justify-center bottom-11 right-1/2 translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
