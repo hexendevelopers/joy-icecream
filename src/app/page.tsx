@@ -98,7 +98,7 @@ export default function Home() {
       {isLoading ? (
         <Loading onComplete={handleLoadingComplete} progress={loadingProgress} />
       ) : (
-        <div className="flex flex-col">
+        <div className="flex flex-col overflow-clip">
           <Hero />
           <SectionThree />
           <SectionFour/>

@@ -413,7 +413,7 @@ function Hero() {
         className=" w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
 
-<div className="w-full h-screen absolute hidden lg:block -bottom-[45vh] z-0 ">
+<div className="w-full h-screen absolute hidden lg:block -bottom-[40vh] z-0 ">
          <div className="w-full h-full mx-auto">
               <Image src={newRound} alt="new" className=""/>
           </div>         

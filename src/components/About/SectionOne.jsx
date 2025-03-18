@@ -19,7 +19,7 @@ const thunderSemibold = localFont({
 
 function SectionOne() {
   return (
-    <div className=" w-full flex flex-col justify-between lg:justify-normal  lg:block lg:h-[75vh] h-screen relative text-white">
+    <div className=" w-full flex flex-col justify-between lg:justify-normal  lg:block lg:h-[75vh] h-auto gap-10 relative text-white">
       <Image
         src={vintageImage}
         alt="old joy factory"

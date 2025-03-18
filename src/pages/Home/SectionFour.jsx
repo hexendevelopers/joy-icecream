@@ -32,7 +32,7 @@ function SectionFour() {
       <div className="w-full h-full flex flex-col gap-10 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
           <h1
-            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] lg:font-semibold lg:text-[9rem]  font-bold`}
+            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] lg:font-semibold lg:text-[9rem]   font-bold`}
           >
             Ice Cream Bars
           </h1>
@@ -45,13 +45,13 @@ function SectionFour() {
         {/* ----BARS DESKTOP ANIMATION--- */}
         <div className="hidden lg:block h-1/2 w-full  relative">
           <div className="absolute z-50 -bottom-11 left-1/2 transform -translate-x-1/2">
-            <Image alt="ice cream bar" src={barMain} className="w-[11.5rem]" />
+            <Image alt="ice cream bar" src={barMain} className="w-[12rem]" />
           </div>
           <div className="absolute bottom-0 left-1/2 z-20 transform -translate-x-1/2  w-[11.5rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0, scale: 0 }}
               whileInView={{ rotateZ: 40, x: 130, scale: 1 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.3,
@@ -68,7 +68,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0, y: 0, scale: 0 }}
               whileInView={{ rotateZ: 60, x: 185, y: 20, scale: 1 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.2,
@@ -85,7 +85,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0, scale: 0 }}
               whileInView={{ rotateZ: -40, x: -130, scale: 1 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.3,
@@ -102,7 +102,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0, y: 0, scale: 0 }}
               whileInView={{ rotateZ: -60, x: -185, y: 20, scale: 1 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.2,
@@ -126,7 +126,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: 30, x: 90 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.3,
@@ -143,7 +143,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: 35, x: 100 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.2,
@@ -160,7 +160,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: -30, x: -90 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.3,
@@ -177,7 +177,7 @@ function SectionFour() {
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: -35, x: -100 }}
-              viewport={{ once: true, amount: 0.99 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.7,
                 delay: 0.2,
