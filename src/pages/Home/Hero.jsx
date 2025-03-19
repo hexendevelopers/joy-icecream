@@ -554,7 +554,7 @@ function Hero() {
             </motion.div>
             <motion.div
               initial={{ x: 180, rotateZ: 0 }}
-              animate={{ x: 10, rotateZ: -30 }}
+              animate={{ x: 10, rotateZ: -28 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -563,7 +563,7 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute top-[60vh] right-1/2 translate-x-1/2 h-[15rem] w-[20rem] z-10 overflow-hidden"
+              className="absolute top-[58.5vh] right-1/2 translate-x-1/2 h-[15rem] w-[20rem] z-10 overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
