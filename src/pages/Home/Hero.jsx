@@ -483,7 +483,6 @@ function Hero() {
                 />
 
                 <directionalLight position={[-2, 0, 1]} intensity={1} />
-
                 {/* Rim light to create separation from background */}
                 <spotLight
                   position={[-5, 2, -8]}
