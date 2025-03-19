@@ -20,7 +20,7 @@ function Navbar() {
       <MobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
       <Link className="flex items-center justify-start" href={"/"}>
         <div className="flex items-center gap-5 justify-start">
-          <Image className="w-[6rem] lg:w-[7.5rem]" src={logo} alt="logo" />
+          <Image className="w-[6rem] md:w-[7rem] lg:w-[7.5rem]" src={logo} alt="logo" />
         </div>
       </Link>
       <div className="items-center gap-5 hidden lg:flex">
@@ -48,7 +48,7 @@ function Navbar() {
       <div className="px-2 lg:hidden">
         <HiMenu
           onClick={() => setShowMenu(true)}
-          className="text-3xl text-white"
+          className="text-3xl md:text-5xl text-white"
         />
       </div>
     </div>

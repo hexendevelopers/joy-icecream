@@ -21,7 +21,7 @@ const thunderSemibold = localFont({
 });
 
 function IceCreamModel() {
-  const gltf = useGLTF("/assets/HERO 3D/Strawberry.glb");
+  const gltf = useGLTF("/assets/MENU 3D/Strawberry.glb");
   const gl = useThree((state) => state.gl);
 
   useEffect(() => {
@@ -96,9 +96,12 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
       } overflow-y-hidden z-50 fixed top-0 left-0 w-screen h-screen p-3 bg-gradient-to-b from-red-900 to-red-500 text-white`}
     >
       <div className="px-4 py-4">
+        <div className="flex flex-col gap-5">
         <div className="w-full flex items-center justify-between ">
-          <h1 className={`text-3xl text-white ${thunderMedium.className}`}>MENU</h1>
-          <IoClose className="text-3xl" onClick={() => setShowMenu(false)} />
+          <h1 className={`text-3xl md:text-5xl text-white ${thunderMedium.className}`}>MENU</h1>
+          <IoClose className="text-3xl md:text-5xl" onClick={() => setShowMenu(false)} />
+        </div>
+        <hr />
         </div>
         <div className="w-full h-full flex flex-col gap-[18rem] justify-between relative">
           <div className=" w-full h-screen flex items-center justify-center absolute top-0 left-0">
@@ -106,28 +109,28 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
               <div className={` w-full flex flex-col text-white mt-5  `}>
                 <Link onClick={() => setShowMenu(false)} href={"/"}>
                   <button
-                    className={`${thunderSemibold.className} text-5xl py-1.5  `}
+                    className={`${thunderSemibold.className} text-5xl md:text-7xl py-1.5  `}
                   >
                     HOME
                   </button>
                 </Link>
                 <Link onClick={() => setShowMenu(false)} href={"/about"}>
                   <button
-                    className={`${thunderSemibold.className} text-5xl py-1.5`}
+                    className={`${thunderSemibold.className} text-5xl md:text-7xl py-1.5`}
                   >
                     ABOUT
                   </button>
                 </Link>
                 <Link onClick={() => setShowMenu(false)} href={"/catalog"}>
                   <button
-                    className={`${thunderSemibold.className} text-5xl py-1.5`}
+                    className={`${thunderSemibold.className} text-5xl md:text-7xl py-1.5`}
                   >
                     CATALOG
                   </button>
                 </Link>
                 <Link onClick={() => setShowMenu(false)} href={"/contact"}>
                   <button
-                    className={`${thunderSemibold.className} text-5xl py-1.5`}
+                    className={`${thunderSemibold.className} text-5xl md:text-7xl py-1.5`}
                   >
                     CONTACT
                   </button>
@@ -138,10 +141,9 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                 <div className="relative w-full  flex lg:hidden flex-col items-center  ">
                   {/* Increased container size from 400px to 500px for both width and height */}
                   <div
-                    // style={{ width: "450px", height: "450px" }}
-                    className={`absolute h-[18rem] w-[20rem]`}
+                    className={`h-[18rem] md:h-[30rem] w-[20rem] md:w-[25rem] z-20`}
                     style={{ 
-                      bottom: `${stageHeight-65}px`,
+                      // bottom: `${stageHeight-65}px`,
                       background: 'transparent' 
                     }}
                   >
@@ -199,7 +201,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                   ref={stageRef}
                     src={menuStage}
                     alt="stage"
-                    className="w-[80%]"
+                    className="w-[80%] md:w-[65%] transform -translate-y-14 md:-translate-y-24 z-10"
                   />
                 </div>
               </div>

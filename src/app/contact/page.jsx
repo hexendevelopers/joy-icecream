@@ -17,7 +17,10 @@ function page() {
       <div className="w-full h-auto flex flex-col justify-between">
         <div className=" w-full h-auto flex flex-col lg:gap-5 z-10 bg-gradient-to-b from-red-800  lg:to-red-900">
           <div className="pt-6 px-5 lg:px-20 flex flex-col gap-16">
+            <div className="flex flex-col gap-5">
             <Navbar />
+            <hr />
+            </div>
             <Main />
           </div>
           <div className="w-full h-auto flex flex-col md:hidden">

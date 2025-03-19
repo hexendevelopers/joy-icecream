@@ -14,11 +14,11 @@ const signatie = localFont({
 
 function Footer() {
   return (
-    <div className="z-10 w-full h-auto lg:h-auto bg-gradient-to-b from-red-900 to-red-800 flex items-center pb-10 justify-center text-white overflow-hidden">
+    <div className="z-10 w-full h-auto  bg-gradient-to-b from-red-900 to-red-800 flex items-center pb-10 justify-center text-white overflow-hidden">
       <div className="flex flex-col justify-around items-center gap-5">
         <div className=" flex flex-col gap-5   items-center">
           <h1
-            className={`text-[3.57rem] lg:text-6xl ${thunder.className} pt-10 font-semibold text-center uppercase leading-none lg:leading-[1] w-[24.12rem] lg:w-[30rem] text-white`}
+            className={`text-[3.57rem] lg:text-6xl ${thunder.className} pt-10 font-semibold text-center uppercase leading-none lg:leading-[1] w-[24.12rem] md:w-[27rem] lg:w-[30rem] text-white`}
           >
             bringing joy to every moment with love
           </h1>

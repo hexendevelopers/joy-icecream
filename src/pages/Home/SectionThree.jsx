@@ -87,10 +87,10 @@ function SectionThree() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-900 overflow-x-clip"
+      className="w-screen h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-900 overflow-x-clip"
     >
-      <div className="sticky w-full h-screen top-0 py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
-        <h1 className={`${thunder.className} text-5xl md:text-6xl lg:text-7xl uppercase text-white`}>
+      <div className="sticky w-screen h-screen top-0 py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
+        <h1 className={`${thunder.className} text-5xl md:text-7xl  uppercase text-white`}>
           explore our flavors
         </h1>
         <div className="w-96 h-96 rounded-full  flex items-center justify-center relative">
@@ -105,7 +105,7 @@ function SectionThree() {
                 NATURAL
               </div>
             </div> */}
-            <Image alt="text describing icecream" src={centerText} className="w-[45%] lg:w-[60%]" />
+            <Image alt="text describing icecream" src={centerText} className="w-[45%] md:w-[50%] lg:w-[60%]" />
           </div>
 
           {/* Ice cream containers */}
@@ -133,7 +133,7 @@ function SectionThree() {
               {/* // ----MOBILE-VERSION--- */}
               <motion.div
                 key={index}
-                className="absolute w-20 h-20  lg:hidden"
+                className="absolute w-20 md:w-24 h-20 md:h-24  lg:hidden"
                 style={{
                   transform: `rotate(${
                     -index * (mobileValue / 50)

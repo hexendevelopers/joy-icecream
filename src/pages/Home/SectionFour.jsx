@@ -32,11 +32,11 @@ function SectionFour() {
       <div className="w-full h-full flex flex-col gap-10 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
           <h1
-            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] lg:font-semibold lg:text-[9rem]   font-bold`}
+            className={`${thunderSemibold.className} lg:${thunderSemibold.className}  text-white uppercase text-[3.6rem] md:text-[6rem] lg:font-semibold lg:text-[9rem]   font-bold`}
           >
             Ice Cream Bars
           </h1>
-          <h1 className=" text-center text-sm lg:text-base w-[22rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
+          <h1 className=" text-center text-sm md:text-sm lg:text-base w-[22rem] md:w-[26rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
             It’s about turning simple moments into delightful experiences. Ice
             cream isn’t just a dessert; it’s a way to bring happiness, share
             smiles, and create lasting memories.{" "}
@@ -120,9 +120,9 @@ function SectionFour() {
         {/* -----BARS ANIMATION MOBILE VERSION--- */}
         <div className="lg:hidden w-full h-1/2 relative">
           <div className="absolute z-50 bottom-0 left-1/2 transform -translate-x-1/2">
-            <Image alt="ice cream bar" src={barMain} className="w-[9.5rem]" />
+            <Image alt="ice cream bar" src={barMain} className="w-[9.5rem] md:w-[13.5rem]" />
           </div>
-          <div className="absolute bottom-28 left-1/2 z-20 transform -translate-x-1/2  w-[7rem]">
+          <div className="absolute bottom-28 left-1/2 z-20 transform -translate-x-1/2  w-[7rem] md:w-[11rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: 30, x: 90 }}
@@ -139,7 +139,7 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar1} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] ">
+          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] md:w-[11rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: 35, x: 100 }}
@@ -156,7 +156,7 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar2} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute bottom-28 left-1/2 z-20 transform -translate-x-1/2  w-[7rem]">
+          <div className="absolute bottom-28 left-1/2 z-20 transform -translate-x-1/2  w-[7rem] md:w-[11rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: -30, x: -90 }}
@@ -173,7 +173,7 @@ function SectionFour() {
               <Image alt="ice cream bar" src={bar3} className="w-full" />
             </motion.div>
           </div>
-          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] ">
+          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2   w-[7rem] md:w-[11rem]">
             <motion.div
               initial={{ rotateZ: 0, x: 0 }}
               whileInView={{ rotateZ: -35, x: -100 }}

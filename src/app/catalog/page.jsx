@@ -261,7 +261,7 @@ function page() {
         })}
       </div>
 
-      <div className="flex flex-col gap-10 md:grid grid-cols-3 md:gap-10 w-full px-5 md:px-20 mt-20">
+      <div className="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 w-full px-5 md:px-20 mt-20">
         {img.map((_, index) => {
           const card = cards[index % cards.length];
           return (

@@ -92,7 +92,7 @@ function Dub2Model({ value, rotateY }) {
       object={glb.scene}
       scale={[3.5, 3.5, 3.5]}
       position={[0, -1.65, 0]}
-      rotation={[0, value * 0.0097, 0]} // Adjust rotation
+      rotation={[0, value * 0.009, 0]} // Adjust rotation
     />
   );
 }
@@ -187,7 +187,7 @@ function Dub1ModelMob() {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
         // Add roughness to all materials
-        child.material.roughness = 0.7; // Adjust value between 0-1
+        child.material.roughness = 0.6; // Adjust value between 0-1
         child.material.metalness = 0.7; // Adjust value between 0-1
         child.material.needsUpdate = true;
       }
@@ -252,7 +252,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
       object={glb.scene}
       scale={[3.5, 3.5, 3.5]}
       position={[0, -1.65, 0]}
-      rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
+      rotation={[0, mobileValue * 0.0106, 0]} //Adjustment of facing position on stage mobile
     />
   );
 }
@@ -276,10 +276,12 @@ function Dub3ModelMob() {
       object={glb.scene}
       scale={[3, 3, 3]}
       position={[-1, -1.3, 0]}
-      rotation={[0, 0, -Math.PI / 6]} // Rotate 30 degrees on Z-axis
+      rotation={[0, 0.09, -Math.PI / 6]} // Rotate 30 degrees on Z-axis
     />
   );
 }
+
+
 
 function Hero() {
   const [value, setValue] = useState(0);
@@ -446,15 +448,15 @@ function Hero() {
     <>
       <div
         ref={containerRef}
-        className=" w-screen h-[180vh] lg:h-[200vh] bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
+        className=" w-screen h-[180vh] lg:h-[200vh] bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-clip"
       >
         {/* //NEW CONCEPT */}
         {/* DESKTOP VERSION  */}
-        <div className="hidden lg:block h-[200vh] w-full relative">
-          <div className=" relative w-full flex flex-col justify-between h-[180vh]">
+        <div className="hidden lg:block h-[200vh] w-screen relative">
+          <div className=" relative w-screen flex flex-col justify-between h-[180vh]">
             <motion.div
               ref={dubRef}
-              className="sticky top-[50vh] w-full  flex items-center justify-center h-[22rem] z-20 "
+              className="sticky top-[50vh] w-screen  flex items-center justify-center h-[22rem] z-20 "
             >
               <Canvas
                 camera={{ position: [0, 0, 5], fov: 50 }}
@@ -596,12 +598,12 @@ function Hero() {
               </Canvas>
             </motion.div>
 
-            <div className="overflow-hidden">
+            <div className="overflow-hidden w-screen">
              <SecondSection/>
             </div>
 
           </div>
-          <div className="flex w-full  transform -translate-y-14 justify-center">
+          <div className="flex w-screen  transform -translate-y-14 justify-center">
             <Image
               ref={stageRef}
               src={stage}
@@ -610,7 +612,7 @@ function Hero() {
               className=""
             />
           </div>
-          <div className="absolute top-[100vh] w-full justify-center flex flex-col gap-5 items-center px-7 lg:px-20 z-10">
+          <div className="absolute top-[100vh] w-screen justify-center flex flex-col gap-5 items-center px-7 lg:px-20 z-10">
             <h1
               className={`${thunderSemiBold.className} text-4xl md:text-6xl lg:text-8xl uppercase font-bold text-white`}
             >
@@ -624,11 +626,11 @@ function Hero() {
         </div>
 
         {/* MOBILE VERSION  NEW CONCEPT*/}
-        <div className="h-[180vh] lg:hidden w-full relative">
-          <div className=" relative w-full h-[160vh]">
+        <div className="h-[180vh] lg:hidden w-screen relative">
+          <div className=" relative w-screen h-[160vh]">
             <motion.div
               ref={dubRefMobile}
-              className="sticky top-[60vh] w-full  flex items-center justify-center  h-[15rem] md:h-[25rem] overflow-hidden  z-20"
+              className="sticky top-[60vh] w-screen  flex items-center justify-center  h-[15rem] md:h-[25rem] overflow-hidden overflow-x-hidden   z-20"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -683,7 +685,7 @@ function Hero() {
 
             <motion.div
               initial={{ x: -100 }}
-              animate={{ x: 50 }}
+              animate={{ x: 42 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -717,7 +719,7 @@ function Hero() {
 
                 {/* Environmental reflection simulation */}
                 <hemisphereLight
-                  intensity={1}
+                  intensity={2}
                   groundColor="#111111"
                   color="#EA2424"
                 />
@@ -727,7 +729,7 @@ function Hero() {
 
             <motion.div
               initial={{ x: 100 }}
-              animate={{ x: -30 }}
+              animate={{ x: -25 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -736,7 +738,7 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute flex justify-center top-[65vh] right-1/2 translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+              className="absolute flex justify-center top-[64.4vh] right-1/2 transform translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -744,7 +746,7 @@ function Hero() {
                 style={{ width: "100%", height: "100%" }}
               >
                 {/* Base ambient light */}
-                <ambientLight intensity={3} />
+                <ambientLight intensity={4} />
 
                 {/* Side specular highlight */}
                 <spotLight
@@ -756,10 +758,10 @@ function Hero() {
                 />
 
                 {/* Subtle fill light */}
-                <directionalLight position={[-3, 0, 1]} intensity={2.2} />
+                <directionalLight position={[-2, 0, 1]} intensity={2.2} />
 
                 {/* Subtle fill light */}
-                <directionalLight position={[3, 0, 1]} intensity={2.2} />
+                <directionalLight position={[2, 0, 1]} intensity={2.2} />
 
                 {/* Environmental reflection simulation */}
                 <hemisphereLight
@@ -773,7 +775,7 @@ function Hero() {
 
            
           </div>
-          <div className=" w-full flex transform -translate-y-8 md:-translate-y-12 justify-center ">
+          <div className=" w-screen flex transform -translate-y-8 md:-translate-y-12 justify-center ">
             <Image
               ref={stageRefMobile}
               src={stage}
@@ -782,7 +784,7 @@ function Hero() {
               className="w-[18.75rem] md:w-[30rem]"
             />
           </div>
-          <div className="absolute top-[100vh] w-full justify-center flex flex-col gap-5 items-center px-7 lg:px-20 z-10 overflow-hidden">
+          <div className="absolute top-[100vh] w-screen justify-center flex flex-col gap-5 items-center px-7 lg:px-20 z-10 overflow-hidden">
             <h1
               className={`${thunderSemiBold.className} text-4xl md:text-6xl lg:text-8xl uppercase font-bold text-white`}
             >
@@ -795,14 +797,14 @@ function Hero() {
           </div>
         </div>
 
-        <div className="w-full h-screen absolute hidden lg:block top-[40vh] z-0  overflow-hidden">
-          <div className="w-full h-full mx-auto">
+        <div className="w-screen h-screen absolute hidden lg:block top-[40vh] z-0  overflow-hidden">
+          <div className="w-screen h-full mx-auto">
             <Image src={newRound} alt="new" className="" />
           </div>
         </div>
 
-        <div className="w-full h-screen absolute  lg:hidden top-[70vh] md:top-[60vh] z-0  overflow-hidden">
-          <div className="w-full h-full mx-auto">
+        <div className="w-screen h-screen absolute  lg:hidden top-[70vh] md:top-[60vh] z-0  overflow-hidden">
+          <div className="w-screen h-full mx-auto">
             <Image src={heroCircleMob} alt="new" className="" />
           </div>
         </div>
@@ -810,8 +812,9 @@ function Hero() {
         <div className=" w-screen h-screen absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
           {/* ----TEXT  CONTAINERS---- */}
           <div className="flex h-full w-full flex-col overflow-hidden">
-            <div className=" flex z-50">
+            <div className=" flex flex-col gap-5 z-50">
               <Navbar />
+              <hr />
             </div>
             <div className=" flex flex-col justify-between ">
               <div className=" w-full  flex  lg:justify-center  ">
@@ -843,8 +846,8 @@ function Hero() {
           </div>
 
           {/* ----FRUITS ICONS----- */}
-          <div className=" w-full h-full absolute top-0 left-0 flex justify-between overflow-hidden">
-            <div className="hidden lg:flex items-center gap-32 w-full justify-between overflow-hidden">
+          <div className=" w-screen h-screen absolute top-0 left-0 flex justify-between overflow-hidden overflow-x-hidden">
+            <div className="hidden lg:flex items-center gap-32 w-screen justify-between overflow-hidden">
               <motion.div
                 initial={{ x: 300, y: 200 }}
                 animate={{ x: 0, y: 0 }}
