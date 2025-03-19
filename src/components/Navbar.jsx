@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import logo from "../app/assets/HERO-SECTION/LOGO.png";
+import logo from "../app/assets/HERO-SECTION/LOGO.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <div className="w-full flex justify-between items-center z-40 overflow-hidden text-white">
       <MobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
-      <Link className="flex items-center justify-start" href={"/"}>
+      <Link className="lg:flex  hidden  items-center justify-start" href={"/"}>
         <div className="flex items-center gap-5 justify-start">
           <Image className="w-[6rem] md:w-[7rem] lg:w-[7.5rem]" src={logo} alt="logo" />
         </div>
@@ -45,7 +45,8 @@ function Navbar() {
           </button>
         </Link>
       </div>
-      <div className="px-2 lg:hidden">
+      <div className="px-2 flex items-center justify-between w-full lg:hidden">
+        <Image className="" width={90} src={logo} alt="logo" />
         <HiMenu
           onClick={() => setShowMenu(true)}
           className="text-3xl md:text-5xl text-white"
