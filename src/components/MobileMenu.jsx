@@ -9,7 +9,7 @@ import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import useMeasure from "react-use-measure";
-
+import { useThree } from '@react-three/fiber';
 
 const thunderMedium = localFont({
   src: "../app/fonts/Thunder-LC.ttf",
@@ -21,14 +21,42 @@ const thunderSemibold = localFont({
 });
 
 function IceCreamModel() {
-  const gltf = useGLTF("/assets/MENU 3D/joy ice cream tub.gltf");
-  // Increased scale from [1.5, 1.5, 1.5] to [2, 2, 2] for larger model
+  const gltf = useGLTF("/assets/HERO 3D/Strawberry.glb");
+  const gl = useThree((state) => state.gl);
+
+  useEffect(() => {
+    gltf.scene.traverse((child) => {
+      if (child.isMesh) {
+        // Fix blurring issue by adjusting material properties
+        child.material.roughness = 0.5;
+        child.material.metalness = 0.3;
+        child.material.envMapIntensity = 1.5;
+
+        // Fix rendering issues
+        child.material.transparent = false;
+        child.material.depthWrite = true;
+        child.material.depthTest = true;
+
+        // Improve texture clarity
+        const texture = child.material.map;
+        if (texture) {
+          texture.anisotropy = gl.capabilities.getMaxAnisotropy();
+          texture.needsUpdate = true;
+        }
+
+        child.castShadow = true;
+        child.receiveShadow = true;
+        child.material.needsUpdate = true;
+      }
+    });
+  }, [gltf, gl]); // Updated dependency array with correct variable names
+  
   return (
     <primitive
       object={gltf.scene}
-      scale={[5.38, 4.28, 5.38]}
+      scale={[4.5, 4.5, 4.5]}
       rotation={[-6.3, Math.PI / 50, 0]}
-      position={[0, 0, 0]}
+      position={[0, -2, 0]}
     />
   );
 }
@@ -111,33 +139,50 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                   {/* Increased container size from 400px to 500px for both width and height */}
                   <div
                     // style={{ width: "450px", height: "450px" }}
-                    className={` absolute  h-[16rem] w-[20rem]`}
-                    style={{ bottom: `${stageHeight-35}px` }}
+                    className={`absolute h-[18rem] w-[20rem]`}
+                    style={{ 
+                      bottom: `${stageHeight-38}px`,
+                      background: 'transparent' 
+                    }}
                   >
-                    <Canvas>
+                    <Canvas
+                      gl={{ 
+                        antialias: true,
+                        alpha: true,
+                        preserveDrawingBuffer: true
+                      }}
+                      dpr={[1, 2]}
+                      style={{ background: 'transparent' }}
+                    >
                       <Suspense fallback={null}>
-                        {/* 
-                    BRIGHTNESS CONTROLS:
-                    - Increase/decrease intensity values for brighter/darker model
-                    - ambientLight: Controls overall brightness (0.1 to 2.0)
-                    - hemisphereLight: Controls environmental lighting (0.1 to 2.0)
-                    - spotLight: Controls focused lighting (0.1 to 4.0)
-                    - directionalLight: Controls directional shadows (0.1 to 2.0)
-                    */}
-                        <ambientLight intensity={1} />
-                        <hemisphereLight intensity={2} groundColor="#ff0000" />
-                        <spotLight
-                          position={[10, 20, 10]}
-                          angle={0.5}
-                          penumbra={1}
-                          intensity={4}
-                          castShadow
-                        />
+                        <ambientLight intensity={2} />
+                        
                         <directionalLight
-                          position={[0, 0, 4]} // Changed to center position
-                          intensity={0.6}
-                          castShadow
+                          position={[2, 0, 1]}
+                          intensity={1}
+                          shadow-camera-left={1}
+                          shadow-camera-right={1}
                         />
+
+                        <directionalLight 
+                          position={[-2, 0, 1]} 
+                          intensity={1} 
+                        />
+
+                        <spotLight
+                          position={[-5, 2, -8]}
+                          angle={0.5}
+                          penumbra={0.8}
+                          intensity={8}
+                          color="#ff9999"
+                        />
+
+                        <hemisphereLight
+                          intensity={0.8}
+                          groundColor="#111111"
+                          color="#EA2424"
+                        />
+
                         <IceCreamModel />
                         <OrbitControls
                           enableZoom={false}
