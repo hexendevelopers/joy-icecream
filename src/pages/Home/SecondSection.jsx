@@ -101,7 +101,8 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
               src={stage}
               alt="stage"
               // width={300}
-              className="w-[18.75rem] md:w-[30rem]"
+              // className="w-[18.75rem] md:w-[30rem]"
+              className="h-[5.70rem] w-[18.75rem]"
             />
           </div>
         </div>

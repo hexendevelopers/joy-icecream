@@ -415,6 +415,74 @@ function Hero() {
         ref={containerRef}
         className=" w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
+
+
+
+
+        {/* //NEW CONCEPT */}
+        <div className="h-[180vh] w-full  relative">
+        <motion.div
+                ref={dubRefMobile}
+                style={{
+                  // transform: `translateY(${mobileValue}px)`,
+                }}
+                className="sticky top-[55vh]  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+              >
+                <Canvas
+                  resize={{ scroll: false, debounce: 0 }}
+                  camera={{ position: [0, 0, 5], fov: 50 }}
+                  style={{ width: "100%", height: "100%" }}
+                  shadows
+                  dpr={[1, 2]} // High DPI rendering for better quality
+                  gl={{ antialias: true }} // Enable anti-aliasing
+                >
+                  {/* Create environment for reflections */}
+                  {/* <Environment 
+                     preset="sunset"
+                     background={false}
+                     intensity={0.3}
+                   /> */}
+
+                  {/* Base ambient light */}
+                  <ambientLight intensity={2} />
+
+                  {/* Directional lights to enhance form and add edge highlights */}
+                  <directionalLight
+                    position={[2, 0, 1]}
+                    intensity={1}
+                    shadow-camera-left={1}
+                    shadow-camera-right={1}
+                  />
+
+                  <directionalLight position={[-2, 0, 1]} intensity={1} />
+
+                  {/* Rim light to create separation from background */}
+                  <spotLight
+                    position={[-5, 2, -8]}
+                    angle={0.5}
+                    penumbra={0.8}
+                    intensity={8}
+                    color="#ff9999"
+                  />
+
+                  {/* Environmental reflection simulation */}
+                  <hemisphereLight
+                    intensity={0.8}
+                    groundColor="#111111"
+                    color="#EA2424"
+                  />
+
+                  {/* Dynamic reflection effect that changes with scroll */}
+                  <SpotlightFollower value={value} />
+
+                  <Dub2ModelMob mobileValue={mobileValue} rotateY={rotateY} />
+                </Canvas>
+              </motion.div>
+        </div>
+
+
+
+
         <div className="w-full h-screen absolute hidden lg:block -bottom-[40vh] z-0 ">
           <div className="w-full h-full mx-auto">
             <Image src={newRound} alt="new" className="" />
@@ -429,7 +497,8 @@ function Hero() {
 
         <div className=" w-screen h-screen absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
           {/* ----TEXT AND ICE CREAM CONTAINERS---- */}
-          <div className="flex h-full w-full flex-col justify-between">
+          {/* <div className="flex h-full w-full flex-col justify-between"> */}
+          <div className="flex h-full w-full flex-col ">
             <div className=" flex  z-30 lg:z-50">
               <Navbar />
             </div>
@@ -611,14 +680,14 @@ function Hero() {
             </div>
 
             {/* ----MOBILE VERSION---- */}
-            <div className="xl:hidden relative flex items-center justify-center h-full w-full">
+            {/* <div className="xl:hidden relative bg-yellow-200 flex items-center justify-center h-full w-full"> */}
+            <div className="hidden relative bg-yellow-200  items-center justify-center h-full w-full">
               <motion.div
                 ref={dubRefMobile}
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                // className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
-                className="w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+                className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
