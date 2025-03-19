@@ -15,8 +15,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import SecondSection from "./SecondSection";
 import useMeasure from "react-use-measure";
-import newRound from '@/app/assets/HERO-SECTION/hero-bg.webp'
-import heroCircleMob from '../../app/assets/MOBILE/hero-circle-mob.png'
+import newRound from "@/app/assets/HERO-SECTION/hero-bg.webp";
+import heroCircleMob from "../../app/assets/MOBILE/hero-circle-mob.png";
 import Lenis from "@studio-freight/lenis";
 import { useLenisScroll } from "@/components/SmoothScroll";
 
@@ -78,9 +78,9 @@ function Dub2Model({ value, rotateY }) {
     <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.50, 3.50, 3.50]}
+      scale={[3.5, 3.5, 3.5]}
       position={[0, -1.65, 0]}
-      rotation={[0,value * 0.00915, 0]} // Adjust rotation
+      rotation={[0, value * 0.00915, 0]} // Adjust rotation
     />
   );
 }
@@ -135,7 +135,11 @@ function Dub1Model() {
   }, [glb]);
 
   return (
-    <primitive object={glb.scene} scale={[3.5, 3.5, 3.5]} position={[0, -1.65, 0]} />
+    <primitive
+      object={glb.scene}
+      scale={[3.5, 3.5, 3.5]}
+      position={[0, -1.65, 0]}
+    />
   );
 }
 
@@ -154,7 +158,11 @@ function Dub3Model() {
   }, [glb]);
 
   return (
-    <primitive object={glb.scene} scale={[3.5, 3.5, 3.5]} position={[0, -1.65, 0]} />
+    <primitive
+      object={glb.scene}
+      scale={[3.5, 3.5, 3.5]}
+      position={[0, -1.65, 0]}
+    />
   );
 }
 
@@ -196,12 +204,12 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
         // child.material.roughness = 0.1; // Lower roughness for more reflective surface
         // child.material.metalness = 0.7; // Higher metalness for better reflections
 
-         // Fix rendering issues
-         child.material.transparent = false;
-         child.material.depthWrite = true;
-         child.material.depthTest = true;
+        // Fix rendering issues
+        child.material.transparent = false;
+        child.material.depthWrite = true;
+        child.material.depthTest = true;
 
-           // Improve texture clarity
+        // Improve texture clarity
         const texture = child.material.map;
         if (texture) {
           texture.anisotropy = gl.capabilities.getMaxAnisotropy();
@@ -219,7 +227,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
         child.receiveShadow = true;
       }
     });
-  }, [glb,gl]);
+  }, [glb, gl]);
 
   useFrame(() => {
     if (rotateY && modelRef.current) {
@@ -231,7 +239,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
       ref={modelRef}
       object={glb.scene}
       scale={[3.5, 3.5, 3.5]}
-      position={[0, -1.65 , 0]}
+      position={[0, -1.65, 0]}
       rotation={[0, mobileValue * 0.0082, 0]} //Adjustment of facing position on stage mobile
     />
   );
@@ -239,7 +247,6 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 
 function Dub3ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
-
 
   useEffect(() => {
     glb.scene.traverse((child) => {
@@ -328,19 +335,16 @@ function Hero() {
     }
   }, [dubBoundsMobile]);
 
-
-  
-
   useEffect(() => {
     const handleScroll = () => {
       const containerTop = containerRef.current.getBoundingClientRect().top;
       if (containerTop < -limit) {
-        if(value !== limit){
+        if (value !== limit) {
           setValue(limit);
-        setRotateY(true);
+          setRotateY(true);
         }
       } else if (containerTop < 0) {
-        if(value !== -containerTop){
+        if (value !== -containerTop) {
           setValue(-containerTop);
           setRotateY(false);
         }
@@ -357,22 +361,20 @@ function Hero() {
     };
   }, [limit]);
 
-
   // IF USING LENIS USE THIS USEEFFECT INSTEAD OF THE ABOVE ONE
 
   // useEffect(() => {
   //   if (!containerRef.current) return;
-    // const containerTop = Math.round(scrollY); 
-  //   const containerTop = Math.round(scrollY / 2) * 2; 
+  // const containerTop = Math.round(scrollY);
+  //   const containerTop = Math.round(scrollY / 2) * 2;
   //   console.log(containerTop,"containertop");
-    
-  
-  //   if (containerTop > limit) { 
+
+  //   if (containerTop > limit) {
   //     if (value !== limit) {
   //       setValue(limit);
   //       setRotateY(true);
   //     }
-  //   } else if (containerTop > 0) { 
+  //   } else if (containerTop > 0) {
   //     if (value !== containerTop) {
   //       setValue(containerTop);
   //       setRotateY(false);
@@ -381,12 +383,13 @@ function Hero() {
   //     setValue(0);
   //     setRotateY(false);
   //   }
-  // }, [scrollY, limit]); 
-
+  // }, [scrollY, limit]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const containerTop = Math.round(containerRef.current.getBoundingClientRect().top);
+      const containerTop = Math.round(
+        containerRef.current.getBoundingClientRect().top
+      );
       if (containerTop < -limitMobile) {
         setMobileValue(limitMobile);
         setRotateY(true);
@@ -412,27 +415,24 @@ function Hero() {
         ref={containerRef}
         className=" w-screen h-screen bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-x-clip"
       >
+        <div className="w-full h-screen absolute hidden lg:block -bottom-[40vh] z-0 ">
+          <div className="w-full h-full mx-auto">
+            <Image src={newRound} alt="new" className="" />
+          </div>
+        </div>
 
-<div className="w-full h-screen absolute hidden lg:block -bottom-[40vh] z-0 ">
-         <div className="w-full h-full mx-auto">
-              <Image src={newRound} alt="new" className=""/>
-          </div>         
-      </div>
+        <div className="w-full h-screen absolute  lg:hidden -bottom-[72vh] md:-bottom-[60vh] z-0 ">
+          <div className="w-full h-full mx-auto">
+            <Image src={heroCircleMob} alt="new" className="" />
+          </div>
+        </div>
 
-      <div className="w-full h-screen absolute  lg:hidden -bottom-[72vh] md:-bottom-[60vh] z-0 ">
-         <div className="w-full h-full mx-auto">
-              <Image src={heroCircleMob} alt="new" className=""/>
-          </div>         
-      </div>
-        
         <div className=" w-screen h-screen absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
-         
-
           {/* ----TEXT AND ICE CREAM CONTAINERS---- */}
           <div className="flex h-full w-full flex-col justify-between">
-          <div className=" flex  z-30 lg:z-50">
-            <Navbar />
-          </div>
+            <div className=" flex  z-30 lg:z-50">
+              <Navbar />
+            </div>
             <div className=" flex flex-col justify-between ">
               <div className=" w-full  flex  lg:justify-center  ">
                 <h1
@@ -461,23 +461,19 @@ function Hero() {
               </h1>
             </div>
 
-            <div className="hidden xl:block h-full  w-full relative">
+            <div className="hidden xl:block h-full w-full relative">
               <motion.div
-             
                 ref={dubRef}
                 style={{
                   transform: `translateY(${value}px)`,
                 }}
                 className="absolute bottom-10 w-full  flex items-center justify-center h-[22rem] z-20"
               >
-                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}
-
-shadows
-dpr={[1, 2]} // High DPI rendering for better quality
-gl={{ antialias: true }} // Enable anti-aliasing
-                
-                
-                
+                <Canvas
+                  camera={{ position: [0, 0, 5], fov: 50 }}
+                  shadows
+                  dpr={[1, 2]} // High DPI rendering for better quality
+                  gl={{ antialias: true }} // Enable anti-aliasing
                 >
                   {/* Create environment for reflections */}
                   {/* <Environment 
@@ -522,18 +518,6 @@ gl={{ antialias: true }} // Enable anti-aliasing
                   <Dub2Model value={value} rotateY={rotateY} />
                 </Canvas>
               </motion.div>
-
-
-
-
-
-
-
-
-
-
-
-
 
               <motion.div
                 initial={{ x: -180, rotateZ: 0 }}
@@ -627,21 +611,22 @@ gl={{ antialias: true }} // Enable anti-aliasing
             </div>
 
             {/* ----MOBILE VERSION---- */}
-            <div className="xl:hidden relative h-full w-full">
+            <div className="xl:hidden relative flex items-center justify-center h-full w-full">
               <motion.div
                 ref={dubRefMobile}
                 style={{
                   transform: `translateY(${mobileValue}px)`,
                 }}
-                className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+                // className="absolute bottom-8  w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+                className="w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
               >
                 <Canvas
                   resize={{ scroll: false, debounce: 0 }}
                   camera={{ position: [0, 0, 5], fov: 50 }}
                   style={{ width: "100%", height: "100%" }}
                   shadows
-dpr={[1, 2]} // High DPI rendering for better quality
-gl={{ antialias: true }} // Enable anti-aliasing
+                  dpr={[1, 2]} // High DPI rendering for better quality
+                  gl={{ antialias: true }} // Enable anti-aliasing
                 >
                   {/* Create environment for reflections */}
                   {/* <Environment 
@@ -688,7 +673,7 @@ gl={{ antialias: true }} // Enable anti-aliasing
 
               <motion.div
                 initial={{ x: -100 }}
-                animate={{ x: 50, }}
+                animate={{ x: 50 }}
                 transition={{
                   delay: 0.5,
                   duration: 0.5,
@@ -949,8 +934,6 @@ gl={{ antialias: true }} // Enable anti-aliasing
           </div>
         </div>
       </div>
-
-     
 
       <SecondSection
         setStageTopMobile={setStageTopMobile}
