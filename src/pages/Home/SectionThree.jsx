@@ -83,14 +83,11 @@ function SectionThree() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(value);
-  }, [value]);
 
   return (
     <div
       ref={containerRef}
-      className="w-full h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-800 to-red-900 overflow-x-clip"
+      className="w-full h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-900 overflow-x-clip"
     >
       <div className="sticky w-full h-screen top-0 py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
         <h1 className={`${thunder.className} text-5xl md:text-6xl lg:text-7xl uppercase text-white`}>
@@ -115,8 +112,6 @@ function SectionThree() {
           {allFlavors.map((item, index) => (
             <>
               <motion.div
-                // initial={{opacity:0}}
-                // animate={{opacity:  (-(10 - index) * (value / 50)) >160 ? 1 : 0 }}
                 key={index}
                 className="absolute w-24 h-24 hidden lg:block"
                 style={{
@@ -137,8 +132,6 @@ function SectionThree() {
 
               {/* // ----MOBILE-VERSION--- */}
               <motion.div
-                // initial={{opacity:0}}
-                // animate={{opacity:  (-(10 - index) * (value / 50)) >160 ? 1 : 0 }}
                 key={index}
                 className="absolute w-20 h-20  lg:hidden"
                 style={{

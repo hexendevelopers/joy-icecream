@@ -54,7 +54,7 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
   }, [stageBoundsMobile]);
 
   return (
-    <div className=" w-screen h-[80vh] lg:h-screen bg-gradient-to-b from-red-900 to-red-800 pb-16 lg:py-5 flex justify-center items-center  text-white overflow-x-clip ">
+    <div className="hidden w-screen h-[80vh] lg:h-screen bg-gradient-to-b from-red-900 to-red-800 pb-16 lg:py-5  justify-center items-center  text-white overflow-x-clip ">
       <div
         className={` flex flex-col justify-between items-center relative h-full  w-full `}
       >
@@ -85,7 +85,8 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
               scoop up!
             </h1>
           </Marquee>
-          <div className="hidden lg:flex w-full justify-center">
+          {/* <div className="hidden lg:flex w-full justify-center"> */}
+          <div className="hidden w-full justify-center">
             <Image
               ref={stageRef}
               src={stage}
@@ -95,7 +96,8 @@ function SecondSection({ setStageTopMobile, setStageTop }) {
             />
           </div>
           {/* ----MOBILE VERSION---- */}
-          <div className=" w-full flex lg:hidden justify-center ">
+          {/* <div className=" w-full flex lg:hidden justify-center "> */}
+          <div className=" w-full hidden justify-center ">
             <Image
               ref={stageRefMobile}
               src={stage}
