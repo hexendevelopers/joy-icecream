@@ -251,7 +251,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
       ref={modelRef}
       object={glb.scene}
       scale={[3.5, 3.5, 3.5]}
-      position={[0, -1.65, 0]}
+      position={[-0.12, -1.65, 0]}
       rotation={[0, mobileValue * 0.0106, 0]} //Adjustment of facing position on stage mobile
     />
   );
@@ -685,7 +685,7 @@ function Hero() {
 
             <motion.div
               initial={{ x: -100 }}
-              animate={{ x: 42 }}
+              animate={{ x: 30 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -738,7 +738,7 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute flex justify-center top-[64.4vh] right-1/2 transform translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+              className="absolute flex justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -797,13 +797,13 @@ function Hero() {
           </div>
         </div>
 
-        <div className="w-screen h-screen absolute hidden lg:block top-[40vh] z-0  overflow-hidden">
+        <div className="w-screen h-screen absolute hidden lg:block top-[40vh] z-0 ">
           <div className="w-screen h-full mx-auto">
             <Image src={newRound} alt="new" className="" />
           </div>
         </div>
 
-        <div className="w-screen h-screen absolute  lg:hidden top-[70vh] md:top-[60vh] z-0  overflow-hidden">
+        <div className="w-screen h-screen absolute  lg:hidden top-[70vh] md:top-[60vh] z-0 ">
           <div className="w-screen h-full mx-auto">
             <Image src={heroCircleMob} alt="new" className="" />
           </div>
