@@ -141,7 +141,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                     // style={{ width: "450px", height: "450px" }}
                     className={`absolute h-[18rem] w-[20rem]`}
                     style={{ 
-                      bottom: `${stageHeight-38}px`,
+                      bottom: `${stageHeight-65}px`,
                       background: 'transparent' 
                     }}
                   >
@@ -187,6 +187,7 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
                         <OrbitControls
                           enableZoom={false}
                           autoRotate
+                          autoRotateSpeed={4}
                           minPolarAngle={Math.PI / 2}
                           maxPolarAngle={Math.PI / 2}
                         />

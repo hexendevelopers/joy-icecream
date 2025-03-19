@@ -21,7 +21,7 @@ const SectionThree = ({scrollYProgress1}) => {
             scale:scale,
 
           }}
-         className={`${thunderSemibold.className} text-[#F5A5A5] text-[5rem] lg:text-[15rem]`}>THE JOURNEY</motion.h1>
+         className={`${thunderSemibold.className} text-[#F5A5A5] text-[5rem] md:text-[10rem] lg:text-[16.5rem]`}>THE JOURNEY</motion.h1>
     </div>   
   )
 }

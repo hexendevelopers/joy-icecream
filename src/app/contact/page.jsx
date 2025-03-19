@@ -15,17 +15,17 @@ function page() {
       
       {/* <div className=" absolute top-0 w-full h-auto left-0 flex flex-col bg-gradient-to-b lg:bg-none from-red-900 to-red-800"> */}
       <div className="w-full h-auto flex flex-col justify-between">
-        <div className=" w-full h-auto flex flex-col lg:gap-5 z-10 bg-gradient-to-b from-red-800 to-red-800 lg:to-red-900">
+        <div className=" w-full h-auto flex flex-col lg:gap-5 z-10 bg-gradient-to-b from-red-800  lg:to-red-900">
           <div className="pt-6 px-5 lg:px-20 flex flex-col gap-16">
             <Navbar />
             <Main />
           </div>
-          <div className="w-full h-auto flex flex-col lg:hidden">
+          <div className="w-full h-auto flex flex-col md:hidden">
             <SectionFive />
             <ContactFooter/>
           </div>
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <ContactFooter />
           </div>    
       </div>

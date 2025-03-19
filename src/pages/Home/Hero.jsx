@@ -20,6 +20,8 @@ import Lenis from "@studio-freight/lenis";
 import { useLenisScroll } from "@/components/SmoothScroll";
 import stage from "../../app/assets/HERO-SECTION/icestage.png";
 import Marquee from "react-fast-marquee";
+import SecondSection from './SecondSection'
+
 
 const thunder = localFont({
   src: "../../app/fonts/Thunder-LC.ttf",
@@ -437,6 +439,8 @@ function Hero() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [limitMobile]);
+  
+
 
   return (
     <>
@@ -447,10 +451,10 @@ function Hero() {
         {/* //NEW CONCEPT */}
         {/* DESKTOP VERSION  */}
         <div className="hidden lg:block h-[200vh] w-full relative">
-          <div className=" relative w-full h-[180vh]">
+          <div className=" relative w-full flex flex-col justify-between h-[180vh]">
             <motion.div
               ref={dubRef}
-              className="sticky top-[50vh] w-full  flex items-center justify-center h-[22rem] z-20"
+              className="sticky top-[50vh] w-full  flex items-center justify-center h-[22rem] z-20 "
             >
               <Canvas
                 camera={{ position: [0, 0, 5], fov: 50 }}
@@ -592,25 +596,10 @@ function Hero() {
               </Canvas>
             </motion.div>
 
-            <div className="hidden absolute bottom-0 overflow-hidden">
-              <Marquee
-                autoFill
-                speed={40}
-                className="w-full flex items-center gap-5 overflow-x-hidden"
-                style={{ willChange: "transform" }}
-              >
-                <h1
-                  className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0  uppercase px-10`}
-                >
-                  scoop up!
-                </h1>
-                <h1
-                  className={`${thunderLight.className} text-[14rem] hidden md:flex flex-shrink-0 uppercase text-transparent [-webkit-text-stroke:2px_white]`}
-                >
-                  scoop up!
-                </h1>
-              </Marquee>
+            <div className="overflow-hidden">
+             <SecondSection/>
             </div>
+
           </div>
           <div className="flex w-full  transform -translate-y-14 justify-center">
             <Image
@@ -639,8 +628,7 @@ function Hero() {
           <div className=" relative w-full h-[160vh]">
             <motion.div
               ref={dubRefMobile}
-              style={{}}
-              className="sticky top-[60vh] w-full  flex items-center justify-center  h-[15rem] md:h-[25rem]  z-20"
+              className="sticky top-[60vh] w-full  flex items-center justify-center  h-[15rem] md:h-[25rem] overflow-hidden  z-20"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -782,8 +770,10 @@ function Hero() {
                 <Dub1ModelMob />
               </Canvas>
             </motion.div>
+
+           
           </div>
-          <div className=" w-full flex transform -translate-y-8 justify-center ">
+          <div className=" w-full flex transform -translate-y-8 md:-translate-y-12 justify-center ">
             <Image
               ref={stageRefMobile}
               src={stage}
@@ -792,7 +782,7 @@ function Hero() {
               className="w-[18.75rem] md:w-[30rem]"
             />
           </div>
-          <div className="absolute top-[100vh] w-full justify-center flex flex-col gap-5 items-center px-7 lg:px-20 z-10">
+          <div className="absolute top-[100vh] w-full justify-center flex flex-col gap-5 items-center px-7 lg:px-20 z-10 overflow-hidden">
             <h1
               className={`${thunderSemiBold.className} text-4xl md:text-6xl lg:text-8xl uppercase font-bold text-white`}
             >
@@ -805,13 +795,13 @@ function Hero() {
           </div>
         </div>
 
-        <div className="w-full h-screen absolute hidden lg:block top-[40vh] z-0 ">
+        <div className="w-full h-screen absolute hidden lg:block top-[40vh] z-0  overflow-hidden">
           <div className="w-full h-full mx-auto">
             <Image src={newRound} alt="new" className="" />
           </div>
         </div>
 
-        <div className="w-full h-screen absolute  lg:hidden top-[70vh] md:-bottom-[60vh] z-0 ">
+        <div className="w-full h-screen absolute  lg:hidden top-[70vh] md:top-[60vh] z-0  overflow-hidden">
           <div className="w-full h-full mx-auto">
             <Image src={heroCircleMob} alt="new" className="" />
           </div>
@@ -819,8 +809,8 @@ function Hero() {
 
         <div className=" w-screen h-screen absolute top-0 left-0 pt-6 px-5 lg:px-20 ">
           {/* ----TEXT  CONTAINERS---- */}
-          <div className="flex h-full w-full flex-col ">
-            <div className=" flex  z-30 lg:z-50">
+          <div className="flex h-full w-full flex-col overflow-hidden">
+            <div className=" flex z-50">
               <Navbar />
             </div>
             <div className=" flex flex-col justify-between ">
@@ -853,7 +843,7 @@ function Hero() {
           </div>
 
           {/* ----FRUITS ICONS----- */}
-          <div className=" w-full h-full absolute top-0 left-0 flex justify-between">
+          <div className=" w-full h-full absolute top-0 left-0 flex justify-between overflow-hidden">
             <div className="hidden lg:flex items-center gap-32 w-full justify-between overflow-hidden">
               <motion.div
                 initial={{ x: 300, y: 200 }}
@@ -950,9 +940,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute top-[13rem] -left-9 transform -translate-y-1/2 animate-float-fast"
+                className="absolute top-[10rem] -left-9 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="coconut" src={coconut} width={110} />
+                <Image alt="coconut" src={coconut} className="w-[5.5rem] md:w-[8rem]" />
               </motion.div>
               <motion.div
                 initial={{ x: -50, y: 300, opacity: 0 }}
@@ -965,9 +955,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute z-20 top-[10rem] left-[10.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                className="absolute z-20 top-[7rem] left-[10.5rem] md:left-[22.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="choclate" src={choclate} width={65} className="" />
+                <Image alt="choclate" src={choclate}  className="w-[4.1rem] md:w-[7rem]" />
               </motion.div>
               <motion.div
                 initial={{ x: 0, y: 300, opacity: 0 }}
@@ -980,12 +970,12 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute z-20 top-[17rem] left-[9.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
+                className="absolute z-20 top-[14rem] md:top-[24rem] left-[9.5rem] md:left-[20rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="berry" src={berry} width={65} />
+                <Image alt="berry" src={berry}  className="w-[4.1rem] md:w-[7rem]" />
               </motion.div>
               <motion.div
-                className="absolute z-20 top-[20rem] left-[15.5rem]"
+                className="absolute z-20 top-[16.5rem] md:top-[32rem] left-[15.5rem] md:left-[35rem] -translate-y-1/2 animate-float-fast"
                 initial={{ x: -20, y: 300, opacity: 0 }}
                 animate={{ x: 0, y: 0, opacity: 1 }}
                 transition={{
@@ -1001,7 +991,7 @@ function Hero() {
                   alt="caramel"
                   src={caramel}
                   width={90}
-                  className=" transform -translate-y-1/2 animate-float-fast"
+                  className=" transform w-[5.6rem] md:w-[8rem] "
                 />
               </motion.div>
               <motion.div
@@ -1015,9 +1005,9 @@ function Hero() {
                   damping: 10,
                   mass: 1,
                 }}
-                className="absolute -right-11 top-[10rem] transform -translate-y-1/2 animate-float-fast"
+                className="absolute -right-10 top-[7rem] transform -translate-y-1/2 animate-float-fast"
               >
-                <Image src={flower} alt="flower" width={110} />
+                <Image src={flower} alt="flower"  className="w-[5.5rem] md:w-[8rem]" />
               </motion.div>
             </div>
           </div>
