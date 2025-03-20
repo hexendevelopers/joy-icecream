@@ -181,7 +181,7 @@ function Dub3Model() {
 // -----MOBILE-MODELS----
 
 function Dub1ModelMob() {
-  const glb = useMemo(() => useGLTF("/assets/HERO 3D/SPANISHMOB.glb"), []);
+  const glb = useGLTF("/assets/HERO 3D/SPANISHMOB.glb");
 
   const materialProps = useMemo(() => ({
     roughness: 0.6,
@@ -263,8 +263,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 }
 
 function Dub3ModelMob() {
-  // const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
-  const glb = useMemo(() => useGLTF("/assets/HERO 3D/CHOCOLATEMOB.glb"), []);
+  const glb = useGLTF("/assets/HERO 3D/CHOCOLATEMOB.glb");
 
   const materialProps = useMemo(() => ({
     roughness: 0.6,
@@ -455,7 +454,7 @@ function Hero() {
   
 
   function WebGLContextHandler() {
-    const { gl, invalidate } = useThree();
+    const { gl } = useThree();
   
     useEffect(() => {
       const handleContextLost = (event) => {
@@ -728,7 +727,6 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              // className=" absolute flex justify-center z-10  top-[65vh] left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
               className=" absolute hidden justify-center z-10  top-[65vh] left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
             >
               <Canvas
@@ -776,8 +774,7 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              // className="absolute flex justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
-              className="absolute hidden justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+              className="absolute flex justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
