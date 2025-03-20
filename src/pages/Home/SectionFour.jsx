@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import bar from "../../app/assets/HERO-SECTION/barImage.png";
 import Image from "next/image";
 import localFont from "next/font/local";
 import barMain from "../../app/assets/HERO-SECTION/ICECREAM-BARS/barMain.png";
@@ -8,7 +7,6 @@ import bar1 from "../../app/assets/HERO-SECTION/ICECREAM-BARS/bar1.png";
 import bar2 from "../../app/assets/HERO-SECTION/ICECREAM-BARS/bar2.png";
 import bar3 from "../../app/assets/HERO-SECTION/ICECREAM-BARS/bar3.png";
 import bar4 from "../../app/assets/HERO-SECTION/ICECREAM-BARS/bar4.png";
-import halfCircle from "../../app/assets/HERO-SECTION/Gradient 14.png";
 import { motion } from "framer-motion";
 
 const thunderLight = localFont({

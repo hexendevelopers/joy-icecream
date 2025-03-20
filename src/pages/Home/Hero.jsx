@@ -16,10 +16,8 @@ import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import useMeasure from "react-use-measure";
 import newRound from "@/app/assets/HERO-SECTION/hero-bg.webp";
 import heroCircleMob from "../../app/assets/MOBILE/hero-circle-mob.png";
-import Lenis from "@studio-freight/lenis";
 import { useLenisScroll } from "@/components/SmoothScroll";
 import stage from "../../app/assets/HERO-SECTION/icestage.png";
-import Marquee from "react-fast-marquee";
 import SecondSection from './SecondSection'
 import choclateDub from '../../app/assets/MOBILE/HOME/choc.png'
 import spanishDub from '../../app/assets/MOBILE/HOME/spanish.png'
