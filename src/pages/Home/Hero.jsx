@@ -444,13 +444,17 @@ function Hero() {
   
 
   function WebGLContextHandler() {
-    const { gl } = useThree();
+    const { gl, invalidate } = useThree();
   
     useEffect(() => {
       const handleContextLost = (event) => {
         event.preventDefault();
         console.warn("WebGL context lost. Attempting to restore...");
-        // You might need to reset or reload the WebGL context here
+        
+        setTimeout(() => {
+          gl.forceContextRestore(); // Try to restore WebGL context
+          invalidate(); // Trigger re-render
+        }, 50);
       };
   
       gl.domElement.addEventListener("webglcontextlost", handleContextLost);
@@ -458,10 +462,12 @@ function Hero() {
       return () => {
         gl.domElement.removeEventListener("webglcontextlost", handleContextLost);
       };
-    }, [gl]);
+    }, [gl, invalidate]);
+
   
     return null;
   }
+
 
 
   return (
@@ -657,7 +663,7 @@ function Hero() {
                 style={{ width: "100%", height: "100%" }}
                 shadows
                 dpr={[1, 2]} // High DPI rendering for better quality
-                gl={{ antialias: true }} // Enable anti-aliasing
+                gl={{ antialias: true, preserveDrawingBuffer:true }} // Enable anti-aliasing
               >
                 <WebGLContextHandler/>
                 {/* Create environment for reflections */}
@@ -720,6 +726,8 @@ function Hero() {
                 resize={{ scroll: false, debounce: 0 }}
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 style={{ width: "100%", height: "100%" }}
+                dpr={[1, 2]} // High DPI rendering for better quality
+                gl={{ antialias: true, preserveDrawingBuffer:true }} // Enable anti-aliasing
               >
                  <WebGLContextHandler/>
                 {/* Base ambient light */}
@@ -765,6 +773,8 @@ function Hero() {
                 resize={{ scroll: false, debounce: 0 }}
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 style={{ width: "100%", height: "100%" }}
+                dpr={[1, 2]} // High DPI rendering for better quality
+                gl={{ antialias: true, preserveDrawingBuffer:true }} // Enable anti-aliasing
               >
                  <WebGLContextHandler/>
                 {/* Base ambient light */}
