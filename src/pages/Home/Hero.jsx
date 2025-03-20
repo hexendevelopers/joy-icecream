@@ -181,7 +181,7 @@ function Dub3Model() {
 // -----MOBILE-MODELS----
 
 function Dub1ModelMob() {
-  const glb = useMemo(() => useGLTF("/assets/HERO 3D/SPANISH.glb"), []);
+  const glb = useMemo(() => useGLTF("/assets/HERO 3D/SPANISHMOB.glb"), []);
 
   const materialProps = useMemo(() => ({
     roughness: 0.6,
@@ -210,7 +210,7 @@ function Dub1ModelMob() {
 }
 
 function Dub2ModelMob({ mobileValue, rotateY }) {
-  const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
+  const glb = useGLTF("/assets/HERO 3D/StrawberryMOB.glb");
   const modelRef = useRef();
   const { gl } = useThree();
   useEffect(() => {
@@ -264,7 +264,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 
 function Dub3ModelMob() {
   // const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
-  const glb = useMemo(() => useGLTF("/assets/HERO 3D/CHOCOLATE.glb"), []);
+  const glb = useMemo(() => useGLTF("/assets/HERO 3D/CHOCOLATEMOB.glb"), []);
 
   const materialProps = useMemo(() => ({
     roughness: 0.6,
@@ -869,7 +869,7 @@ function Hero() {
                 <h1
                   className={`text-[38.5vw] w-full leading-none lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
                 >
-                  SCOOPi
+                  SCOOP
                 </h1>
                 <h1
                   className={`text-[30vw] w-full leading-none lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 lg:mt-0`}
