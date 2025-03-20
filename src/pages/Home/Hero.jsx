@@ -443,6 +443,26 @@ function Hero() {
   }, [limitMobile]);
   
 
+  function WebGLContextHandler() {
+    const { gl } = useThree();
+  
+    useEffect(() => {
+      const handleContextLost = (event) => {
+        event.preventDefault();
+        console.warn("WebGL context lost. Attempting to restore...");
+        // You might need to reset or reload the WebGL context here
+      };
+  
+      gl.domElement.addEventListener("webglcontextlost", handleContextLost);
+  
+      return () => {
+        gl.domElement.removeEventListener("webglcontextlost", handleContextLost);
+      };
+    }, [gl]);
+  
+    return null;
+  }
+
 
   return (
     <>
@@ -639,6 +659,7 @@ function Hero() {
                 dpr={[1, 2]} // High DPI rendering for better quality
                 gl={{ antialias: true }} // Enable anti-aliasing
               >
+                <WebGLContextHandler/>
                 {/* Create environment for reflections */}
                 {/* <Environment 
                      preset="sunset"
@@ -700,6 +721,7 @@ function Hero() {
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 style={{ width: "100%", height: "100%" }}
               >
+                 <WebGLContextHandler/>
                 {/* Base ambient light */}
                 <ambientLight intensity={4} />
 
@@ -744,6 +766,7 @@ function Hero() {
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 style={{ width: "100%", height: "100%" }}
               >
+                 <WebGLContextHandler/>
                 {/* Base ambient light */}
                 <ambientLight intensity={4} />
 

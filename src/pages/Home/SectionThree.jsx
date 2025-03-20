@@ -83,75 +83,86 @@ function SectionThree() {
     };
   }, []);
 
-
   return (
     <div
       ref={containerRef}
-      className="w-screen h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-900 overflow-x-clip"
+      className="w-screen h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-900 overflow-clip"
     >
-      <div className="sticky w-screen h-screen top-0 py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
-        <h1 className={`${thunder.className} text-5xl md:text-7xl  uppercase text-white`}>
+      <div className="sticky w-full h-screen top-0 will-change-transform  py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
+        <h1
+          className={`${thunder.className} text-5xl md:text-7xl  uppercase text-white`}
+        >
           explore our flavors
         </h1>
-        <div className="w-96 h-96 rounded-full  flex items-center justify-center relative">
+
+        {/* DESKTOP VERSION  */}
+        <div className="w-96 h-96 rounded-full hidden lg:flex items-center justify-center relative">
           {/* Center text */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* <div className="text-center">
-              <div className={`${thunder.className} text-4xl`}>100%</div>
-              <div className={`${thunderLight.className} text-2xl`}>
-                ICE CREAM
-              </div>
-              <div className={`${thunderLight.className} text-2xl`}>
-                NATURAL
-              </div>
-            </div> */}
-            <Image alt="text describing icecream" src={centerText} className="w-[45%] md:w-[50%] lg:w-[60%]" />
+            <Image
+              alt="text describing icecream"
+              src={centerText}
+              className="w-[45%] md:w-[50%] lg:w-[60%]"
+            />
           </div>
 
           {/* Ice cream containers */}
           {allFlavors.map((item, index) => (
-            <>
-              <motion.div
-                key={index}
-                className="absolute w-24 h-24 hidden lg:block"
-                style={{
-                  transform: `rotate(${
-                    -index * (value /60)
-                  }deg) translateY(-170px)`,
-                  zIndex: 11 - index,
-                }}
-              >
-                <Image
-                  src={item}
-                  alt={`Ice cream ${index + 1}`}
-                  width={80}
-                  height={80}
-                  className={`w-full h-full object-contain `}
-                />
-              </motion.div>
-
-              {/* // ----MOBILE-VERSION--- */}
-              <motion.div
-                key={index}
-                className="absolute w-20 md:w-24 h-20 md:h-24  lg:hidden"
-                style={{
-                  transform: `rotate(${
-                    -index * (mobileValue / 50)
-                  }deg) translateY(-140px)`,
-                  zIndex: 11 - index,
-                }}
-              >
-                <Image
-                  src={item}
-                  alt={`Ice cream ${index + 1}`}
-                  width={80}
-                  height={80}
-                  className={`w-full h-full object-contain `}
-                />
-              </motion.div>
-            </>
+            <motion.div
+              key={index}
+              className="absolute w-24 h-24 hidden lg:block"
+              style={{
+                transform: `rotate(${
+                  -index * (value / 60)
+                }deg) translateY(-170px)`,
+                zIndex: 11 - index,
+              }}
+            >
+              <Image
+                src={item}
+                alt={`Ice cream ${index + 1}`}
+                width={80}
+                height={80}
+                className={`w-full h-full object-contain `}
+              />
+            </motion.div>
           ))}
         </div>
+
+        {/* MOBILE VERSION  */}
+        <div className="w-96 h-96 rounded-full lg:hidden flex items-center justify-center relative">
+          {/* Center text */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image
+              alt="text describing icecream"
+              src={centerText}
+              className="w-[45%] md:w-[50%] lg:w-[60%]"
+            />
+          </div>
+
+          {/* Ice cream containers */}
+          {allFlavors.map((item, index) => (
+            <div
+              key={index}
+              className="absolute w-20 md:w-24 h-20 md:h-24  lg:hidden"
+              style={{
+                transform: `rotate(${
+                  -index * (mobileValue / 50)
+                }deg) translateY(-140px)`,
+                zIndex: 11 - index,
+              }}
+            >
+              <Image
+                src={item}
+                alt={`Ice cream ${index + 1}`}
+                width={80}
+                height={80}
+                className={`w-full h-full object-contain `}
+              />
+            </div>
+          ))}
+        </div>
+
         <h1 className="w-[22.56rem] md:w-[600px] text-sm md:text-base text-center text-white">
           Our Ice Cream is made with the finest natural ingredients, including
           fresh dairy and real fruits. Crafted for pure joy, every scoop is

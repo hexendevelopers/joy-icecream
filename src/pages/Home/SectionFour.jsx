@@ -27,7 +27,7 @@ const thunderBold = localFont({
 
 function SectionFour() {
   return (
-    <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-900 to-red-800 overflow-x-clip">
+    <div className=" w-full h-screen relative lg:flex lg:items-center text-white  lg:justify-center bg-gradient-to-b from-red-900 to-red-800 overflow-x-hidden">
       <div className="absolute z-0 top-0 left-0 hidden lg:block"></div>
       <div className="w-full h-full flex flex-col gap-10 justify-around lg:justify-between items-center">
         <div className=" flex flex-col gap-16 lg:gap-10 justify-between lg:justify-normal items-center lg:py-0">
