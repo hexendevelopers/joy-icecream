@@ -728,7 +728,8 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className=" absolute flex justify-center z-10  top-[65vh] left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
+              // className=" absolute flex justify-center z-10  top-[65vh] left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
+              className=" absolute hidden justify-center z-10  top-[65vh] left-1/2 -translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem]  overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -775,7 +776,8 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute flex justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+              // className="absolute flex justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+              className="absolute hidden justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
