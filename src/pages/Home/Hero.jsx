@@ -21,6 +21,8 @@ import { useLenisScroll } from "@/components/SmoothScroll";
 import stage from "../../app/assets/HERO-SECTION/icestage.png";
 import Marquee from "react-fast-marquee";
 import SecondSection from './SecondSection'
+import choclateDub from '../../app/assets/MOBILE/HOME/choc.png'
+import spanishDub from '../../app/assets/MOBILE/HOME/spanish.png'
 
 
 const thunder = localFont({
@@ -774,7 +776,7 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute flex justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
+              className="absolute hidden justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -810,6 +812,41 @@ function Hero() {
                 />
                 <Dub1ModelMob />
               </Canvas>
+            </motion.div>
+
+
+            {/* NEW CONCEPT  */}
+            <motion.div
+              initial={{ x: -100 ,rotateZ:0}}
+              animate={{ x: 40,rotateZ:30 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 1,
+              }}
+              className=" absolute flex justify-center outline-none border-none z-10  top-[67vh] left-1/2 -translate-x-1/2 h-auto w-[8.5rem]  overflow-hidden"
+            >
+              <Image className="w-full h-auto" src={choclateDub}/>
+            </motion.div>
+
+            <motion.div
+              initial={{ x: 100 ,rotateZ:0}}
+              animate={{ x: -40,rotateZ:-30 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 1,
+              }}
+              className=" absolute flex justify-center  outline-none border-none z-10  top-[67vh] right-1/2 translate-x-1/2 h-auto w-[8.5rem]  overflow-hidden"
+            >
+                            <Image className="w-full h-auto" src={spanishDub}/>
+
             </motion.div>
 
            
