@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, use, useEffect, useRef, useState } from "react";
+import React, { Suspense, use, useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "../../components/Navbar";
 import { Bebas_Neue, Montez } from "next/font/google";
 import { Manrope } from "next/font/google";
@@ -181,18 +181,23 @@ function Dub3Model() {
 // -----MOBILE-MODELS----
 
 function Dub1ModelMob() {
-  const glb = useGLTF("/assets/HERO 3D/SPANISH.glb");
+  const glb = useMemo(() => useGLTF("/assets/HERO 3D/SPANISH.glb"), []);
+
+  const materialProps = useMemo(() => ({
+    roughness: 0.6,
+    metalness: 0.7,
+  }), []);
 
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
         // Add roughness to all materials
-        child.material.roughness = 0.6; // Adjust value between 0-1
-        child.material.metalness = 0.7; // Adjust value between 0-1
-        child.material.needsUpdate = true;
+        Object.assign(child.material, materialProps);
+      child.material.needsUpdate = true;
       }
     });
-  }, [glb]);
+  // }, [glb]);
+  }, []);
 
   return (
     <primitive
@@ -258,18 +263,24 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 }
 
 function Dub3ModelMob() {
-  const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
+  // const glb = useGLTF("/assets/HERO 3D/CHOCOLATE.glb");
+  const glb = useMemo(() => useGLTF("/assets/HERO 3D/CHOCOLATE.glb"), []);
+
+  const materialProps = useMemo(() => ({
+    roughness: 0.6,
+    metalness: 0.7,
+  }), []);
 
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
         // Add roughness to all materials
-        child.material.roughness = 0.6; // Adjust value between 0-1
-        child.material.metalness = 0.7; // Adjust value between 0-1
-        child.material.needsUpdate = true;
+        Object.assign(child.material, materialProps);
+      child.material.needsUpdate = true;
       }
     });
-  }, [glb]);
+  // }, [glb]);
+  }, []);
 
   return (
     <primitive
@@ -451,10 +462,7 @@ function Hero() {
         event.preventDefault();
         console.warn("WebGL context lost. Attempting to restore...");
         
-        setTimeout(() => {
           gl.forceContextRestore(); // Try to restore WebGL context
-          invalidate(); // Trigger re-render
-        }, 50);
       };
   
       gl.domElement.addEventListener("webglcontextlost", handleContextLost);
@@ -462,7 +470,7 @@ function Hero() {
       return () => {
         gl.domElement.removeEventListener("webglcontextlost", handleContextLost);
       };
-    }, [gl, invalidate]);
+    }, [gl]);
 
   
     return null;
@@ -861,7 +869,7 @@ function Hero() {
                 <h1
                   className={`text-[38.5vw] w-full leading-none lg:text-[18vw] ${thunder.className} text-white flex justify-center font-extrabold`}
                 >
-                  SCOOP
+                  SCOOPi
                 </h1>
                 <h1
                   className={`text-[30vw] w-full leading-none lg:text-[18vw] flex justify-center text-white flex-1 ${thunder.className}  -mt-24 lg:mt-0`}
