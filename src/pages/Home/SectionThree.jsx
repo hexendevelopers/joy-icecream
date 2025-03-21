@@ -95,11 +95,10 @@ function SectionThree() {
         >
           explore our flavors
         </h1>
-        <h1 className="w-[22.56rem] md:w-[32rem] lg:w-[600px] text-sm md:text-base text-center text-white">
+        <h1 className="w-[22.56rem] md:w-[32rem]  text-sm md:text-base text-center text-white">
           Our Ice Cream is made with the finest natural ingredients, including
           fresh dairy and real fruits. Crafted for pure joy<span className="hidden lg:inline">, every scoop is
-          rich, creamy, and irresistibly delicious. Enjoy a treat that’s as
-          wholesome as it is delightful!</span> 
+          rich, creamy, and irresistibly delicious.</span> 
         </h1>
         </div>
        

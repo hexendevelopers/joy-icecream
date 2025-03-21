@@ -56,7 +56,7 @@ const manrope = Manrope({
 
 // -----STARWBERRY TUB CODE----
 
-function Dub2Model({ isMoving,value, rotateY }) {
+function Dub2Model({ value, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
   const modelRef = useRef();
   const { gl } = useThree();
@@ -90,23 +90,16 @@ function Dub2Model({ isMoving,value, rotateY }) {
 
   useFrame(() => {
     if (rotateY && modelRef.current) {
-      modelRef.current.rotation.y += 0.01; 
-      // Smooth Y-axis rotation
+      modelRef.current.rotation.y += 0.01;  // Smooth Y-axis rotation
     }
   });
 
- 
-  const { scale, position } = useSpring({
-    scale: isMoving ? [3.5, 3.5, 3.5] : [3.35, 3.35, 3.35],
-    config: { mass: 1, tension: 400, friction: 15 }, // More tension = faster, lower friction = bouncier
-  })
-
   return (
-    <a.primitive
+    <primitive
       ref={modelRef}
       object={glb.scene}
-      scale={scale}
-      position={[0, -1.65, 0]}
+      scale={[3.5, 3.5, 3.5]}
+      position={[0, -1.6, 0]}
       rotation={[0, value * 0.009, 0]} // Adjust rotation
     />
   );
@@ -322,7 +315,6 @@ function Hero() {
   const [limit, setLimit] = useState(500);
   const [limitMobile, setLimitMobile] = useState(500);
   const [rotateY, setRotateY] = useState(false);
-  const [isMoving, setIsMoving] = useState(false);
 
   const scrollY = useLenisScroll();
   const containerRef = useRef();
@@ -413,12 +405,10 @@ function Hero() {
         if (value !== -containerTop) {
           setValue(-containerTop);
           setRotateY(false);
-          setIsMoving(true);
         }
       } else {
         setValue(0);
         setRotateY(false);
-        setIsMoving(false);
       }
     };
 
@@ -509,17 +499,9 @@ function Hero() {
         <div className="hidden lg:block h-[200vh] w-screen relative">
           <div className=" relative w-screen flex flex-col justify-between h-[180vh]">
             <motion.div
-              // animate={{
-              //   y: isMoving ? -50 : 0,
-              //   opacity: isMoving ? 1 : 0.99,
-              // }}
-              // transition={{
-              //   stiffness: 100,
-              //   damping: 10, 
-               
-              // }}
+            
               ref={dubRef}
-              className={`sticky flex top-[47vh] w-screen items-center justify-center h-[23rem] z-20 `}
+              className={`sticky flex top-[50vh] w-screen items-center justify-center h-[22rem] z-20 `}
             >
               <Canvas
                 camera={{ position: [0, 0, 5], fov: 50 }}
@@ -566,7 +548,7 @@ function Hero() {
                 <SpotlightFollower value={value} />
 
                 {/* Main model */}
-                <Dub2Model isMoving={isMoving} value={value} rotateY={rotateY} />
+                <Dub2Model value={value} rotateY={rotateY} />
               </Canvas>
             </motion.div>
 

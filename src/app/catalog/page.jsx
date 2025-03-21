@@ -213,31 +213,31 @@ function page() {
             src={One}
             alt="blueberry"
             width={80}
-            className=" hidden md:block absolute top-52 right-80 transform -translate-y-1/2 md:w-[140px] animate-float-fast"
+            className=" hidden lg:block absolute top-52 right-80 transform -translate-y-1/2 md:w-[140px] animate-float-fast"
           />
           <Image
             src={strawberry}
             alt="strawberry"
             width={80}
-            className="hidden md:block  absolute left-[48%] top-12 md:w-[100px] animate-float-slow"
+            className="hidden lg:block  absolute left-[48%] top-12 md:w-[100px] animate-float-slow"
           />
           <Image
             src={four}
             alt="caramel"
             width={380}
-            className="hidden md:block  absolute right-[32%] top-20 transform -translate-y-1/2 md:w-[150px] animate-float-fast"
+            className="hidden lg:block  absolute right-[32%] top-20 transform -translate-y-1/2 md:w-[150px] animate-float-fast"
           />
           <Image
             src={three}
             alt="vanilla"
             width={140}
-            className="hidden md:block  absolute left-[27rem] bottom-0 md:w-[130px] animate-float-slow"
+            className="hidden lg:block  absolute left-[27rem] bottom-0 md:w-[130px] animate-float-slow"
           />
           <Image
             src={two}
             alt="orange"
             width={180}
-            className="hidden md:block  absolute left-80 top-10 md:w-[80px] animate-float-fast"
+            className="hidden lg:block  absolute left-80 top-10 md:w-[80px] animate-float-fast"
           />
         </div>
         <div className=" flex justify-center w-full ">
