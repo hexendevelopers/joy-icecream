@@ -89,11 +89,20 @@ function SectionThree() {
       className="w-screen h-[350vh] lg:h-[400vh] py-20  relative text-white bg-gradient-to-b from-red-900 to-red-900 overflow-clip"
     >
       <div className="sticky w-full h-screen top-0 will-change-transform  py-10 flex flex-col justify-around gap-10 lg:gap-20 items-center ">
+        <div className="flex flex-col justify-center gap-2">
         <h1
-          className={`${thunder.className} text-5xl md:text-7xl  uppercase text-white`}
+          className={`${thunder.className} text-5xl md:text-7xl text-center  uppercase text-white`}
         >
           explore our flavors
         </h1>
+        <h1 className="w-[22.56rem] md:w-[32rem] lg:w-[600px] text-sm md:text-base text-center text-white">
+          Our Ice Cream is made with the finest natural ingredients, including
+          fresh dairy and real fruits. Crafted for pure joy<span className="hidden lg:inline">, every scoop is
+          rich, creamy, and irresistibly delicious. Enjoy a treat that’s as
+          wholesome as it is delightful!</span> 
+        </h1>
+        </div>
+       
 
         {/* DESKTOP VERSION  */}
         <div className="w-96 h-96 rounded-full hidden lg:flex items-center justify-center relative">
@@ -163,12 +172,7 @@ function SectionThree() {
           ))}
         </div>
 
-        <h1 className="w-[22.56rem] md:w-[600px] text-sm md:text-base text-center text-white">
-          Our Ice Cream is made with the finest natural ingredients, including
-          fresh dairy and real fruits. Crafted for pure joy, every scoop is
-          rich, creamy, and irresistibly delicious. Enjoy a treat that’s as
-          wholesome as it is delightful!
-        </h1>
+       
       </div>
     </div>
   );

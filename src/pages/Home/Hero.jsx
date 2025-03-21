@@ -1,5 +1,12 @@
 "use client";
-import React, { Suspense, use, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  Suspense,
+  use,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Navbar from "../../components/Navbar";
 import { Bebas_Neue, Montez } from "next/font/google";
 import { Manrope } from "next/font/google";
@@ -18,9 +25,10 @@ import newRound from "@/app/assets/HERO-SECTION/hero-bg.webp";
 import heroCircleMob from "../../app/assets/MOBILE/hero-circle-mob.png";
 import { useLenisScroll } from "@/components/SmoothScroll";
 import stage from "../../app/assets/HERO-SECTION/icestage.png";
-import SecondSection from './SecondSection'
-import choclateDub from '../../app/assets/MOBILE/HOME/choc.png'
-import spanishDub from '../../app/assets/MOBILE/HOME/spanish.png'
+import SecondSection from "./SecondSection";
+import choclateDub from "../../app/assets/HERO-SECTION/choc.png";
+import spanishDub from "../../app/assets/HERO-SECTION/spanish.png";
+import { useSpring, a } from "@react-spring/three";
 
 
 const thunder = localFont({
@@ -48,7 +56,7 @@ const manrope = Manrope({
 
 // -----STARWBERRY TUB CODE----
 
-function Dub2Model({ value, rotateY }) {
+function Dub2Model({ isMoving,value, rotateY }) {
   const glb = useGLTF("/assets/HERO 3D/Strawberry.glb");
   const modelRef = useRef();
   const { gl } = useThree();
@@ -82,15 +90,22 @@ function Dub2Model({ value, rotateY }) {
 
   useFrame(() => {
     if (rotateY && modelRef.current) {
-      modelRef.current.rotation.y += 0.01; // Smooth Y-axis rotation
+      modelRef.current.rotation.y += 0.01; 
+      // Smooth Y-axis rotation
     }
   });
 
+ 
+  const { scale, position } = useSpring({
+    scale: isMoving ? [3.5, 3.5, 3.5] : [3.35, 3.35, 3.35],
+    config: { mass: 1, tension: 400, friction: 15 }, // More tension = faster, lower friction = bouncier
+  })
+
   return (
-    <primitive
+    <a.primitive
       ref={modelRef}
       object={glb.scene}
-      scale={[3.5, 3.5, 3.5]}
+      scale={scale}
       position={[0, -1.65, 0]}
       rotation={[0, value * 0.009, 0]} // Adjust rotation
     />
@@ -183,20 +198,23 @@ function Dub3Model() {
 function Dub1ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/SPANISHMOB.glb");
 
-  const materialProps = useMemo(() => ({
-    roughness: 0.6,
-    metalness: 0.7,
-  }), []);
+  const materialProps = useMemo(
+    () => ({
+      roughness: 0.6,
+      metalness: 0.7,
+    }),
+    []
+  );
 
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
         // Add roughness to all materials
         Object.assign(child.material, materialProps);
-      child.material.needsUpdate = true;
+        child.material.needsUpdate = true;
       }
     });
-  // }, [glb]);
+    // }, [glb]);
   }, []);
 
   return (
@@ -256,7 +274,7 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
       ref={modelRef}
       object={glb.scene}
       scale={[3.5, 3.5, 3.5]}
-      position={[-0.12, -1.65, 0]}
+      position={[0, -1.65, 0]}
       rotation={[0, mobileValue * 0.0106, 0]} //Adjustment of facing position on stage mobile
     />
   );
@@ -265,20 +283,23 @@ function Dub2ModelMob({ mobileValue, rotateY }) {
 function Dub3ModelMob() {
   const glb = useGLTF("/assets/HERO 3D/CHOCOLATEMOB.glb");
 
-  const materialProps = useMemo(() => ({
-    roughness: 0.6,
-    metalness: 0.7,
-  }), []);
+  const materialProps = useMemo(
+    () => ({
+      roughness: 0.6,
+      metalness: 0.7,
+    }),
+    []
+  );
 
   useEffect(() => {
     glb.scene.traverse((child) => {
       if (child.isMesh) {
         // Add roughness to all materials
         Object.assign(child.material, materialProps);
-      child.material.needsUpdate = true;
+        child.material.needsUpdate = true;
       }
     });
-  // }, [glb]);
+    // }, [glb]);
   }, []);
 
   return (
@@ -291,8 +312,6 @@ function Dub3ModelMob() {
   );
 }
 
-
-
 function Hero() {
   const [value, setValue] = useState(0);
   const [mobileValue, setMobileValue] = useState(0);
@@ -303,6 +322,7 @@ function Hero() {
   const [limit, setLimit] = useState(500);
   const [limitMobile, setLimitMobile] = useState(500);
   const [rotateY, setRotateY] = useState(false);
+  const [isMoving, setIsMoving] = useState(false);
 
   const scrollY = useLenisScroll();
   const containerRef = useRef();
@@ -393,10 +413,12 @@ function Hero() {
         if (value !== -containerTop) {
           setValue(-containerTop);
           setRotateY(false);
+          setIsMoving(true);
         }
       } else {
         setValue(0);
         setRotateY(false);
+        setIsMoving(false);
       }
     };
 
@@ -451,31 +473,30 @@ function Hero() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [limitMobile]);
-  
 
   function WebGLContextHandler() {
     const { gl } = useThree();
-  
+
     useEffect(() => {
       const handleContextLost = (event) => {
         event.preventDefault();
         console.warn("WebGL context lost. Attempting to restore...");
-        
-          gl.forceContextRestore(); // Try to restore WebGL context
+
+        gl.forceContextRestore(); // Try to restore WebGL context
       };
-  
+
       gl.domElement.addEventListener("webglcontextlost", handleContextLost);
-  
+
       return () => {
-        gl.domElement.removeEventListener("webglcontextlost", handleContextLost);
+        gl.domElement.removeEventListener(
+          "webglcontextlost",
+          handleContextLost
+        );
       };
     }, [gl]);
 
-  
     return null;
   }
-
-
 
   return (
     <>
@@ -488,8 +509,17 @@ function Hero() {
         <div className="hidden lg:block h-[200vh] w-screen relative">
           <div className=" relative w-screen flex flex-col justify-between h-[180vh]">
             <motion.div
+              // animate={{
+              //   y: isMoving ? -50 : 0,
+              //   opacity: isMoving ? 1 : 0.99,
+              // }}
+              // transition={{
+              //   stiffness: 100,
+              //   damping: 10, 
+               
+              // }}
               ref={dubRef}
-              className="sticky top-[50vh] w-screen  flex items-center justify-center h-[22rem] z-20 "
+              className={`sticky flex top-[47vh] w-screen items-center justify-center h-[23rem] z-20 `}
             >
               <Canvas
                 camera={{ position: [0, 0, 5], fov: 50 }}
@@ -536,10 +566,11 @@ function Hero() {
                 <SpotlightFollower value={value} />
 
                 {/* Main model */}
-                <Dub2Model value={value} rotateY={rotateY} />
+                <Dub2Model isMoving={isMoving} value={value} rotateY={rotateY} />
               </Canvas>
             </motion.div>
 
+            {/* FOR SIDE DUBS LIGHTNING (HIDDEN)  */}
             <motion.div
               initial={{ x: -180, rotateZ: 0 }}
               animate={{ x: 15, rotateZ: 30 }}
@@ -551,7 +582,7 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className=" absolute z-10  top-[60vh] left-1/2 -translate-x-1/2 h-[15rem] w-[20rem]  overflow-hidden"
+              className=" absolute z-10 hidden top-[60vh] left-1/2 -translate-x-1/2 h-[15rem] w-[20rem]  overflow-hidden"
             >
               <Canvas
                 resize={{ scroll: false, debounce: 0 }}
@@ -584,9 +615,10 @@ function Hero() {
                 <Dub3Model />
               </Canvas>
             </motion.div>
+
             <motion.div
-              initial={{ x: 180, rotateZ: 0 }}
-              animate={{ x: 10, rotateZ: -28 }}
+              initial={{ x: -110, rotateZ: 0 }}
+              animate={{ x: 50, rotateZ: 30 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -595,45 +627,29 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className="absolute top-[58.5vh] right-1/2 translate-x-1/2 h-[15rem] w-[20rem] z-10 overflow-hidden"
+              className=" absolute z-10 flex justify-center outline-none border-none top-[58vh] left-1/2 -translate-x-1/2 w-[13.5rem]  overflow-hidden"
             >
-              <Canvas
-                resize={{ scroll: false, debounce: 0 }}
-                camera={{ position: [0, 0, 5], fov: 50 }}
-                style={{ width: "100%", height: "100%" }}
-              >
-                {/* Base ambient light */}
-                <ambientLight intensity={3} />
-
-                {/* Side specular highlight */}
-                <spotLight
-                  position={[8, 3, 8]}
-                  angle={0.4}
-                  penumbra={0.7}
-                  intensity={22}
-                  distance={12}
-                />
-
-                {/* Subtle fill light */}
-                <directionalLight position={[-3, 0, 1]} intensity={2.2} />
-
-                {/* Subtle fill light */}
-                <directionalLight position={[3, 0, 1]} intensity={2.2} />
-
-                {/* Environmental reflection simulation */}
-                <hemisphereLight
-                  intensity={2}
-                  groundColor="#111111"
-                  color="#EA2424"
-                />
-                <Dub1Model />
-              </Canvas>
+              <Image src={choclateDub} className="w-full h-auto" />
+            </motion.div>
+            <motion.div
+              initial={{ x: 110, rotateZ: 0 }}
+              animate={{ x: -50, rotateZ: -30 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 1,
+              }}
+              className="absolute top-[58vh] flex justify-center outline-none border-none right-1/2 translate-x-1/2 w-[13.5rem] z-10 overflow-hidden"
+            >
+              <Image src={spanishDub} className="w-full h-auto" />
             </motion.div>
 
             <div className="overflow-hidden w-screen">
-             <SecondSection/>
+              <SecondSection />
             </div>
-
           </div>
           <div className="flex w-screen  transform -translate-y-14 justify-center">
             <Image
@@ -670,9 +686,9 @@ function Hero() {
                 style={{ width: "100%", height: "100%" }}
                 shadows
                 dpr={[1, 2]} // High DPI rendering for better quality
-                gl={{ antialias: true, preserveDrawingBuffer:true }} // Enable anti-aliasing
+                gl={{ antialias: true, preserveDrawingBuffer: true }} // Enable anti-aliasing
               >
-                <WebGLContextHandler/>
+                <WebGLContextHandler />
                 {/* Create environment for reflections */}
                 {/* <Environment 
                      preset="sunset"
@@ -716,6 +732,7 @@ function Hero() {
               </Canvas>
             </motion.div>
 
+            {/* FOR SIDE DUBS LIGHTNING (HIDDEN)  */}
             <motion.div
               initial={{ x: -100 }}
               animate={{ x: 30 }}
@@ -734,9 +751,9 @@ function Hero() {
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 style={{ width: "100%", height: "100%" }}
                 dpr={[1, 2]} // High DPI rendering for better quality
-                gl={{ antialias: true, preserveDrawingBuffer:true }} // Enable anti-aliasing
+                gl={{ antialias: true, preserveDrawingBuffer: true }} // Enable anti-aliasing
               >
-                 <WebGLContextHandler/>
+                <WebGLContextHandler />
                 {/* Base ambient light */}
                 <ambientLight intensity={4} />
 
@@ -763,60 +780,10 @@ function Hero() {
               </Canvas>
             </motion.div>
 
-            <motion.div
-              initial={{ x: 100 }}
-              animate={{ x: -25 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                mass: 1,
-              }}
-              className="absolute hidden justify-center top-[64.4vh] right-1/2  translate-x-1/2 h-[12rem] md:h-[22rem] w-[11rem] md:w-[21rem] z-10 overflow-hidden"
-            >
-              <Canvas
-                resize={{ scroll: false, debounce: 0 }}
-                camera={{ position: [0, 0, 5], fov: 50 }}
-                style={{ width: "100%", height: "100%" }}
-                dpr={[1, 2]} // High DPI rendering for better quality
-                gl={{ antialias: true, preserveDrawingBuffer:true }} // Enable anti-aliasing
-              >
-                 <WebGLContextHandler/>
-                {/* Base ambient light */}
-                <ambientLight intensity={4} />
-
-                {/* Side specular highlight */}
-                <spotLight
-                  position={[8, 3, 8]}
-                  angle={0.4}
-                  penumbra={0.7}
-                  intensity={22}
-                  distance={12}
-                />
-
-                {/* Subtle fill light */}
-                <directionalLight position={[-2, 0, 1]} intensity={2.2} />
-
-                {/* Subtle fill light */}
-                <directionalLight position={[2, 0, 1]} intensity={2.2} />
-
-                {/* Environmental reflection simulation */}
-                <hemisphereLight
-                  intensity={2}
-                  groundColor="#111111"
-                  color="#EA2424"
-                />
-                <Dub1ModelMob />
-              </Canvas>
-            </motion.div>
-
-
             {/* NEW CONCEPT  */}
             <motion.div
-              initial={{ x: -100 ,rotateZ:0}}
-              animate={{ x: 40,rotateZ:30 }}
+              initial={{ x: -70, rotateZ: 0 }}
+              animate={{ x: 40, rotateZ: 30 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -825,14 +792,14 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className=" absolute flex justify-center outline-none border-none z-10  top-[67vh] left-1/2 -translate-x-1/2 h-auto w-[8.5rem]  overflow-hidden"
+              className=" absolute flex justify-center outline-none border-none z-10  top-[67vh] left-1/2 -translate-x-1/2 h-auto w-[8.5rem] md:w-[14rem]  overflow-hidden"
             >
-              <Image className="w-full h-auto" src={choclateDub}/>
+              <Image className="w-full h-auto" src={choclateDub} />
             </motion.div>
 
             <motion.div
-              initial={{ x: 100 ,rotateZ:0}}
-              animate={{ x: -40,rotateZ:-30 }}
+              initial={{ x: 70, rotateZ: 0 }}
+              animate={{ x: -40, rotateZ: -30 }}
               transition={{
                 delay: 0.5,
                 duration: 0.5,
@@ -841,13 +808,10 @@ function Hero() {
                 damping: 20,
                 mass: 1,
               }}
-              className=" absolute flex justify-center  outline-none border-none z-10  top-[67vh] right-1/2 translate-x-1/2 h-auto w-[8.5rem]  overflow-hidden"
+              className=" absolute flex justify-center  outline-none border-none z-10  top-[67vh] right-1/2 translate-x-1/2 h-auto w-[8.5rem] md:w-[14rem]   overflow-hidden"
             >
-                            <Image className="w-full h-auto" src={spanishDub}/>
-
+              <Image className="w-full h-auto" src={spanishDub} />
             </motion.div>
-
-           
           </div>
           <div className=" w-screen flex transform -translate-y-8 md:-translate-y-12 justify-center ">
             <Image
@@ -1019,7 +983,11 @@ function Hero() {
                 }}
                 className="absolute top-[10rem] -left-9 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="coconut" src={coconut} className="w-[5.5rem] md:w-[8rem]" />
+                <Image
+                  alt="coconut"
+                  src={coconut}
+                  className="w-[5.5rem] md:w-[8rem]"
+                />
               </motion.div>
               <motion.div
                 initial={{ x: -50, y: 300, opacity: 0 }}
@@ -1034,7 +1002,11 @@ function Hero() {
                 }}
                 className="absolute z-20 top-[7rem] left-[10.5rem] md:left-[22.5rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="choclate" src={choclate}  className="w-[4.1rem] md:w-[7rem]" />
+                <Image
+                  alt="choclate"
+                  src={choclate}
+                  className="w-[4.1rem] md:w-[7rem]"
+                />
               </motion.div>
               <motion.div
                 initial={{ x: 0, y: 300, opacity: 0 }}
@@ -1049,7 +1021,11 @@ function Hero() {
                 }}
                 className="absolute z-20 top-[14rem] md:top-[24rem] left-[9.5rem] md:left-[20rem] flex flex-shrink-0 transform -translate-y-1/2 animate-float-fast"
               >
-                <Image alt="berry" src={berry}  className="w-[4.1rem] md:w-[7rem]" />
+                <Image
+                  alt="berry"
+                  src={berry}
+                  className="w-[4.1rem] md:w-[7rem]"
+                />
               </motion.div>
               <motion.div
                 className="absolute z-20 top-[16.5rem] md:top-[32rem] left-[15.5rem] md:left-[35rem] -translate-y-1/2 animate-float-fast"
@@ -1084,7 +1060,11 @@ function Hero() {
                 }}
                 className="absolute -right-10 top-[7rem] transform -translate-y-1/2 animate-float-fast"
               >
-                <Image src={flower} alt="flower"  className="w-[5.5rem] md:w-[8rem]" />
+                <Image
+                  src={flower}
+                  alt="flower"
+                  className="w-[5.5rem] md:w-[8rem]"
+                />
               </motion.div>
             </div>
           </div>

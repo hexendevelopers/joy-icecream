@@ -47,7 +47,7 @@ function page() {
       const containerTop = ContainerRef2.current.getBoundingClientRect().top;
       const containerBottom = window.innerHeight - ContainerRef2.current.getBoundingClientRect().bottom;
       
-        if(containerTop <= 5 && containerBottom <= 5){
+        if(containerTop <= 0 && containerBottom <= 0){
           setIsFixed(true);
         }else{
           setIsFixed(false)
