@@ -471,6 +471,7 @@ function Hero() {
       const handleContextLost = (event) => {
         event.preventDefault();
         console.warn("WebGL context lost. Attempting to restore...");
+        window.location.reload(); // reload on lost of webgl context
 
         gl.forceContextRestore(); // Try to restore WebGL context
       };
@@ -494,7 +495,6 @@ function Hero() {
         ref={containerRef}
         className=" w-screen h-[180vh] lg:h-[200vh] bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-clip"
       >
-        {/* //NEW CONCEPT */}
         {/* DESKTOP VERSION  */}
         <div className="hidden lg:block h-[200vh] w-screen relative">
           <div className=" relative w-screen flex flex-col justify-between h-[180vh]">
