@@ -14,7 +14,7 @@ const signatie = localFont({
 
 function Footer() {
   return (
-    <div className="z-10 w-full h-auto  bg-gradient-to-b from-red-900 to-red-800 flex items-center pb-10 justify-center text-white overflow-hidden">
+    <div className="z-10 w-full h-auto  bg-gradient-to-b from-red-900 to-red-950 flex items-center pb-10 justify-center text-white overflow-hidden">
       <div className="flex flex-col justify-around items-center gap-5">
         <div className=" flex flex-col gap-5   items-center">
           <h1

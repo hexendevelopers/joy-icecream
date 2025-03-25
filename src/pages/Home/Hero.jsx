@@ -493,7 +493,7 @@ function Hero() {
     <>
       <div
         ref={containerRef}
-        className=" w-screen h-[180vh] lg:h-[200vh] bg-gradient-to-b from-red-900 to-black  relative text-white overflow-clip"
+        className=" w-screen h-[180vh] lg:h-[200vh] bg-gradient-to-b from-red-900 to-red-950  relative text-white overflow-clip"
       >
         {/* DESKTOP VERSION  */}
         <div className="hidden lg:block h-[200vh] w-screen relative">
