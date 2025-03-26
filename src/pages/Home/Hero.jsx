@@ -496,7 +496,7 @@ function Hero() {
         className=" w-screen h-[180vh] lg:h-[200vh] bg-gradient-to-b from-red-800 to-red-900  relative text-white overflow-clip"
       >
         {/* DESKTOP VERSION  */}
-        <div className="hidden lg:block h-[200vh] w-screen relative">
+        <div className="hidden lg:block  h-[200vh] w-screen relative">
           <div className=" relative w-screen flex flex-col justify-between h-[180vh]">
             <motion.div
             
@@ -656,7 +656,7 @@ function Hero() {
         </div>
 
         {/* MOBILE VERSION  NEW CONCEPT*/}
-        <div className="h-[180vh] lg:hidden w-screen relative">
+        <div className="h-[180vh] bg-gradient-to-b from-red-800 to-red-900  lg:hidden w-screen relative">
           <div className=" relative w-screen h-[160vh]">
             <motion.div
               ref={dubRefMobile}

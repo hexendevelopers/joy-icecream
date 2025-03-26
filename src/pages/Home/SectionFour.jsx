@@ -34,10 +34,10 @@ function SectionFour() {
           >
             Ice Cream Bars
           </h1>
-          <h1 className=" text-center text-sm md:text-sm lg:text-base w-[22rem] md:w-[26rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
+          <h1 className=" text-center text-sm md:text-sm lg:text-base w-[22rem]  md:w-[26rem] lg:-mt-24 lg:w-[30rem] -mt-16 text-white">
             It’s about turning simple moments into delightful experiences. Ice
-            cream isn’t just a dessert; it’s a way to bring happiness, share
-            smiles, and create lasting memories.{" "}
+            cream isn’t just a dessert; it’s a way to bring happiness.<span className="hidden md:block">share
+            smiles, and create lasting memories.</span>
           </h1>
         </div>
         {/* ----BARS DESKTOP ANIMATION--- */}
